@@ -1,5 +1,59 @@
+"use client";
+
 import Link from "next/link";
 import { Linkedin, Facebook, Instagram } from "lucide-react";
+import { useState, useRef } from "react";
+import { subscribeNewsletter } from "@/app/actions/newsletter";
+
+function NewsletterForm() {
+    const [email, setEmail] = useState("");
+    const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+    const [message, setMessage] = useState("");
+    const formRef = useRef<HTMLFormElement>(null);
+
+    async function handleSubmit(e: React.FormEvent) {
+        e.preventDefault();
+        setStatus("loading");
+        setMessage("");
+
+        const result = await subscribeNewsletter(email);
+
+        if (result.success) {
+            setStatus("success");
+            setMessage(result.message);
+            setEmail("");
+        } else {
+            setStatus("error");
+            setMessage(result.message);
+        }
+    }
+
+    return (
+        <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-3">
+            <input
+                type="email"
+                placeholder="Email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                disabled={status === "loading" || status === "success"}
+                className="w-full px-4 py-3 bg-white border border-zinc-300 rounded font-body text-[14px] text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-[#9f860e] disabled:opacity-60 transition-colors"
+            />
+            <button
+                type="submit"
+                disabled={status === "loading" || status === "success"}
+                className="w-full px-4 py-3 bg-[#C9AF72] text-white uppercase font-body text-[13px] font-semibold tracking-widest rounded hover:bg-[#b89a5e] transition disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+                {status === "loading" ? "Subscribing…" : status === "success" ? "Subscribed ✓" : "Subscribe"}
+            </button>
+            {message && (
+                <p className={`font-body text-[13px] leading-snug ${status === "success" ? "text-emerald-600" : "text-red-500"}`}>
+                    {message}
+                </p>
+            )}
+        </form>
+    );
+}
 
 export function Footer() {
     return (
@@ -41,7 +95,7 @@ export function Footer() {
                             Explore the Collection
                         </Link>
                         <Link
-                            href="#request"
+                            href="/contact"
                             className="flex h-[50px] min-w-[220px] px-8 items-center justify-center rounded-full border border-[#6F6B50]/40 bg-[#5E5B42]/70 font-body text-[13px] font-semibold tracking-widest text-[#C4C2B4] transition hover:bg-[#68644A]"
                         >
                             Request Private Access
@@ -101,10 +155,15 @@ export function Footer() {
                                 Quick Links
                             </h3>
                             <ul className="space-y-3">
-                                {['Home', 'About Us', 'Company', 'Contact Us'].map((link) => (
-                                    <li key={link}>
-                                        <Link href="#" className="font-body text-[14px] text-zinc-500 hover:text-[#9f860e] transition-colors">
-                                            {link}
+                                {[
+                                    { label: 'Home', href: '/' },
+                                    { label: 'About Us', href: '#about' },
+                                    { label: 'Company', href: '#company' },
+                                    { label: 'Contact Us', href: '/contact' },
+                                ].map((link) => (
+                                    <li key={link.label}>
+                                        <Link href={link.href} className="font-body text-[14px] text-zinc-500 hover:text-[#9f860e] transition-colors">
+                                            {link.label}
                                         </Link>
                                     </li>
                                 ))}
@@ -135,19 +194,7 @@ export function Footer() {
                             <p className="font-body text-[14px] text-zinc-500 mb-5 leading-[1.7]">
                                 Get updates &amp; special announcements.
                             </p>
-                            <form className="flex flex-col gap-3">
-                                <input
-                                    type="email"
-                                    placeholder="Email address"
-                                    className="w-full px-4 py-3 bg-white border border-zinc-300 rounded font-body text-[14px] text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-[#9f860e]"
-                                />
-                                <button
-                                    type="button"
-                                    className="w-full px-4 py-3 bg-[#C9AF72] text-white uppercase font-body text-[13px] font-semibold tracking-widest rounded hover:bg-[#b89a5e] transition"
-                                >
-                                    Submit
-                                </button>
-                            </form>
+                            <NewsletterForm />
                         </div>
                     </div>
 
