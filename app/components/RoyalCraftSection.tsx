@@ -62,11 +62,11 @@ export function RoyalCraftSection() {
         </div>
 
         {/* Right: bottle image */}
-        <div className="relative w-full aspect-[4/5] lg:aspect-[3/4] overflow-hidden ml-auto lg:max-w-[550px]">
+        <div className="relative w-full aspect-[8/9] overflow-hidden ml-auto lg:max-w-[550px]">
           <img
             src="/bottle in field.png"
             alt="Cousins Vodka bottle in field"
-            className="absolute inset-0 h-full w-full object-cover aspect-square"
+            className="absolute inset-0 h-full w-full object-cover"
           />
         </div>
       </div>

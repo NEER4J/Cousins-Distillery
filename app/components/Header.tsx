@@ -1,61 +1,127 @@
+"use client";
+
 import Link from "next/link";
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+
+const NAV_LINKS = [
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "#about" },
+  { label: "Company", href: "#company" },
+  { label: "Contact Us", href: "#contact" },
+];
 
 export function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-zinc-200 bg-white">
-      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Logo */}
-        <Link href="/" className="relative flex shrink-0 items-center">
-          <img
-            src="/logo.svg"
-            alt="Cousins Distillery Ltd. – Crafting Quality Spirits"
-            className="h-[72px] w-auto max-w-[200px] object-contain object-left sm:h-20 sm:max-w-[240px]"
-            width={240}
-            height={80}
-          />
-        </Link>
+    <>
+      <header className="sticky top-0 z-50 w-full border-b border-zinc-200 bg-white">
+        <div className="mx-auto flex h-20 max-w-[1400px] items-center justify-between px-4 sm:px-6 lg:px-8">
 
-        {/* Navigation */}
-        <nav
-          className="hidden lg:flex flex-1 items-center justify-center gap-10"
-          aria-label="Main"
+          {/* Logo */}
+          <Link href="/" className="relative flex shrink-0 items-center">
+            <img
+              src="/logo.svg"
+              alt="Cousins Distillery Ltd. – Crafting Quality Spirits"
+              className="h-[60px] w-auto max-w-[180px] object-contain object-left sm:h-[68px] sm:max-w-[220px]"
+            />
+          </Link>
+
+          {/* Desktop: Nav + CTA on right */}
+          <div className="hidden lg:flex items-center gap-8">
+            <nav className="flex items-center gap-8" aria-label="Main">
+              {NAV_LINKS.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="font-body text-sm font-medium uppercase tracking-[0.18em] text-zinc-800 hover:text-[#9f860e] transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+            <Link
+              href="#visit"
+              className="rounded-full bg-[#D1BB8A] px-7 py-3 font-body text-[13px] font-semibold uppercase tracking-wider text-white transition-opacity hover:opacity-90"
+            >
+              Find Us
+            </Link>
+          </div>
+
+          {/* Mobile: hamburger */}
+          <button
+            className="lg:hidden flex items-center justify-center p-2 text-zinc-800 hover:text-[#9f860e] transition-colors"
+            aria-label="Open menu"
+            onClick={() => setMenuOpen(true)}
+          >
+            <Menu size={26} />
+          </button>
+        </div>
+      </header>
+
+      {/* Mobile drawer overlay */}
+      <div
+        className={`fixed inset-0 z-[100] transition-all duration-300 ${menuOpen ? "visible" : "invisible"}`}
+      >
+        {/* Backdrop */}
+        <div
+          className={`absolute inset-0 bg-black/40 transition-opacity duration-300 ${menuOpen ? "opacity-100" : "opacity-0"}`}
+          onClick={() => setMenuOpen(false)}
+        />
+
+        {/* Slide-in panel from right */}
+        <div
+          className={`absolute top-0 right-0 h-full w-[300px] bg-white shadow-2xl flex flex-col transition-transform duration-300 ease-in-out ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
         >
-          <Link
-            href="/"
-            className="font-body text-sm font-medium uppercase tracking-[0.2em] text-zinc-800 hover:text-zinc-600 transition-colors"
-          >
-            Home
-          </Link>
-          <Link
-            href="#about"
-            className="font-body text-sm font-medium uppercase tracking-[0.2em] text-zinc-800 hover:text-zinc-600 transition-colors"
-          >
-            About Us
-          </Link>
-          <Link
-            href="#company"
-            className="font-body text-sm font-medium uppercase tracking-[0.2em] text-zinc-800 hover:text-zinc-600 transition-colors"
-          >
-            Company
-          </Link>
-          <Link
-            href="#contact"
-            className="font-body text-sm font-medium uppercase tracking-[0.2em] text-zinc-800 hover:text-zinc-600 transition-colors"
-          >
-            Contact Us
-          </Link>
-        </nav>
+          {/* Drawer header */}
+          <div className="flex items-center justify-between px-6 py-5 border-b border-zinc-100">
+            <img
+              src="/logo.svg"
+              alt="Cousins Distillery"
+              className="h-[48px] w-auto object-contain"
+            />
+            <button
+              onClick={() => setMenuOpen(false)}
+              className="text-zinc-500 hover:text-zinc-900 transition-colors"
+              aria-label="Close menu"
+            >
+              <X size={24} />
+            </button>
+          </div>
 
-        {/* CTA */}
-        <div className="flex shrink-0 items-center justify-end">
-          <Link
-            href="#visit"
-            className="rounded-full bg-[#D1BB8A] px-8 py-3.5 font-body text-[13px] font-semibold uppercase tracking-wider text-white transition-opacity hover:opacity-90"
-          >
-            Find Us
-          </Link>
+          {/* Nav links */}
+          <nav className="flex flex-col gap-1 px-6 py-8" aria-label="Mobile navigation">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className="font-body text-[15px] font-medium uppercase tracking-[0.18em] text-zinc-800 hover:text-[#9f860e] transition-colors py-3 border-b border-zinc-100 last:border-0"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          {/* CTA at bottom */}
+          <div className="px-6 mt-auto pb-10">
+            <Link
+              href="#visit"
+              onClick={() => setMenuOpen(false)}
+              className="flex w-full items-center justify-center rounded-full bg-[#D1BB8A] px-7 py-3.5 font-body text-[13px] font-semibold uppercase tracking-wider text-white hover:opacity-90 transition-opacity"
+            >
+              Find Us
+            </Link>
+          </div>
         </div>
       </div>
-    </header>
+    </>
   );
 }

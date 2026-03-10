@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[100vh] w-full overflow-hidden">
+    <section className="relative min-h-[calc(100vh-80px)] w-full overflow-hidden">
       {/* Video background */}
       <video
         autoPlay
@@ -22,7 +22,7 @@ export function Hero() {
       />
 
       {/* Content */}
-      <div className="relative flex min-h-[100vh] flex-col items-center justify-center px-4 py-24 text-center sm:px-6 lg:px-8">
+      <div className="relative flex min-h-[calc(100vh-80px)] flex-col items-center justify-center px-4 py-24 text-center sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl pt-10 flex flex-col items-center">
           {/* Logo Overlay at top center */}
           <p className="font-body text-xs font-semibold uppercase tracking-[0.3em] text-white/80 mb-6">
@@ -30,13 +30,13 @@ export function Hero() {
           </p>
 
           {/* H1: Cormorant Garamond, White, text-7xl or larger */}
-          <h1 className="font-heading text-[5rem] sm:text-[6rem] lg:text-[7rem] font-medium leading-[1] text-white">
+          <h1 className="font-heading text-[5rem] sm:text-[6rem] lg:text-[7rem] font-bold leading-[1] text-white">
             Cousins Vodka
           </h1>
 
           {/* Subheading: Italic, Cormorant, Gold #D1BB8A, text-2xl or 35px */}
-          <p className="mt-8 font-heading text-2xl sm:text-3xl lg:text-[35px] font-medium italic text-[#D1BB8A]">
-            From Bloodline to Bottle. From Field to Crown.
+          <p className="mt-8 font-heading text-2xl sm:text-3xl lg:text-[35px] tracking-[0.05em] font-bold italic text-white">
+            From Bloodline to Bottle. <br /> From Field to Crown.
           </p>
 
           {/* Para: Poppins, centered, white, max-w-2xl */}

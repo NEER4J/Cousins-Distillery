@@ -37,7 +37,7 @@ export function CraftSliderSection() {
         >
           {SLIDES.map((slide) => (
             <SwiperSlide key={slide.id}>
-              <div className="group relative aspect-[4/5] w-full overflow-hidden bg-zinc-800">
+              <div className="group relative aspect-[8/9] w-full overflow-hidden bg-zinc-800">
                 <video src={slide.url} autoPlay loop muted playsInline className="w-full h-full object-cover mix-blend-multiply opacity-60" />
                 <div className="absolute inset-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                   <button
