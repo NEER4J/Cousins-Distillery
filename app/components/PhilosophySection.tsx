@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function PhilosophySection() {
     return (
-        <section className="bg-[#FEFEF6] px-4 py-24 sm:px-6 lg:px-8">
+        <section id="company" className="bg-[#FEFEF6] px-4 py-24 sm:px-6 lg:px-8 scroll-mt-20">
             {/* Centered Top Header */}
             <div className="mx-auto max-w-4xl text-center mb-12">
                 <div className="flex items-center justify-center gap-4">

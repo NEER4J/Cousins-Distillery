@@ -23,7 +23,7 @@ export function CraftSliderSection() {
   }, []);
 
   return (
-    <section className="bg-[#FEFEF6] py-8 overflow-hidden">
+    <section id="explore" className="bg-[#FEFEF6] py-8 overflow-hidden scroll-mt-20">
       <div className="w-full">
         <Swiper
           ref={swiperRef}

@@ -1,7 +1,8 @@
 export function ExperienceSection() {
     return (
         <section
-            className="relative bg-[#FEFEF6] px-4 py-16 sm:px-6 lg:px-8 overflow-hidden bg-cover bg-center bg-no-repeat"
+            id="visit"
+            className="relative bg-[#FEFEF6] px-4 py-16 sm:px-6 lg:px-8 overflow-hidden bg-cover bg-center bg-no-repeat scroll-mt-20"
             style={{ backgroundImage: "url('/the-exp-backgournd.png')" }}
         >
             <div className="absolute inset-0 bg-[#FEFEF6]/80"></div>

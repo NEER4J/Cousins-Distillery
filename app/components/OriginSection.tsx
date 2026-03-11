@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function OriginSection() {
   return (
-    <section className="bg-[#FEFEF6] px-4 py-20 sm:px-6 lg:px-8">
+    <section id="about" className="bg-[#FEFEF6] px-4 py-20 sm:px-6 lg:px-8 scroll-mt-20">
       {/* Section header */}
       <header className="mx-auto max-w-4xl text-center mb-12">
         <div className="flex items-center justify-center gap-4">

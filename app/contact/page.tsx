@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { submitContactForm } from "@/app/actions/contact";
-import { Mail, Phone, MapPin, ArrowLeft, Send } from "lucide-react";
+import { Send } from "lucide-react";
+import { Header } from "@/app/components/Header";
 
 const SUBJECTS = [
     "General Inquiry",
@@ -49,26 +50,7 @@ export default function ContactPage() {
 
     return (
         <div className="min-h-screen bg-[#F9F8F3]">
-
-            {/* Top Nav Bar */}
-            <div className="bg-white border-b border-zinc-200 px-4 sm:px-6 lg:px-8">
-                <div className="mx-auto max-w-[1400px] flex items-center justify-between h-20">
-                    <Link href="/" className="relative flex shrink-0 items-center">
-                        <img
-                            src="/logo.svg"
-                            alt="Cousins Distillery Ltd."
-                            className="h-[60px] w-auto max-w-[180px] object-contain object-left sm:h-[68px] sm:max-w-[220px]"
-                        />
-                    </Link>
-                    <Link
-                        href="/"
-                        className="flex items-center gap-2 font-body text-[13px] font-medium uppercase tracking-widest text-zinc-600 hover:text-[#9f860e] transition-colors"
-                    >
-                        <ArrowLeft size={16} />
-                        Back to Home
-                    </Link>
-                </div>
-            </div>
+            <Header />
 
             {/* Hero Banner */}
             <section className="bg-[#41380E] py-20 px-4 sm:px-6 lg:px-8 text-center">
@@ -89,84 +71,10 @@ export default function ContactPage() {
                 </div>
             </section>
 
-            {/* Main Content */}
+            {/* Main Content — Form only */}
             <section className="py-20 px-4 sm:px-6 lg:px-8">
-                <div className="mx-auto max-w-[1200px]">
-                    <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
-
-                        {/* Left — Contact Info */}
-                        <div className="lg:col-span-2 flex flex-col gap-10">
-                            <div>
-                                <h2 className="font-heading text-[32px] font-bold italic text-[#222222] mb-3">
-                                    Let&rsquo;s Connect
-                                </h2>
-                                <p className="font-body text-[15px] text-zinc-600 leading-[1.8]">
-                                    Our team is ready to assist you with any questions about Cousins Distillery, our products, or how we can work together.
-                                </p>
-                            </div>
-
-                            {/* Info Cards */}
-                            <div className="flex flex-col gap-5">
-                                {[
-                                    {
-                                        icon: <Mail size={20} />,
-                                        label: "Email",
-                                        value: "hello@cousinsdistillery.com",
-                                        href: "mailto:hello@cousinsdistillery.com",
-                                    },
-                                    {
-                                        icon: <Phone size={20} />,
-                                        label: "Phone",
-                                        value: "+1 (800) COUSINS",
-                                        href: "tel:+18002684677",
-                                    },
-                                    {
-                                        icon: <MapPin size={20} />,
-                                        label: "Distillery",
-                                        value: "Visit us at our distillery — by appointment only.",
-                                        href: null,
-                                    },
-                                ].map((item) => (
-                                    <div
-                                        key={item.label}
-                                        className="flex items-start gap-4 bg-white p-5 rounded-lg border border-zinc-200"
-                                    >
-                                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#41380E]/10 text-[#41380E]">
-                                            {item.icon}
-                                        </div>
-                                        <div>
-                                            <p className="font-body text-[11px] font-semibold uppercase tracking-widest text-zinc-400 mb-1">
-                                                {item.label}
-                                            </p>
-                                            {item.href ? (
-                                                <a
-                                                    href={item.href}
-                                                    className="font-body text-[15px] text-zinc-800 hover:text-[#9f860e] transition-colors"
-                                                >
-                                                    {item.value}
-                                                </a>
-                                            ) : (
-                                                <p className="font-body text-[15px] text-zinc-800">
-                                                    {item.value}
-                                                </p>
-                                            )}
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-
-                            {/* Decorative quote */}
-                            <div className="border-l-2 border-[#D1BB8A] pl-5">
-                                <blockquote className="font-heading text-[20px] font-bold italic text-[#41380E] leading-snug">
-                                    &ldquo;This Is Not Just Vodka. This Is Cultivated Excellence.&rdquo;
-                                </blockquote>
-                                <p className="font-body text-[13px] text-zinc-500 mt-2">— Cousins Distillery Ltd.</p>
-                            </div>
-                        </div>
-
-                        {/* Right — Contact Form */}
-                        <div className="lg:col-span-3">
-                            <div className="bg-white rounded-2xl border border-zinc-200 p-8 sm:p-10 shadow-sm">
+                <div className="mx-auto max-w-[640px]">
+                    <div className="bg-white rounded-2xl border border-zinc-200 p-8 sm:p-10">
                                 {status === "success" ? (
                                     <div className="flex flex-col items-center justify-center text-center py-12 gap-6">
                                         <div className="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
@@ -303,9 +211,6 @@ export default function ContactPage() {
                                         </form>
                                     </>
                                 )}
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </section>

@@ -108,8 +108,8 @@ export function Footer() {
             <footer className="bg-[#F5F2E8] px-4 py-14 sm:px-6 lg:px-8">
                 <div className="mx-auto max-w-[1400px]">
 
-                    {/* Main grid */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12">
+                    {/* Main grid — only sections that exist on the page */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-8 mb-12">
 
                         {/* Col 1 — Brand */}
                         <div className="flex flex-col">
@@ -149,7 +149,7 @@ export function Footer() {
                             </div>
                         </div>
 
-                        {/* Col 2 — Quick Links */}
+                        {/* Col 2 — Quick Links (match header: Home, About, Company, Contact, Explore) */}
                         <div className="flex flex-col">
                             <h3 className="font-body text-[13px] font-semibold uppercase tracking-widest text-zinc-900 mb-5">
                                 Quick Links
@@ -159,6 +159,8 @@ export function Footer() {
                                     { label: 'Home', href: '/' },
                                     { label: 'About Us', href: '#about' },
                                     { label: 'Company', href: '#company' },
+                                    { label: 'Explore', href: '#explore' },
+                                    { label: 'Find Us', href: '#visit' },
                                     { label: 'Contact Us', href: '/contact' },
                                 ].map((link) => (
                                     <li key={link.label}>
@@ -170,23 +172,7 @@ export function Footer() {
                             </ul>
                         </div>
 
-                        {/* Col 3 — Products */}
-                        <div className="flex flex-col">
-                            <h3 className="font-body text-[13px] font-semibold uppercase tracking-widest text-zinc-900 mb-5">
-                                Products
-                            </h3>
-                            <ul className="space-y-3">
-                                {['Cousin Vodka', 'Cousin Tequila', 'Cocktails'].map((link) => (
-                                    <li key={link}>
-                                        <Link href="#" className="font-body text-[14px] text-zinc-500 hover:text-[#9f860e] transition-colors">
-                                            {link}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-
-                        {/* Col 4 — Newsletter */}
+                        {/* Col 3 — Newsletter */}
                         <div className="flex flex-col">
                             <h3 className="font-body text-[13px] font-semibold uppercase tracking-widest text-zinc-900 mb-5">
                                 Newsletter
