@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -12,6 +12,7 @@ const NAV_LINKS = [
 ];
 
 export function Header() {
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
   // Prevent body scroll when menu is open
@@ -20,39 +21,48 @@ export function Header() {
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
+  // Use full page URL for hash links when not on home (so browser shows spinner and navigation works)
+  const getHref = (href: string) => {
+    if (href.startsWith("#")) return pathname === "/" ? href : `/${href}`;
+    return href;
+  };
+
+  const linkClass = "font-body text-sm font-medium uppercase tracking-[0.18em] text-zinc-800 hover:text-[#9f860e] transition-colors";
+  const ctaClass = "rounded-full bg-[#D1BB8A] px-7 py-3 font-body text-[13px] font-semibold uppercase tracking-wider text-white transition-opacity hover:opacity-90";
+
   return (
     <>
       <header className="sticky top-0 z-50 w-full border-b border-zinc-200 bg-white">
         <div className="mx-auto flex h-20 max-w-[1400px] items-center justify-between px-4 sm:px-6 lg:px-8">
 
-          {/* Logo */}
-          <Link href="/" className="relative flex shrink-0 items-center">
+          {/* Logo — native anchor so navigation shows browser spinner */}
+          <a href="/" className="relative flex shrink-0 items-center">
             <img
               src="/logo.svg"
               alt="Cousins Distillery Ltd. – Crafting Quality Spirits"
               className="h-[60px] w-auto max-w-[180px] object-contain object-left sm:h-[68px] sm:max-w-[220px]"
             />
-          </Link>
+          </a>
 
           {/* Desktop: Nav + CTA on right */}
           <div className="hidden lg:flex items-center gap-8">
             <nav className="flex items-center gap-8" aria-label="Main">
               {NAV_LINKS.map((link) => (
-                <Link
+                <a
                   key={link.label}
-                  href={link.href}
-                  className="font-body text-sm font-medium uppercase tracking-[0.18em] text-zinc-800 hover:text-[#9f860e] transition-colors"
+                  href={getHref(link.href)}
+                  className={linkClass}
                 >
                   {link.label}
-                </Link>
+                </a>
               ))}
             </nav>
-            <Link
-              href="#visit"
-              className="rounded-full bg-[#D1BB8A] px-7 py-3 font-body text-[13px] font-semibold uppercase tracking-wider text-white transition-opacity hover:opacity-90"
+            <a
+              href={getHref("#visit")}
+              className={ctaClass}
             >
               Find Us
-            </Link>
+            </a>
           </div>
 
           {/* Mobile: hamburger */}
@@ -96,29 +106,29 @@ export function Header() {
             </button>
           </div>
 
-          {/* Nav links */}
+          {/* Nav links — native anchors so navigation shows browser spinner */}
           <nav className="flex flex-col gap-1 px-6 py-8" aria-label="Mobile navigation">
             {NAV_LINKS.map((link) => (
-              <Link
+              <a
                 key={link.label}
-                href={link.href}
+                href={getHref(link.href)}
                 onClick={() => setMenuOpen(false)}
                 className="font-body text-[15px] font-medium uppercase tracking-[0.18em] text-zinc-800 hover:text-[#9f860e] transition-colors py-3 border-b border-zinc-100 last:border-0"
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
           </nav>
 
           {/* CTA at bottom */}
           <div className="px-6 mt-auto pb-10">
-            <Link
-              href="#visit"
+            <a
+              href={getHref("#visit")}
               onClick={() => setMenuOpen(false)}
               className="flex w-full items-center justify-center rounded-full bg-[#D1BB8A] px-7 py-3.5 font-body text-[13px] font-semibold uppercase tracking-wider text-white hover:opacity-90 transition-opacity"
             >
               Find Us
-            </Link>
+            </a>
           </div>
         </div>
       </div>

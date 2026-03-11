@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { submitContactForm } from "@/app/actions/contact";
 import { Send } from "lucide-react";
 import { Header } from "@/app/components/Header";
+import { Footer } from "@/app/components/Footer";
 
 const SUBJECTS = [
     "General Inquiry",
@@ -215,18 +215,7 @@ export default function ContactPage() {
                 </div>
             </section>
 
-            {/* Footer Bar */}
-            <div className="border-t border-zinc-200 bg-white px-4 sm:px-6 lg:px-8 py-6">
-                <div className="mx-auto max-w-[1400px] flex flex-col sm:flex-row items-center justify-between gap-3">
-                    <p className="font-body text-[12px] text-zinc-400">
-                        © All Rights Reserved — Cousins Distillery Ltd.
-                    </p>
-                    <Link href="/" className="font-body text-[12px] text-zinc-400 hover:text-[#9f860e] transition-colors">
-                        ← Back to Home
-                    </Link>
-                </div>
-            </div>
-
+            <Footer />
         </div>
     );
 }
