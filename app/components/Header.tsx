@@ -11,9 +11,22 @@ const NAV_LINKS = [
   { label: "Contact Us", href: "/contact" },
 ];
 
+const SCROLL_THRESHOLD = 24;
+
 export function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Shrink header after user scrolls
+  useEffect(() => {
+    function handleScroll() {
+      setScrolled(window.scrollY > SCROLL_THRESHOLD);
+    }
+    handleScroll(); // run once for SSR/hydration
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -32,15 +45,22 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full border-b border-zinc-200 bg-white">
-        <div className="mx-auto flex h-20 max-w-[1400px] items-center justify-between px-4 sm:px-6 lg:px-8">
-
+      <header
+        className={`sticky top-0 z-50 w-full border-b border-zinc-200 bg-white transition-[height] duration-300 ease-out ${
+          scrolled ? "h-20" : "h-28 sm:h-32"
+        }`}
+      >
+        <div className="mx-auto flex h-full max-w-[1400px] items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Logo — native anchor so navigation shows browser spinner */}
           <a href="/" className="relative flex shrink-0 items-center">
             <img
               src="/logo.svg"
               alt="Cousins Distillery Ltd. – Crafting Quality Spirits"
-              className="h-[60px] w-auto max-w-[180px] object-contain object-left sm:h-[68px] sm:max-w-[220px]"
+              className={`w-auto object-contain object-left transition-[height,max-width] duration-300 ease-out ${
+                scrolled
+                  ? "h-[52px] max-w-[180px] sm:h-[56px] sm:max-w-[200px]"
+                  : "h-[88px] max-w-[260px] sm:h-[96px] sm:max-w-[280px]"
+              }`}
             />
           </a>
 
