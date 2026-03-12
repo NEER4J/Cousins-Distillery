@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Linkedin, Facebook, Instagram } from "lucide-react";
 import { useState, useRef } from "react";
 import { subscribeNewsletter } from "@/app/actions/newsletter";
+import { PRODUCTS } from "@/lib/products";
 
 function NewsletterForm() {
     const [email, setEmail] = useState("");
@@ -108,8 +109,8 @@ export function Footer() {
             <footer className="bg-[#F5F2E8] px-4 py-14 sm:px-6 lg:px-8">
                 <div className="mx-auto max-w-[1400px]">
 
-                    {/* Main grid — only sections that exist on the page */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-8 mb-12">
+                    {/* Main grid — Brand, Quick Links, Products, Newsletter */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12">
 
                         {/* Col 1 — Brand */}
                         <div className="flex flex-col">
@@ -172,7 +173,26 @@ export function Footer() {
                             </ul>
                         </div>
 
-                        {/* Col 3 — Newsletter */}
+                        {/* Col 3 — Products */}
+                        <div className="flex flex-col">
+                            <h3 className="font-body text-[13px] font-semibold uppercase tracking-widest text-zinc-900 mb-5">
+                                Products
+                            </h3>
+                            <ul className="space-y-3">
+                                {PRODUCTS.map((product) => (
+                                    <li key={product.slug}>
+                                        <Link
+                                            href={`/${product.slug}`}
+                                            className="font-body text-[14px] text-zinc-500 hover:text-[#9f860e] transition-colors"
+                                        >
+                                            {product.name}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Col 4 — Newsletter */}
                         <div className="flex flex-col">
                             <h3 className="font-body text-[13px] font-semibold uppercase tracking-widest text-zinc-900 mb-5">
                                 Newsletter

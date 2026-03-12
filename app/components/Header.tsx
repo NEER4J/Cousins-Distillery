@@ -1,11 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { PRODUCTS } from "@/lib/products";
 
 const NAV_LINKS = [
-  { label: "Home", href: "/" },
   { label: "About Us", href: "#about" },
   { label: "Company", href: "#company" },
   { label: "Contact Us", href: "/contact" },
@@ -17,6 +18,25 @@ export function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
+  const [productsMobileOpen, setProductsMobileOpen] = useState(false);
+  const productsTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const clearProductsTimeout = () => {
+    if (productsTimeoutRef.current) {
+      clearTimeout(productsTimeoutRef.current);
+      productsTimeoutRef.current = null;
+    }
+  };
+
+  const handleProductsEnter = () => {
+    clearProductsTimeout();
+    setProductsOpen(true);
+  };
+
+  const handleProductsLeave = () => {
+    productsTimeoutRef.current = setTimeout(() => setProductsOpen(false), 120);
+  };
 
   // Shrink header after user scrolls
   useEffect(() => {
@@ -33,6 +53,8 @@ export function Header() {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
+
+  useEffect(() => () => clearProductsTimeout(), []);
 
   // Use full page URL for hash links when not on home (so browser shows spinner and navigation works)
   const getHref = (href: string) => {
@@ -64,9 +86,60 @@ export function Header() {
             />
           </a>
 
-          {/* Desktop: Nav + CTA on right */}
+          {/* Desktop: Nav + Products mega menu + CTA on right */}
           <div className="hidden lg:flex items-center gap-8">
             <nav className="flex items-center gap-8" aria-label="Main">
+              <a href={getHref("/")} className={linkClass}>
+                Home
+              </a>
+              {/* Products dropdown trigger + mega menu (second place) */}
+              <div
+                className="relative"
+                onMouseEnter={handleProductsEnter}
+                onMouseLeave={handleProductsLeave}
+              >
+                <button
+                  type="button"
+                  className={`${linkClass} flex items-center gap-1 border-0 bg-transparent p-0 cursor-pointer`}
+                  aria-expanded={productsOpen}
+                  aria-haspopup="true"
+                >
+                  Products
+                  <ChevronDown
+                    size={16}
+                    className={`transition-transform ${productsOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
+                {/* Mega menu panel */}
+                <div
+                  className={`absolute left-1/2 -translate-x-1/2 top-full pt-2 transition-[opacity,visibility] duration-200 ${
+                    productsOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+                  }`}
+                >
+                  <div className="w-[min(90vw,720px)] bg-white border border-zinc-200 rounded-lg overflow-hidden">
+                    <div className="grid grid-cols-2 gap-0 [&>a:nth-child(3)]:border-b-0 [&>a:nth-child(4)]:border-b-0">
+                      {PRODUCTS.map((product) => (
+                        <Link
+                          key={product.slug}
+                          href={`/${product.slug}`}
+                          className="block p-5 text-left border-b border-r border-zinc-100 even:border-r-0 hover:bg-[#F9F8F3] transition-colors"
+                          onClick={() => setProductsOpen(false)}
+                        >
+                          <span className="font-body text-[15px] font-semibold uppercase tracking-[0.12em] text-zinc-900 block mb-1">
+                            {product.name}
+                          </span>
+                          <span className="font-body text-[13px] text-zinc-500 leading-snug line-clamp-2">
+                            {product.metaDescription}
+                          </span>
+                          <span className="font-body text-[12px] font-semibold uppercase tracking-widest text-[#9f860e] mt-2 inline-block">
+                            Learn more →
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
               {NAV_LINKS.map((link) => (
                 <a
                   key={link.label}
@@ -77,10 +150,7 @@ export function Header() {
                 </a>
               ))}
             </nav>
-            <a
-              href={getHref("#visit")}
-              className={ctaClass}
-            >
+            <a href={getHref("#visit")} className={ctaClass}>
               Find Us
             </a>
           </div>
@@ -128,6 +198,41 @@ export function Header() {
 
           {/* Nav links — native anchors so navigation shows browser spinner */}
           <nav className="flex flex-col gap-1 px-6 py-8" aria-label="Mobile navigation">
+            <a
+              href={getHref("/")}
+              onClick={() => setMenuOpen(false)}
+              className="font-body text-[15px] font-medium uppercase tracking-[0.18em] text-zinc-800 hover:text-[#9f860e] transition-colors py-3 border-b border-zinc-100"
+            >
+              Home
+            </a>
+            {/* Products expandable */}
+            <div className="border-b border-zinc-100">
+              <button
+                type="button"
+                onClick={() => setProductsMobileOpen((o) => !o)}
+                className="flex w-full items-center justify-between font-body text-[15px] font-medium uppercase tracking-[0.18em] text-zinc-800 hover:text-[#9f860e] transition-colors py-3"
+              >
+                Products
+                <ChevronDown
+                  size={18}
+                  className={`transition-transform ${productsMobileOpen ? "rotate-180" : ""}`}
+                />
+              </button>
+              {productsMobileOpen && (
+                <div className="pb-2 pl-3 flex flex-col gap-1">
+                  {PRODUCTS.map((product) => (
+                    <Link
+                      key={product.slug}
+                      href={`/${product.slug}`}
+                      onClick={() => setMenuOpen(false)}
+                      className="font-body text-[14px] font-medium tracking-[0.12em] text-zinc-600 hover:text-[#9f860e] transition-colors py-2"
+                    >
+                      {product.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
             {NAV_LINKS.map((link) => (
               <a
                 key={link.label}
