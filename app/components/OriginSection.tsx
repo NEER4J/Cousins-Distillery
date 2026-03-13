@@ -43,7 +43,7 @@ export function OriginSection() {
         {/* Row 1, Col 2 — Field Image */}
         <div className="relative w-full aspect-square overflow-hidden bg-[#A89530]">
           <img
-            src="/origin-one.jpg"
+            src="/cornone.jpg"
             alt="Corn Fields"
             className="absolute inset-0 h-full w-full object-cover mix-blend-multiply opacity-75"
           />
@@ -62,8 +62,8 @@ export function OriginSection() {
         {/* Row 2, Col 1 — Agave Image */}
         <div className="relative w-full aspect-square overflow-hidden bg-[#A89530]">
           <img
-            src="/origin-two.jpg"
-            alt="Agave plant"
+            src="/corntwo.jpg"
+            alt="Corn Fields"
             className="absolute inset-0 h-full w-full object-cover mix-blend-multiply opacity-75"
           />
         </div>
