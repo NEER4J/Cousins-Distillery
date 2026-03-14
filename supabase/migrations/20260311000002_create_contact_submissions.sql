@@ -33,3 +33,9 @@ CREATE POLICY "service_role_select_contact"
 -- 5. Indexes
 CREATE INDEX IF NOT EXISTS contact_submissions_email_idx ON public.contact_submissions (email);
 CREATE INDEX IF NOT EXISTS contact_submissions_created_at_idx ON public.contact_submissions (created_at DESC);
+
+
+vodka from corn 
+tequila form blue agave - aged
+Whiskey made from rye 
+blue agave made of fresh agave and juices

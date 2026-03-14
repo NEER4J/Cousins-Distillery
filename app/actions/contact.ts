@@ -73,8 +73,8 @@ export async function submitContactForm(formData: {
     if (!subject || subject.length < 2) {
         return { success: false, message: 'Please enter a subject.' };
     }
-    if (!message || message.length < 10) {
-        return { success: false, message: 'Please enter a message (at least 10 characters).' };
+    if (!message) {
+        return { success: false, message: 'Please enter a message.' };
     }
 
     try {

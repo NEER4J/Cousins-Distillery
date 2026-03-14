@@ -46,3 +46,77 @@ body {
 .font-body {
   font-family: var(--font-poppins), "Poppins", sans-serif !important;
 }
+
+/* ── Keyframe Animations ─────────────────────────────────────────────────── */
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-16px); }
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(8px); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes goldLine {
+  from { width: 0; opacity: 0; }
+  to   { width: 64px; opacity: 1; }
+}
+
+/* ── Animation Utility Classes ───────────────────────────────────────────── */
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease both;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 1.6s ease-in-out infinite;
+}
+
+.animate-gold-line {
+  animation: goldLine 0.8s ease both;
+}
+
+/* ── Scroll-triggered reveal (JS adds .is-visible class) ─────────────────── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+

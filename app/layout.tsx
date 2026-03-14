@@ -20,29 +20,31 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://cousinsdistillery.c
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Cousins Distillery | Craft Vodka & Spirits",
+    default: "Cousins Distillery | Small-Batch Craft Spirits",
     template: "%s | Cousins Distillery",
   },
   description:
-    "Cousins Vodka is cultivated, not merely distilled. Small-batch spirits crafted through thirteen stages of refinement. Discover our craft vodka and plan a visit.",
+    "Cousins Distillery: Cultivating premium small-batch spirits including Vodka, Whiskey, and Tequila. Crafted through 13 stages of refinement from bloodline to bottle.",
   keywords: [
     "Cousins Distillery",
-    "Cousins Vodka",
-    "craft vodka",
-    "small-batch spirits",
-    "distillery",
-    "premium vodka",
+    "Small-batch spirits",
+    "Craft Vodka",
+    "Premium Whiskey",
+    "Blue Agave Spirit",
+    "Artisanal Tequila",
+    "Distillery North America",
+    "Luxury Spirits",
   ],
-  authors: [{ name: "Cousins Distillery Ltd." }],
-  creator: "Cousins Distillery Ltd.",
+  authors: [{ name: "Cousins Distillery" }],
+  creator: "Cousins Distillery",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: siteUrl,
     siteName: "Cousins Distillery",
-    title: "Cousins Distillery | Craft Vodka & Spirits",
+    title: "Cousins Distillery | Small-Batch Craft Spirits",
     description:
-      "Cousins Vodka is cultivated, not merely distilled. Small-batch spirits crafted through thirteen stages of refinement.",
+      "Cultivating premium spirits through 13 stages of refinement. Discover our craft vodka, whiskey, and agave spirits.",
     images: [
       {
         url: "/bottle%20in%20field.png",
@@ -54,9 +56,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cousins Distillery | Craft Vodka & Spirits",
+    title: "Cousins Distillery | Small-Batch Craft Spirits",
     description:
-      "Cousins Vodka is cultivated, not merely distilled. Small-batch spirits crafted through thirteen stages of refinement.",
+      "Cultivating premium spirits through 13 stages of refinement. Discover our craft vodka, whiskey, and agave spirits.",
     images: ["/bottle%20in%20field.png"],
   },
   icons: {
@@ -67,6 +69,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   alternates: {
     canonical: siteUrl,

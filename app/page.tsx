@@ -1,11 +1,21 @@
+import type { Metadata } from "next";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { OriginSection } from "./components/OriginSection";
 import { RoyalCraftSection } from "./components/RoyalCraftSection";
 import { CraftSliderSection } from "./components/CraftSliderSection";
+import { CuratedSpiritsSection } from "./components/CuratedSpiritsSection";
 import { PhilosophySection } from "./components/PhilosophySection";
 import { ExperienceSection } from "./components/ExperienceSection";
 import { Footer } from "./components/Footer";
+
+export const metadata: Metadata = {
+  title: "Cousins Distillery | Premium Craft Spirits & Small-Batch Vodka",
+  description: "Cousins Distillery: Experience the art of craft spirits. From our 13-stage distillation process to our heritage-inspired blends, discover why we cultivate rather than just distill.",
+  alternates: {
+    canonical: "/",
+  }
+};
 
 export default function Home() {
   return (
@@ -15,6 +25,7 @@ export default function Home() {
       <OriginSection />
       <RoyalCraftSection />
       <CraftSliderSection />
+      <CuratedSpiritsSection />
       <PhilosophySection />
       <ExperienceSection />
       <Footer />

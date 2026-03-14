@@ -18,10 +18,13 @@ export interface Product {
   name: string;
   metaTitle: string;
   metaDescription: string;
+  metaKeywords: string[];
   headline: string;
   subheading: string;
   primaryCta: ProductCta;
   secondaryCta: ProductCta;
+  image: string;
+  sourceImage: string;
   sections: ProductSection[];
   forPartnersTitle: string;
   forPartnersBody: string;
@@ -37,14 +40,17 @@ export const PRODUCTS: Product[] = [
   {
     slug: "vodka",
     name: "Vodka",
-    metaTitle: "Vodka – The Essence of Purity",
+    metaTitle: "Premium Artisanal Vodka | 13-Stage Distilled | Cousins Distillery",
     metaDescription:
-      "Cousins Distillery Vodka. Smooth, refined, crafted through our meticulous 13-stage distillation process. The foundation of our house.",
+      "Cousins Distillery Vodka: The essence of purity. Small-batch craft vodka refined through thirteen stages for an exceptionally smooth, silky finish.",
+    metaKeywords: ["craft vodka", "small-batch vodka", "13-stage distillation", "premium spirit", "smooth vodka", "artisanal spirits"],
     headline: "Cousins Distillery Vodka – The Essence of Purity",
     subheading:
       "Smooth, refined, and crafted through our meticulous 13-stage distillation process.",
-    primaryCta: { label: "Shop Vodka", href: "#" },
-    secondaryCta: { label: "Try Our Signature Cocktail", href: "#" },
+    primaryCta: { label: "Shop Vodka", href: CONTACT_HREF },
+    secondaryCta: { label: "Try Our Signature Cocktail", href: CONTACT_HREF },
+    image: "/vodka.png",
+    sourceImage: "/cornone.jpg",
     sections: [
       {
         title: "The spirit of purity",
@@ -52,7 +58,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         title: "Crafted for refinement",
-        body: "At Cousins Distillery, we believe a great vodka should never overpower the moment. Our vodka is designed to be clean, balanced, and versatile, with a subtle character that shines through in both classic and contemporary cocktails. The 13-stage process ensures impurities are carefully removed, leaving a smooth, refined spirit with a clean finish and a refined mouthfeel.",
+        body: "Distilled from premium corn, our vodka is designed to be clean, balanced, and versatile, with a subtle character that shines through in classic and contemporary cocktails. At Cousins Distillery, we believe a great vodka should never overpower the moment. The 13-stage process ensures impurities are carefully removed, leaving a smooth, refined spirit with a clean finish and a refined mouthfeel.",
       },
       {
         title: "Signature moments",
@@ -62,7 +68,7 @@ export const PRODUCTS: Product[] = [
           "A perfectly balanced martini or vodka-soda",
           "A signature house cocktail created with premium mixers and fresh ingredients",
         ],
-        cta: { label: "Discover Our Cocktail Pairings", href: "#" },
+        cta: { label: "Discover Our Cocktail Pairings", href: CONTACT_HREF },
       },
     ],
     forPartnersTitle: "For bars and venues",
@@ -76,38 +82,41 @@ export const PRODUCTS: Product[] = [
   {
     slug: "blue-agave-spirit",
     name: "Blue Agave Spirit",
-    metaTitle: "Blue Agave Spirit – Refined, Rich, Distinctive",
+    metaTitle: "Blue Agave Spirit | Modern Agave Expression | Cousins Distillery",
     metaDescription:
-      "Blue Agave Spirit by Cousins Distillery. A modern expression of agave, crafted with precision through our 13-stage distillation process.",
+      "Discover the rich, distinctive character of Cousins Distillery Blue Agave Spirit. A modern expression of agave, crafted with precision and heritage.",
+    metaKeywords: ["blue agave spirit", "agave spirit", "craft agave", "jalisco agave", "artisanal agave", "cousins distillery agave"],
     headline: "Blue Agave Spirit by Cousins Distillery – Refined, Rich, Distinctive",
     subheading:
       "A modern expression of agave, crafted with precision through our 13-stage distillation process.",
-    primaryCta: { label: "Shop Blue Agave Spirit", href: "#" },
-    secondaryCta: { label: "See Tasting Notes", href: "#" },
+    primaryCta: { label: "Shop Blue Agave Spirit", href: CONTACT_HREF },
+    secondaryCta: { label: "See Tasting Notes", href: CONTACT_HREF },
+    image: "/blue-agave.png",
+    sourceImage: "/blue-agave.jpg",
     sections: [
       {
         title: "A new expression of agave",
-        body: "Blue Agave Spirit is Cousins Distillery's refined take on the agave spirit category. We start with premium blue agave, capturing its natural sweetness and depth, then refine it through our 13-stage distillation process to create a smooth, rounded spirit with subtle complexity. The result is a modern, versatile expression that feels both bold and balanced.",
+        body: "Blue agave tequila is a distilled spirit made exclusively from the Agave tequilana Weber Azul plant, predominantly grown in Jalisco, Mexico. Where our cousins Blue agave is harvested. By law, it must contain at least 51% blue agave sugars (100% for premium versions), providing a distinctively earthy, sweet flavor profile developed over 6–8 years of plant maturation.",
       },
       {
-        title: "Taste profile",
-        body: "Our Blue Agave Spirit reveals layers of character:",
+        title: "Key Facts & Production",
+        body: "Crafted from fresh agave and its natural juices, the heart of the plant—known as the piña—is harvested, roasted, crushed to release juice (aguamiel), fermented, and distilled. Our production honors the traditional geography and true essence of the agave.",
         bullets: [
-          "Warm, lightly spiced sweetness from the agave",
-          "A smooth, rounded mouthfeel",
-          "A clean, refined finish with a hint of citrus and herbal notes",
+          "100% Blue Agave: Highest quality, must be bottled within the region of origin.",
+          "Cousins Distillery Varieties: Crafted from 100% blue agave and typically rested for a minimum of 3 months to allow the spirit to settle.",
+          "Taste Profile: Bright herbal notes, subtle sweetness, and a crisp finish.",
         ],
         bodyAfter:
-          "It is ideal for sipping neat, on ice, or in agave-forward cocktails that celebrate the natural spirit.",
+          "Target Market: Tequila enthusiasts, mixologists, and consumers who appreciate a fresh, authentic agave-forward spirit. Ideal for cocktail bars, restaurants, and social gatherings.",
       },
       {
         title: "Bottling and presentation",
-        body: "Packaged in a minimalist, premium bottle, Blue Agave Spirit is designed to sit comfortably on luxury bars and private collections. Its clean label and understated elegance reflect the same philosophy that shapes the spirit within: refined craftsmanship, quiet confidence, and attention to detail.",
+        body: "Packaged in a minimalist, premium bottle, Blue Agave Spirit is designed to sit comfortably on luxury bars and private collections. Rooted in family. Refined in spirit.",
       },
     ],
     forPartnersTitle: "For partners and venues",
     forPartnersBody:
-      "Cousins Distillery Blue Agave Spirit is crafted for trend-forward bars, cocktail lounges, and lifestyle venues that want a distinctive agave-based spirit with a clean, modern profile. We provide cocktail suggestions, pairing ideas, and product support to help you showcase this spirit with confidence.",
+      "Cousins Distillery Blue Agave Spirit is crafted for trend-forward bars, cocktail lounges, and lifestyle venues that want a distinctive agave-based spirit with a clean, modern profile. We provide cocktail suggestions, pairing ideas, and product support.",
     forPartnersCta: { label: "Enquire About Partnership", href: CONTACT_HREF },
     finalCtaHeadline:
       "Discover the refined character of Cousins Distillery Blue Agave Spirit",
@@ -117,29 +126,27 @@ export const PRODUCTS: Product[] = [
   {
     slug: "tequila",
     name: "Tequila",
-    metaTitle: "Tequila – Crafted for the Discerning Palate",
+    metaTitle: "Artisanal Tequila | Reposado & Extra Añejo | Cousins Distillery",
     metaDescription:
-      "Cousins Distillery Tequila. A refined tequila range, crafted with respect for tradition and the agave. Blanco, Reposado, and Añejo.",
+      "Refined Cousins Distillery Tequila. Experience our Reposado and Extra Añejo expressions, crafted for the discerning palate with respect for tradition.",
+    metaKeywords: ["premium tequila", "reposado tequila", "extra anejo tequila", "artisanal tequila", "small-batch tequila", "100% blue agave"],
     headline: "Cousins Distillery Tequila – Crafted for the Discerning Palate",
     subheading:
       "A refined tequila range, crafted with respect for tradition and the agave.",
-    primaryCta: { label: "Shop Tequila", href: "#" },
-    secondaryCta: { label: "Explore Our Expressions", href: "#" },
+    primaryCta: { label: "Shop Tequila", href: CONTACT_HREF },
+    secondaryCta: { label: "Explore Our Expressions", href: CONTACT_HREF },
+    image: "/taquila.png",
+    sourceImage: "/agave.jpg",
     sections: [
       {
-        title: "The spirit of agave",
-        body: "Cousins Distillery Tequila celebrates the agave with balance, elegance, and precision. Using carefully nurtured blue agave and a patient distillation process, we create tequila that feels both authentic and refined. Each expression is then polished through our 13-stage distillation process, allowing subtle aromas and smooth textures to shine without harsh edges.",
+        title: "Our Reposado Expression",
+        body: "Aged a minimum of 3-6 months. Rested in oak barrels to develop a smooth balance between fresh agave character and subtle oak notes, with hints of vanilla and spice.",
+        bodyAfter: "Target Market: Young professionals, social drinkers, and tequila enthusiasts who enjoy premium spirits for cocktails or casual sipping. Reposado appeals strongly to cocktail bars, restaurants, and hospitality venues seeking a versatile, high-quality tequila."
       },
       {
-        title: "Our tequila range",
-        body: "Our tequila range is designed for those who appreciate nuance:",
-        bullets: [
-          "Blanco (Silver) – Bright, vibrant, and citrus-forward, with a clean, lively finish",
-          "Reposado – Aged in oak to reveal notes of vanilla, spice, and warmth, while remaining smooth",
-          "Añejo (premium expression) – Deeply layered, with rich oak, caramel, and spice, finished with a refined, silky mouthfeel",
-        ],
-        bodyAfter:
-          "Each style is crafted to be enjoyed neat, on the rocks, or in thoughtfully composed cocktails.",
+        title: "Extra Añejo (Aged 9–12 months)",
+        body: "Made from 100% blue agave and expertly aged, extended maturation enhances the tequila’s depth, creating richer notes of caramel, oak, and spice while maintaining the smooth, sweet character of the blue agave.",
+        bodyAfter: "Target Market: Premium spirit collectors, connoisseurs, and luxury consumers who appreciate sipping tequilas similar to fine whiskey or cognac. Ideal for high-end restaurants, specialty liquor retailers, and premium gift markets seeking an elevated tequila experience."
       },
       {
         title: "Serving suggestions",
@@ -149,7 +156,7 @@ export const PRODUCTS: Product[] = [
           "On the rocks, with a twist of citrus",
           "In elevated cocktails like a refined margarita or tequila-based sour",
         ],
-        cta: { label: "Discover Our Tequila Cocktails", href: "#" },
+        cta: { label: "Discover Our Tequila Cocktails", href: CONTACT_HREF },
       },
     ],
     forPartnersTitle: "For premium venues",
@@ -164,14 +171,17 @@ export const PRODUCTS: Product[] = [
   {
     slug: "whiskey",
     name: "Whiskey",
-    metaTitle: "Whiskey – Depth, Warmth, Legacy",
+    metaTitle: "Premium Rye Whiskey | Depth, Warmth & Legacy | Cousins Distillery",
     metaDescription:
-      "Cousins Distillery Whiskey. A refined whiskey range, crafted with patience, tradition, and our 13-stage distillation process.",
+      "Cousins Distillery Whiskey: A legacy of depth and warmth. Meticulously crafted from high-quality rye and polished through thirteen stages of distillation.",
+    metaKeywords: ["rye whiskey", "premium whiskey", "craft whiskey", "small-batch whiskey", "aged whiskey", "legacy spirits"],
     headline: "Cousins Distillery Whiskey – Depth, Warmth, Legacy",
     subheading:
       "A refined whiskey range, crafted with patience, tradition, and our 13-stage distillation process.",
-    primaryCta: { label: "Shop Whiskey", href: "#" },
-    secondaryCta: { label: "Explore Our Range", href: "#" },
+    primaryCta: { label: "Shop Whiskey", href: CONTACT_HREF },
+    secondaryCta: { label: "Explore Our Range", href: CONTACT_HREF },
+    image: "/wishky.png",
+    sourceImage: "/rye.jpg",
     sections: [
       {
         title: "The heart of the barrel",
@@ -179,7 +189,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         title: "Taste and character",
-        body: "Our whiskey range offers a spectrum of experience:",
+        body: "Meticulously crafted from high-quality rye, our whiskey offers a remarkable spectrum of experience:",
         bullets: [
           "Striking balance of vanilla, caramel, and spice",
           "Silky texture and a long, warming finish",

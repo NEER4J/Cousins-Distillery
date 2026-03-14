@@ -1,81 +1,111 @@
-export function ExperienceSection() {
-    return (
-        <section
-            id="visit"
-            className="relative bg-[#FEFEF6] px-4 py-16 sm:px-6 lg:px-8 overflow-hidden bg-cover bg-center bg-no-repeat scroll-mt-20"
-            style={{ backgroundImage: "url('/the-exp-backgournd.png')" }}
-        >
-            <div className="absolute inset-0 bg-[#FEFEF6]/80"></div>
+"use client";
 
-            <div className="relative mx-auto max-w-[1400px] text-center z-10 w-full flex flex-col items-center">
+import { useEffect, useRef } from "react";
 
-                {/* Header */}
-                <div className="flex items-center justify-center gap-4 mb-3">
-                    <span className="h-[1px] w-12 bg-[#9f860e]" aria-hidden />
-                    <p className="font-heading text-[32px] font-bold italic tracking-wider text-[#9f860e]">
-                        The Experience
-                    </p>
-                    <span className="h-[1px] w-12 bg-[#9f860e]" aria-hidden />
-                </div>
-
-                <h2 className="font-body text-[22px] sm:text-[28px] font-bold tracking-[0.1em] text-black mb-4">
-                    A Spirit Of Distinction
-                </h2>
-
-                <p className="font-body text-[14px] lg:text-[15px] font-medium tracking-[0.05em] text-[#444444] leading-[1.8] mb-10 max-w-[500px]">
-                    Cousins Vodka Offers A Gentle Sweetness, Exceptional Smoothness, And A Finish That Lingers With Quiet Authority.
-                </p>
-
-                {/* 3-Column Layout — bottle flanked by icons */}
-                <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] items-center gap-8 lg:gap-4 w-full">
-
-                    {/* Left Column — icons aligned right, tight to bottle */}
-                    <div className="flex flex-col items-center lg:items-end justify-center gap-10 lg:gap-16 w-full lg:pr-6">
-                        {/* Top Left */}
-                        <div className="flex flex-col items-center lg:items-center text-center gap-3">
-                            <img src="/noun-gluten-free.png" alt="Gluten Free Icon" className="w-[90px] lg:w-[110px] object-contain" />
-                            <p className="font-body text-[15px] lg:text-[17px] font-semibold tracking-[0.08em] text-[#111111]">
-                                Naturally Gluten-Free.
-                            </p>
-                        </div>
-                        {/* Bottom Left */}
-                        <div className="flex flex-col items-center lg:items-center text-center gap-3">
-                            <img src="/noun-distillation.png" alt="Distilled Icon" className="w-[90px] lg:w-[110px] object-contain" />
-                            <p className="font-body text-[15px] lg:text-[17px] font-semibold tracking-[0.08em] text-[#111111]">
-                                Thirteen Times Distilled.
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* Center Column — bottle larger */}
-                    <div className="flex justify-center w-[300px] lg:w-[520px] mx-auto z-10 relative">
-                        <img
-                            src="/bottle.png"
-                            alt="Cousins Vodka Bottle"
-                            className="w-full h-auto object-contain drop-shadow-2xl mix-blend-multiply"
-                        />
-                    </div>
-
-                    {/* Right Column — icons aligned left, tight to bottle */}
-                    <div className="flex flex-col items-center lg:items-start justify-center gap-10 lg:gap-16 w-full lg:pl-6">
-                        {/* Top Right */}
-                        <div className="flex flex-col items-center lg:items-center text-center gap-3">
-                            <img src="/noun-corn.png" alt="Corn Icon" className="w-[70px] lg:w-[90px] h-[95px] object-contain" />
-                            <p className="font-body text-[15px] lg:text-[17px] font-semibold tracking-[0.08em] text-[#111111]">
-                                Crafted From 100% Yellow Corn.
-                            </p>
-                        </div>
-                        {/* Bottom Right */}
-                        <div className="flex flex-col items-center lg:items-center text-center gap-3">
-                            <img src="/noun-prepared-in-small-batches.png" alt="Small Batches Icon" className="w-[90px] lg:w-[110px] object-contain" />
-                            <p className="font-body text-[15px] lg:text-[17px] font-semibold tracking-[0.08em] text-[#111111]">
-                                Small-Batch Refined.
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
+function useScrollReveal(ref: React.RefObject<HTMLElement | null>) {
+  useEffect(() => {
+    const container = ref.current;
+    if (!container) return;
+    const elements = container.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
     );
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [ref]);
+}
+
+const ITEMS = [
+  { icon: "/noun-gluten-free.png", label: "Pure Ingredients" },
+  { icon: "/noun-distillation.png", label: "13-Stage Process" },
+  { icon: "/noun-corn.png", label: "Finest Grains & Agave" },
+  { icon: "/noun-prepared-in-small-batches.png", label: "Small Batch" },
+];
+
+export function ExperienceSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+  useScrollReveal(sectionRef);
+
+  return (
+    <section
+      id="visit"
+      ref={sectionRef}
+      className="relative bg-black px-4 py-16 lg:py-24 overflow-hidden scroll-mt-20 flex flex-col justify-center"
+    >
+      {/* Mega Background Text - Scale reduced */}
+      <div className="absolute top-0 right-0 h-full flex flex-col justify-center pointer-events-none z-0">
+        <p className="font-heading text-[15vw] font-bold text-white/[0.03] leading-none [writing-mode:vertical-rl] rotate-180 transform translate-x-1/4">
+          DISTINCTIVE
+        </p>
+      </div>
+
+      <div className="relative mx-auto max-w-[1400px] z-10 w-full">
+
+        {/* Header - Compact */}
+        <div className="max-w-2xl mb-16 reveal">
+          <div className="flex items-center gap-4 mb-4">
+            <span className="h-[2px] w-12 bg-[#D1BB8A]" />
+            <p className="font-body text-[11px] font-bold uppercase tracking-[0.45em] text-[#D1BB8A]">
+              The Experience
+            </p>
+          </div>
+          <h2 className="font-heading text-[clamp(2rem,6vw,4rem)] font-bold text-white leading-tight mb-6">
+            Spirit of <span className="italic text-[#D1BB8A]">Distinction.</span>
+          </h2>
+          <p className="font-body text-[16px] lg:text-[18px] font-light text-white/50 leading-relaxed max-w-lg">
+            Exceptional smoothness and a finish that lingers. For those who acknowledge true craftsmanship.
+          </p>
+        </div>
+
+        {/* Central Display - Height constrained */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-12 lg:gap-8">
+
+          {/* Bottle Showcased */}
+          <div className="lg:col-span-7 relative reveal reveal-delay-1 order-2 lg:order-1">
+            <div className="relative group max-h-[40vh] sm:max-h-[55vh] lg:max-h-[60vh] flex items-center">
+              <img
+                src="/all-bottole-transperent.png"
+                alt="Cousins Spirits"
+                className="w-full h-auto max-h-[40vh] sm:max-h-[55vh] object-contain mx-auto drop-shadow-[0_40px_100px_rgba(209,187,138,0.25)] mix-blend-screen animate-float"
+              />
+              <div className="absolute inset-0 bg-radial from-[#D1BB8A]/20 to-transparent opacity-40 blur-3xl pointer-events-none" />
+            </div>
+          </div>
+
+          {/* Feature List - Compact Gap */}
+          <div className="lg:col-span-5 grid grid-cols-2 lg:grid-cols-1 gap-4 lg:gap-10 order-1 lg:order-2">
+            {ITEMS.map((item, idx) => (
+              <div key={idx} className="flex items-center gap-3 sm:gap-5 reveal reveal-delay-2 group">
+                <div className="h-14 w-14 sm:h-18 sm:w-18 flex-shrink-0 flex items-center justify-center border border-white/10 group-hover:border-[#D1BB8A]/50 transition-colors">
+                  <img
+                    src={item.icon}
+                    alt=""
+                    className="w-7 h-7 sm:w-10 sm:h-10 object-contain invert opacity-50 group-hover:opacity-100 transition-opacity"
+                  />
+                </div>
+                <div>
+                  <p className="font-body text-[9px] font-bold tracking-[0.3em] uppercase text-[#D1BB8A]/60 mb-1">
+                    Feature
+                  </p>
+                  <h4 className="font-heading text-[16px] sm:text-[20px] lg:text-[24px] font-bold italic text-white leading-none">
+                    {item.label}
+                  </h4>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  );
 }

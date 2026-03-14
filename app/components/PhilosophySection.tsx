@@ -1,70 +1,86 @@
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
+import { useEffect, useRef } from "react";
+
+function useScrollReveal(ref: React.RefObject<HTMLElement | null>) {
+  useEffect(() => {
+    const container = ref.current;
+    if (!container) return;
+    const elements = container.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [ref]);
+}
 
 export function PhilosophySection() {
-    return (
-        <section id="company" className="bg-[#FEFEF6] px-4 py-24 sm:px-6 lg:px-8 scroll-mt-20">
-            {/* Centered Top Header */}
-            <div className="mx-auto max-w-4xl text-center mb-12">
-                <div className="flex items-center justify-center gap-4">
-                    <span className="h-[1px] w-12 bg-[#9f860e]" aria-hidden />
-                    <p className="font-heading text-[32px] font-bold italic tracking-wider text-[#9f860e]">
-                        The Philosophy
-                    </p>
-                    <span className="h-[1px] w-12 bg-[#9f860e]" aria-hidden />
-                </div>
-                <h2 className="mt-4 font-body text-[22px] sm:text-[28px] font-bold tracking-[0.1em] text-black">
-                    A House Built On Unity
-                </h2>
-            </div>
+  const sectionRef = useRef<HTMLElement>(null);
+  useScrollReveal(sectionRef);
 
-            <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-12 lg:grid-cols-2">
+  return (
+    <section
+      id="company"
+      ref={sectionRef}
+      className="relative min-h-[75vh] lg:min-h-[85vh] flex items-center justify-center overflow-hidden bg-black py-20"
+    >
+      {/* Full-bleed background image - slightly darker */}
+      <img
+        src="/lady-with-glass.jpg"
+        alt="Philosophy background"
+        className="absolute inset-0 w-full h-full object-cover opacity-50 scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/70" />
 
-                {/* Left: Lifestyle Image */}
-                <div className="relative w-full aspect-[8/8] overflow-hidden ml-auto lg:max-w-[550px]">
-                    <img
-                        src="/lady-with-glass.jpg"
-                        alt="Lady with an elegant glass of Cousins Vodka"
-                        className="absolute inset-0 h-full w-full object-cover "
-                    />
-                </div>
+      <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
+        <div className="flex flex-col items-center">
+          <div className="flex items-center gap-4 mb-6 reveal">
+            <span className="h-[1px] w-12 bg-[#D1BB8A]" />
+            <p className="font-body text-[11px] font-bold uppercase tracking-[0.4em] text-[#D1BB8A]">
+              The Core Philosophy
+            </p>
+            <span className="h-[1px] w-12 bg-[#D1BB8A]" />
+          </div>
 
-                {/* Right: Text content */}
-                <div className="flex flex-col justify-center lg:pr-8">
-                    <div className="mb-6">
-                        <h3 className="font-body text-[16px] lg:text-[18px] font-semibold tracking-widest text-[#111111]">
-                            Cousins Distillery Was Founded On More Than Ambition.
-                        </h3>
-                        <p className="font-heading text-[20px] lg:text-[28px] font-bold italic tracking-wider text-[#9f860e] mt-1">
-                            It Was Founded On Family.
-                        </p>
-                    </div>
+          <blockquote className="font-heading text-[clamp(2rem,5vw,4rem)] font-bold text-white leading-tight italic mb-10 reveal reveal-delay-1">
+            "Refinement is not <br /> extravagance — <br /> 
+            <span className="text-[#D1BB8A]">It is discipline."</span>
+          </blockquote>
 
-                    <div className="font-body text-[16px] xl:text-[18px] font-medium tracking-[0.06em] text-[#444444] space-y-2 mb-6">
-                        <p>
-                            Every Bottle Carries The Spirit Of Unity, Craftsmanship, And Shared Vision — A Reminder That True Luxury Is Rooted In Authenticity.
-                        </p>
-                    </div>
+          <div className="max-w-xl mx-auto space-y-6 reveal reveal-delay-2">
+            <p className="font-body text-[16px] lg:text-[19px] font-light leading-relaxed text-white/70">
+              For those who recognize that true distinction is found in the spirit of unity and uncompromising craft.
+            </p>
+            
+            <Link
+              href="/contact"
+              className="inline-flex items-center group pt-4"
+            >
+              <span className="h-[2px] w-12 bg-[#D1BB8A] mr-6 group-hover:w-20 transition-all duration-500" />
+              <span className="font-body text-[12px] font-bold uppercase tracking-[0.3em] text-white group-hover:text-[#D1BB8A] transition-colors">
+                Our Story
+              </span>
+            </Link>
+          </div>
+        </div>
+      </div>
 
-                    <ul className="mb-6">
-                        {[
-                            "We Do Not Produce For The Masses.",
-                            "We Craft For Connoisseurs.",
-                            "For Those Who Appreciate Refinement Not As Extravagance — But As Discipline.",
-                            "From Our Family... To Yours."
-                        ].map((point, i) => (
-                            <li key={i} className="flex gap-2 items-start">
-                                <span className="mt-[7px] flex h-[16px] w-[16px] shrink-0 items-center justify-center rounded-full border-[1.5px] border-[#9f860e] text-[#9f860e]" aria-hidden>
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
-                                </span>
-                                <span className="font-body text-[16px] xl:text-[18px] font-medium leading-[1.8] xl:leading-[2.2] tracking-[0.06em] text-[#444444] whitespace-pre-wrap">
-                                    {point}
-                                </span>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-
-            </div>
-        </section>
-    );
+      {/* Bottom accent label - Smaller */}
+      <div className="absolute bottom-10 left-10 lg:left-20 hidden lg:block">
+         <p className="font-heading text-[60px] font-bold text-white/5 leading-none select-none">
+          FAMILY FIRST
+        </p>
+      </div>
+    </section>
+  );
 }

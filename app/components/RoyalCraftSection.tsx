@@ -1,74 +1,89 @@
-import Image from "next/image";
+"use client";
+
+import { useEffect, useRef } from "react";
 
 const STEPS = [
-  "Small Batches Are Milled With Intention.",
-  "Blended With Pristine Water.",
-  "Given Time To Breathe.",
-  "Through Copper Pot Stills, Crystal-Clear Spirit Rises — Polished,\nFiltered, Perfected — Achieving Brilliance While Retaining Depth.",
+  { num: "01", title: "Milled With Intention", desc: "Small batches, large purpose." },
+  { num: "02", title: "Pristine Purity", desc: "Blended with mineral-rich water." },
+  { num: "03", title: "The Breath", desc: "Given the silence it requires." },
+  { num: "04", title: "Refined Brilliance", desc: "Polished thirteen times over." },
 ];
 
+function useScrollReveal(ref: React.RefObject<HTMLElement | null>) {
+  useEffect(() => {
+    const container = ref.current;
+    if (!container) return;
+    const elements = container.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [ref]);
+}
+
 export function RoyalCraftSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+  useScrollReveal(sectionRef);
+
   return (
-    <section className="bg-[#FEFEF6] px-4 py-24 sm:px-6 lg:px-8">
-      {/* Centered Top Header */}
-      <div className="mx-auto max-w-4xl text-center mb-12">
-        <div className="flex items-center justify-center gap-4">
-          <span className="h-[1px] w-12 bg-[#9f860e]" aria-hidden />
-          <p className="font-heading text-[32px] font-bold italic tracking-wider text-[#9f860e]">
-            The Royal Craft
-          </p>
-          <span className="h-[1px] w-12 bg-[#9f860e]" aria-hidden />
-        </div>
-        <h2 className="mt-4 font-body text-[22px] sm:text-[28px] font-bold tracking-[0.1em] text-black">
-          The Thirteen Stages Of Refinement
-        </h2>
+    <section
+      ref={sectionRef}
+      className="relative bg-[#0F0A08] px-4 py-16 lg:py-24 overflow-hidden"
+    >
+      {/* Massive Background Accent */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-heading text-[25vw] font-bold text-white/[0.03] leading-none pointer-events-none select-none">
+        13
       </div>
 
-      <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-12 lg:grid-cols-2">
-        {/* Left: text content */}
-        <div className="flex flex-col justify-center lg:pl-8">
-          <div className="mb-6">
-            <h3 className="font-body text-[16px] lg:text-[18px] font-semibold tracking-widest text-[#111111]">
-              Great Spirits Are Not Rushed.
+      <div className="relative mx-auto max-w-[1400px] grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        {/* Left Content */}
+        <div className="lg:col-span-7 z-10">
+          <div className="flex items-center gap-4 mb-6 reveal">
+            <span className="h-[1px] w-12 bg-[#D1BB8A]" aria-hidden />
+            <p className="font-body text-[11px] font-bold uppercase tracking-[0.4em] text-[#D1BB8A]">
+              The Royal Craft
+            </p>
+          </div>
+          
+          <h2 className="font-heading text-[clamp(2rem,6vw,4rem)] font-bold text-white leading-[1.05] mb-10 reveal reveal-delay-1">
+            Thirteen Stages <br />
+            Of <span className="italic text-[#D1BB8A]">Refinement.</span>
+          </h2>
+
+          <div className="reveal reveal-delay-2 max-w-xl">
+            <h3 className="font-heading text-[20px] sm:text-[24px] lg:text-[28px] font-bold italic text-white mb-6">
+              At Cousins Distillery, craftsmanship lives in the details.
             </h3>
-            <p className="font-heading text-[20px] lg:text-[28px] font-bold italic tracking-wider text-[#9f860e] mt-1">
-              They Are Refined.
+            <p className="font-body text-[15px] lg:text-[18px] font-light text-white/70 leading-[1.8] mb-6">
+              Each spirit is refined through a 13-stage distillation process, a carefully calibrated sequence of purification, separation, and polishing. 
+            </p>
+            <p className="font-body text-[15px] lg:text-[18px] font-light text-white/70 leading-[1.8]">
+              This method ensures a cleaner, smoother, more refined spirit while maintaining its natural character and depth. For the guest, this means a refined mouthfeel, a clean finish, and a sensory experience that feels truly elevated.
             </p>
           </div>
+        </div>
 
-          <div className="font-body text-[16px] xl:text-[18px] font-medium  tracking-[0.06em] text-[#444444] space-y-2 mb-6">
-            <p>
-              Distilled Not Once... Not Twice... But Thirteen Times, Cousins Vodka Undergoes A Meticulous Journey Of Purification And Elevation. Each Stage Removes Impurity While Preserving Character — Sculpting Clarity Without Stripping Soul.
-            </p>
+        {/* Right Imagery - Full range */}
+        <div className="lg:col-span-5 relative reveal reveal-delay-2">
+          <div className="relative aspect-[4/3] max-h-[70vh] overflow-hidden mx-auto lg:ml-auto">
+            <img
+              src="/all-bottles.jpeg"
+              alt="Cousins spirits: Vodka, Blue Agave, Tequila, and Whiskey — thirteen stages of refinement"
+              className="w-full h-full object-cover object-center transition-transform duration-[2s] hover:scale-[1.02]"
+            />
           </div>
-
-          <ul className="mb-6">
-            {STEPS.map((step, i) => (
-              <li key={i} className="flex gap-2 items-start">
-                <span className="mt-[7px] flex h-[16px] w-[16px] shrink-0 items-center justify-center rounded-full border-[1.5px] border-[#9f860e] text-[#9f860e]" aria-hidden>
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
-                </span>
-                <span className="font-body text-[16px] xl:text-[18px] font-medium leading-[1.8] xl:leading-[2.2] tracking-[0.06em] text-[#444444] whitespace-pre-wrap">
-                  {step}
-                </span>
-              </li>
-            ))}
-          </ul>
-
-          <p className="font-body text-[16px] xl:text-[18px] font-medium leading-[2] tracking-[0.08em] text-[#444444]">
-            <span className="font-bold text-[#9f860e]">The Result: </span>
-            An Exquisite, Silky Finish With Elegant Smoothness And Commanding Presence.
-          </p>
         </div>
 
-        {/* Right: bottle image */}
-        <div className="relative w-full aspect-[8/9] overflow-hidden ml-auto lg:max-w-[550px]">
-          <img
-            src="/bottle in field.png"
-            alt="Cousins Vodka bottle in field"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-        </div>
       </div>
     </section>
   );
