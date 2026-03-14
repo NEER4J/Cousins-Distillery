@@ -81,7 +81,7 @@ export function Footer() {
                         <span className="text-[#D1BB8A]">Honor Craftsmanship.</span>
                     </h2>
 
-                    <p className="font-body text-[15px] lg:text-[18px] font-light tracking-wide text-zinc-600 leading-[1.8] mb-12 max-w-2xl mx-auto">
+                    <p className="font-body text-[15px] lg:text-[18px] font-normal tracking-wide text-zinc-600 leading-[1.8] mb-12 max-w-2xl mx-auto">
                         Cousins Vodka offers a gentle sweetness, exceptional smoothness, and a finish that lingers with quiet authority. This is not just vodka. This is cultivated excellence.
                     </p>
 
@@ -125,7 +125,7 @@ export function Footer() {
                                     className="h-[60px] w-auto object-contain object-left opacity-90"
                                 />
                             </Link>
-                            <p className="font-body text-[14px] text-zinc-600 leading-[1.9] font-light max-w-sm mb-10">
+                            <p className="font-body text-[14px] text-zinc-600 leading-[1.9] font-normal max-w-sm mb-10">
                                 At Cousins Distillery, vodka is not merely distilled — it is cultivated. Crafted through devotion, refined through thirteen stages, and destined for those who recognize true distinction.
                             </p>
                             {/* Social Icons */}
@@ -211,7 +211,7 @@ export function Footer() {
                             <h3 className="font-body text-[11px] font-bold uppercase tracking-[0.3em] text-[#D1BB8A] mb-8">
                                 The Inner Circle
                             </h3>
-                            <p className="font-body text-[13px] text-zinc-500 mb-6 font-light leading-relaxed">
+                            <p className="font-body text-[13px] text-zinc-500 mb-6 font-normal leading-relaxed">
                                 Join our inner circle for exclusive allocations, event invitations, and distillery news.
                             </p>
                             <NewsletterForm />

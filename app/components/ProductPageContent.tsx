@@ -25,6 +25,19 @@ function useScrollReveal(ref: React.RefObject<HTMLElement | null>) {
   }, [ref]);
 }
 
+// Helper to render title with italics based on `*text*` markers
+function renderTitle(title: string) {
+  const parts = title.split("*");
+  if (parts.length === 1) return title;
+  return (
+    <>
+      {parts[0]}
+      <span className="italic block sm:inline">{parts[1]}</span>
+      {parts[2]}
+    </>
+  );
+}
+
 interface ProductPageContentProps {
   product: Product;
 }
@@ -39,174 +52,190 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
 
   return (
     <div ref={containerRef} className="bg-[#FEFEF6]">
-      <section className="relative min-h-[70svh] w-full overflow-hidden bg-[#0F0A08] flex items-center pt-20 pb-12 sm:pt-28">
+      <section className="relative min-h-[75svh] w-full overflow-hidden bg-[#0F0A08] flex items-center pt-16 pb-16 sm:pt-24 sm:pb-16">
         {/* Primary Source Image Background */}
         <div className="absolute inset-0 z-0">
           <img src={sourceImg} alt="Source Background" className="w-full h-full object-cover opacity-50" />
         </div>
 
         {/* Flat Overlays matching Homepage */}
-        <div className="absolute inset-0 bg-black/40 z-0" aria-hidden />
+        <div className="absolute inset-0 bg-black/60 z-0" aria-hidden />
 
-        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center h-full">
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center h-full">
           <div className="lg:col-span-7 flex flex-col justify-center">
-            <div className="flex items-center gap-4 mb-4 sm:mb-8 reveal">
-              <p className="font-body text-[12px] sm:text-[16px] font-bold uppercase tracking-[0.3em] sm:tracking-[0.4em] text-[#D1BB8A]">
-                From Bloodline to Bottle
-              </p>
-            </div>
+            {product.eyebrow && (
+              <div className="inline-block border border-[#AA921E]/30 font-body text-[10px] sm:text-[12px] font-bold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-[#AA921E] px-4 py-2 mb-6 w-max reveal drop-shadow-sm">
+                {product.eyebrow}
+              </div>
+            )}
 
-            <h1 className="font-heading font-bold text-white leading-[0.9] mb-4 sm:mb-8 reveal reveal-delay-1" style={{ fontSize: "clamp(3rem, 10vw, 9rem)" }}>
-              <span className="block text-white/40 italic font-light tracking-tight mb-2 text-[clamp(1.8rem,5vw,5rem)]">The</span>
-              {product.name}
+
+
+            <h1 className="font-heading font-bold text-white leading-[0.9] mb-4 reveal reveal-delay-1" style={{ fontSize: "clamp(3.5rem, 8vw, 5.5rem)" }}>
+              {product.headline}
             </h1>
 
-            <p className="max-w-xl font-body text-[14px] sm:text-[17px] font-light leading-[1.8] text-white/70 mb-8 sm:mb-12 reveal reveal-delay-2">
-              {product.subheading}
-            </p>
+            {product.subtitle && (
+              <p className="font-heading text-[1.2rem] sm:text-[1.8rem] italic font-bold text-[#AA921E] mb-6 reveal reveal-delay-2 drop-shadow-md">
+                {product.subtitle}
+              </p>
+            )}
 
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 reveal reveal-delay-3">
-              <Link
-                href={product.primaryCta.href}
-                className="group flex h-[56px] w-full sm:w-auto sm:min-w-[220px] px-10 items-center justify-center bg-[#D1BB8A] font-body text-[13px] font-bold uppercase tracking-[0.2em] text-black transition-all hover:bg-white hover:scale-[1.02]"
-              >
-                {product.primaryCta.label}
-              </Link>
-              <Link
-                href={product.secondaryCta.href}
-                className="group flex h-[56px] w-full sm:w-auto sm:min-w-[220px] px-10 items-center justify-center border border-white/40 bg-transparent font-body text-[13px] font-bold uppercase tracking-[0.2em] text-white transition-all hover:border-white hover:bg-white/10"
-              >
-                {product.secondaryCta.label}
-              </Link>
+            <div className="max-w-3xl font-body text-[16px] sm:text-[18px] font-medium leading-[1.9] text-white/95 mb-10 reveal reveal-delay-2 whitespace-pre-wrap drop-shadow-md">
+              {product.subheading}
             </div>
+
+            {product.stats && product.stats.length > 0 && (
+              <div className="flex flex-wrap border-t border-[#AA921E]/20 pt-6 mt-4 gap-y-6 reveal reveal-delay-3 w-full">
+                {product.stats.map((stat, i) => (
+                  <div key={i} className={`flex-1 min-w-[120px] px-2 sm:px-6 ${i !== 0 ? 'border-l border-[#AA921E]/20' : 'pl-0'}`}>
+                    <div className="font-body text-[10px] sm:text-[12px] font-bold uppercase tracking-[0.2em] text-white/70 mb-1 sm:mb-2 drop-shadow-sm">{stat.label}</div>
+                    <div className="font-heading text-[18px] sm:text-[22px] text-white font-bold">{stat.value}</div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Primary/Secondary CTA removed from HTML ref, but we keep them here below stats for continuity if needed, or hide if not explicitly required by new design. We'll leave them hidden to match the HTML strictly, HTML has no CTA here except scroll/back */}
           </div>
 
-          <div className="lg:col-span-5 relative h-[40vh] sm:h-[50vh] lg:h-[70vh] flex items-center justify-center reveal reveal-delay-2">
+          <div className="lg:col-span-5 relative h-[50vh] sm:h-[60vh] lg:h-[80vh] flex items-center justify-center reveal reveal-delay-2">
             <img
               src={bottleImg}
               alt={product.name}
-              className="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] scale-110"
+              className="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] scale-[1.15]"
             />
           </div>
         </div>
 
         {/* Accent Label */}
-        <div className="absolute bottom-10 left-6 lg:left-12 pointer-events-none z-10">
-          <p className="font-heading text-[clamp(3rem,8vw,6rem)] font-bold text-white/5 leading-none select-none tracking-tighter">
+        <div className="absolute bottom-10 left-6 lg:left-12 pointer-events-none z-10 hidden lg:block">
+          <p className="font-heading text-[clamp(4rem,9vw,8rem)] font-bold text-white/5 leading-none select-none tracking-tighter">
             {accentLabel}
           </p>
         </div>
       </section>
 
-      <section className="py-24 lg:py-32 px-6 lg:px-12 relative overflow-hidden">
-        <div className="mx-auto max-w-[1400px]">
-          {/* Featured Content Block */}
-          {product.sections.length > 0 && (
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center mb-32 reveal">
-              <div className="lg:col-span-6 relative">
-                <div className="aspect-[4/5] bg-[#0F0A08] relative overflow-hidden">
-                  <img src={sourceImg} alt="Source Material" className="w-full h-full object-cover opacity-30 mix-blend-luminosity" />
-                  <div className="absolute inset-0 flex items-center justify-center p-12 drop-shadow-2xl">
-                    <img src={bottleImg} alt={product.name} className="w-full h-full object-contain scale-110 translate-y-8" />
-                  </div>
-                </div>
-                {/* Decorative Accent */}
-                <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[#D1BB8A] opacity-20 blur-3xl rounded-full" />
-              </div>
-
-              <div className="lg:col-span-6">
+      {/* Story Sections */}
+      {product.storySections && product.storySections.length > 0 && (
+        <section className="bg-[#1C1A14] py-24 lg:py-32 px-6 lg:px-12 relative">
+          <div className="mx-auto max-w-[1300px] grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+            {product.storySections.map((section, idx) => (
+              <div key={idx} className={`reveal ${idx > 0 ? "reveal-delay-1" : ""}`}>
                 <div className="flex items-center gap-4 mb-6">
-                  <span className="h-[2px] w-12 bg-[#D1BB8A]" aria-hidden />
-                  <p className="font-heading text-[20px] lg:text-[24px] font-bold italic text-[#D1BB8A]">
-                    {product.name}
+                  <span className="h-[1px] w-8 bg-[#AA921E]" aria-hidden />
+                  <p className="font-body text-[10px] sm:text-[12px] font-bold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-[#AA921E]">
+                    {section.label}
                   </p>
                 </div>
-                <h2 className="font-heading text-[clamp(2.5rem,6vw,4rem)] font-bold leading-[1.1] text-[#0F0A08] mb-8 italic">
-                  {product.sections[0].title}
+                <h2 className="font-heading text-[clamp(2.2rem,4vw,3.5rem)] text-white mb-8 leading-[1.1]">
+                  {renderTitle(section.title)}
                 </h2>
-                <p className="font-body text-[16px] lg:text-[18px] font-light leading-[1.8] text-zinc-600">
-                  {product.sections[0].body}
-                </p>
-              </div>
-            </div>
-          )}
-
-          {/* Remaining Sections */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-16 items-start">
-            {product.sections.slice(1).map((section, i) => (
-              <div key={i} className="reveal bg-white p-10 lg:p-14 border border-zinc-100 shadow-sm">
-                <h2 className="font-heading text-[clamp(2rem,4vw,3rem)] font-bold italic text-[#0F0A08] mb-6 leading-tight">
-                  {section.title}
-                </h2>
-                {section.body && (
-                  <p className="font-body text-[16px] lg:text-[17px] text-zinc-600 font-light leading-[1.8] mb-6">
-                    {section.body}
-                  </p>
-                )}
-                {section.bullets && section.bullets.length > 0 && (
-                  <ul className="mb-6 space-y-4">
-                    {section.bullets.map((bullet, j) => (
-                      <li key={j} className="flex gap-4 items-start">
-                        <span className="mt-[8px] flex h-[16px] w-[16px] shrink-0 items-center justify-center rounded-full border border-[#D1BB8A] text-[#D1BB8A]" aria-hidden>
-                          <span className="w-1.5 h-1.5 bg-[#D1BB8A] rounded-full" />
-                        </span>
-                        <span className="font-body text-[16px] lg:text-[17px] text-zinc-600 font-light leading-[1.8]">
-                          {bullet}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-                {section.bodyAfter && (
-                  <p className="font-body text-[16px] lg:text-[17px] text-zinc-600 font-light leading-[1.8] mb-6">
-                    {section.bodyAfter}
-                  </p>
-                )}
-                {section.cta && (
-                  <Link
-                    href={section.cta.href}
-                    className="inline-flex items-center gap-3 font-body text-[12px] font-bold uppercase tracking-[0.2em] text-black hover:text-[#D1BB8A] transition-colors mt-4 group"
-                  >
-                    {section.cta.label}
-                    <span className="w-8 h-[1px] bg-black group-hover:bg-[#D1BB8A] group-hover:w-12 transition-all" />
-                  </Link>
-                )}
+                <div className="space-y-6">
+                  {section.body.map((para, i) => (
+                    <p key={i} className="font-body text-[16px] xl:text-[18px] font-normal leading-[1.9] tracking-[0.03em] text-[#A09C96]">
+                      {para}
+                    </p>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
-      {/* For Partners - High Impact Block */}
-      <section className="bg-[#0F0A08] py-24 lg:py-32 px-6 lg:px-12 text-center text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/lady-with-glass.jpg')] opacity-10 mix-blend-overlay object-cover" />
-        <div className="mx-auto max-w-[800px] relative z-10">
-          <div className="flex items-center justify-center gap-6 mb-8 reveal">
-            <span className="h-[2px] w-12 bg-[#D1BB8A]" aria-hidden />
-            <p className="font-body text-[12px] font-bold uppercase tracking-[0.4em] text-[#D1BB8A]">
-              For Partners
-            </p>
-            <span className="h-[2px] w-12 bg-[#D1BB8A]" aria-hidden />
+      {/* Varieties (e.g. Tequila Expressions) */}
+      {product.varieties && product.varieties.length > 0 && (
+        <section className="bg-[#13110C] py-24 lg:py-32 px-6 lg:px-12 relative overflow-hidden">
+          <div className="mx-auto max-w-[1300px]">
+            <div className="flex items-center gap-4 mb-4 reveal">
+              <span className="h-[1px] w-8 bg-[#AA921E]" aria-hidden />
+              <p className="font-body text-[11px] font-bold uppercase tracking-[0.3em] text-[#AA921E]">
+                Three Expressions
+              </p>
+            </div>
+            <h2 className="font-heading text-[clamp(2.5rem,5vw,3.5rem)] text-white mb-16 leading-[1.1] reveal">
+              One agave.<br /><span className="italic block mt-2 text-[#AA921E]">Three remarkable chapters.</span>
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#AA921E]/10 reveal reveal-delay-1">
+              {product.varieties.map((v, i) => (
+                <div key={i} className="group bg-[#1a1813] p-10 lg:p-12 relative flex flex-col transition-colors hover:bg-[#201e18]">
+                  <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#AA921E] scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100" />
+
+                  <div className="font-body text-[10px] font-bold uppercase tracking-[0.3em] text-[#AA921E] mb-6">
+                    {v.number}
+                  </div>
+
+                  <div className="self-start inline-block font-body text-[10px] font-medium uppercase tracking-[0.2em] text-white border border-[#AA921E]/30 px-3 py-1.5 mb-6">
+                    {v.subtitle}
+                  </div>
+
+                  <h3 className="font-heading font-bold text-[28px] lg:text-[32px] text-white tracking-[0.02em] mb-2">{v.name}</h3>
+                  <div className="font-heading text-[16px] italic text-[#A09C96] mb-8">{v.type}</div>
+
+                  <div className="font-body text-[14px] lg:text-[15px] font-normal leading-[1.8] text-[#A09C96] flex-1 mb-8 space-y-4">
+                    {v.body.map((para, idx) => (
+                      <p key={idx}>{para}</p>
+                    ))}
+                  </div>
+
+                  {(v.idealForHeader || v.idealForBody) && (
+                    <div className="mt-auto border-t border-[#AA921E]/20 pt-6">
+                      <div className="font-body text-[10px] uppercase font-bold tracking-[0.2em] text-[#AA921E] mb-3">{v.idealForHeader}</div>
+                      <p className="font-body text-[13px] font-normal leading-[1.7] text-[#A09C96]">{v.idealForBody}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
+        </section>
+      )}
 
-          <h2 className="font-heading text-[clamp(2.5rem,6vw,4.5rem)] font-bold italic text-white mb-8 leading-[1.1] reveal reveal-delay-1">
-            {product.forPartnersTitle}
-          </h2>
+      {/* Tasting Notes */}
+      {product.tastingNotes && (
+        <section className="bg-[#1C1A14] py-24 lg:py-32 px-6 lg:px-12 relative">
+          <div className="mx-auto max-w-[1300px]">
+            <div className="flex items-center gap-4 mb-4 reveal">
+              <span className="h-[1px] w-8 bg-[#AA921E]" aria-hidden />
+              <p className="font-body text-[11px] font-bold uppercase tracking-[0.3em] text-[#AA921E]">
+                {product.tastingNotes.label}
+              </p>
+            </div>
+            <h2 className="font-heading text-[clamp(2.5rem,5vw,3.5rem)] text-white mb-16 leading-[1.1] reveal">
+              {renderTitle(product.tastingNotes.title)}
+            </h2>
 
-          <p className="font-body text-[16px] lg:text-[18px] font-light tracking-wide text-white/60 leading-[1.8] mb-12 reveal reveal-delay-2">
-            {product.forPartnersBody}
-          </p>
-
-          <div className="reveal reveal-delay-3">
-            <Link
-              href={product.forPartnersCta.href}
-              className="inline-flex h-[56px] min-w-[240px] px-10 items-center justify-center bg-white font-body text-[13px] font-bold uppercase tracking-[0.2em] text-black transition-all hover:bg-[#D1BB8A] hover:scale-[1.02]"
-            >
-              {product.forPartnersCta.label}
-            </Link>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#AA921E]/10 reveal reveal-delay-1">
+              {product.tastingNotes.notes.map((note, i) => (
+                <div key={i} className="bg-[#1a1813] p-10 lg:p-12 flex flex-col">
+                  <div className="font-body text-[10px] font-bold uppercase tracking-[0.3em] text-[#AA921E] mb-4">
+                    {note.type}
+                  </div>
+                  <h3 className="font-heading font-medium text-[26px] lg:text-[28px] text-white mb-6">
+                    {note.title}
+                  </h3>
+                  {note.tags && note.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {note.tags.map((tag, idx) => (
+                        <span key={idx} className="font-body text-[10px] font-medium tracking-[0.1em] text-[#AA921E] border border-[#AA921E]/30 px-3 py-1">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  <p className="font-body text-[15px] lg:text-[16px] font-normal leading-[1.8] tracking-[0.02em] text-[#A09C96] flex-1">
+                    {note.body}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
+
+
     </div>
   );
 }

@@ -127,7 +127,7 @@ export function Header() {
                             <h3 className="font-heading text-[clamp(2rem,3vw,3rem)] italic leading-tight mb-6">
                                 The <br/> <span className="text-[#D1BB8A]">House</span> <br/> Classics.
                             </h3>
-                            <p className="font-body text-[14px] text-white/60 leading-relaxed font-light max-w-sm">
+                            <p className="font-body text-[14px] text-white/60 leading-relaxed font-normal max-w-sm">
                                 Discover our meticulously categorized expressions of purity, grain, and agave.
                             </p>
                         </div>

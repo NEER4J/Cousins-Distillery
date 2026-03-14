@@ -58,7 +58,7 @@ export function PhilosophySection() {
           </blockquote>
 
           <div className="max-w-xl mx-auto space-y-6 reveal reveal-delay-2">
-            <p className="font-body text-[16px] lg:text-[19px] font-light leading-relaxed text-white/70">
+            <p className="font-body text-[16px] lg:text-[19px] font-normal leading-relaxed text-white/70">
               For those who recognize that true distinction is found in the spirit of unity and uncompromising craft.
             </p>
             

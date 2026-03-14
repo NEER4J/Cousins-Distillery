@@ -65,7 +65,7 @@ export function Hero() {
           <div className="flex items-center justify-center gap-4 mb-6 reveal">
             <span className="h-[1px] w-12 bg-[#D1BB8A]" aria-hidden />
             <p className="font-body text-[11px] font-bold uppercase tracking-[0.4em] text-[#D1BB8A]">
-              Cousins Distillery · Est. 2024
+              Rooted in Family. Refined in Spirit.
             </p>
             <span className="h-[1px] w-12 bg-[#D1BB8A]" aria-hidden />
           </div>
@@ -75,38 +75,35 @@ export function Hero() {
             className="font-heading font-bold text-white leading-[0.9] reveal reveal-delay-1"
             style={{ fontSize: "clamp(3.5rem, 8vw, 7rem)" }}
           >
-            Cousins Distillery<br />
-            <span className="italic text-[#D1BB8A] text-[clamp(2rem,5vw,4.5rem)] block mt-4">Where Craft Becomes Legacy</span>
+            COUSIN<br />
+            DISTILLERY
           </h1>
 
-          {/* Horizontal gold rule */}
-          <div className="flex items-center justify-center gap-4 my-8 reveal reveal-delay-2">
-            <span className="font-body text-[16px] uppercase tracking-[0.3em] text-[#D1BB8A]/80">
-              From Bloodline to Bottle
-            </span>
-          </div>
+          <p className="font-heading text-[1.5rem] sm:text-[2rem] italic text-[#D1BB8A] mt-6 reveal reveal-delay-2">
+            Field to Bottle · España · Est. 2019
+          </p>
 
           {/* Body copy */}
-          <p className="max-w-2xl mx-auto font-body text-[17px] lg:text-[19px] font-light leading-[1.85] text-white/80 mb-12 reveal reveal-delay-3">
-            A refined house of spirits, built on passion, precision, and a meticulous 13-stage distillation process.
+          <p className="max-w-2xl mx-auto font-body text-[17px] lg:text-[19px] font-normal leading-[1.85] text-white/80 mt-8 mb-12 reveal reveal-delay-3">
+            Two cousins. Four premium spirits. Thirteen stages of unwavering obsession. Distilled from our own organic farms in rural Spain — nothing in between.
           </p>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 reveal reveal-delay-4 w-full px-2 sm:px-0">
             <Link
-              href="#our-spirits"
+              href="/collection"
               className="group flex h-[56px] w-full sm:w-auto items-center justify-center bg-[#D1BB8A] px-10 font-body text-[13px] font-bold uppercase tracking-[0.2em] text-[#1A130F] transition-all hover:bg-white hover:scale-[1.02]"
             >
-              Discover Our Story
+              Explore the Collection
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="ml-3 transition-transform group-hover:translate-x-1">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </Link>
             <Link
-              href="#explore"
+              href="#process"
               className="flex h-[56px] w-full sm:w-auto items-center justify-center border border-white/40 px-10 font-body text-[13px] font-bold uppercase tracking-[0.2em] text-white transition-all hover:border-white hover:bg-white/10"
             >
-              Explore Our Products
+              Our 13-Stage Process
             </Link>
           </div>
         </div>

@@ -8,6 +8,40 @@ export interface ProductSection {
   cta?: { label: string; href: string };
 }
 
+export interface StatInfo {
+  label: string;
+  value: string;
+}
+
+export interface StorySection {
+  label: string;
+  title: string;
+  body: string[];
+}
+
+export interface TastingNoteItem {
+  type: string;
+  title: string;
+  tags: string[];
+  body: string;
+}
+
+export interface TastingNotes {
+  label: string;
+  title: string;
+  notes: TastingNoteItem[];
+}
+
+export interface VarietyItem {
+  number: string;
+  subtitle: string;
+  name: string;
+  type: string;
+  body: string[];
+  idealForHeader?: string;
+  idealForBody?: string;
+}
+
 export interface ProductCta {
   label: string;
   href: string;
@@ -25,7 +59,18 @@ export interface Product {
   secondaryCta: ProductCta;
   image: string;
   sourceImage: string;
+  
+  // New structured properties from HTML
+  eyebrow: string;
+  subtitle: string;
+  stats: StatInfo[];
+  storySections: StorySection[];
+  tastingNotes?: TastingNotes;
+  varieties?: VarietyItem[];
+  
+  // Legacy sections (kept optional for fallback/backwards compatibility if needed, though replaced mostly)
   sections: ProductSection[];
+  
   forPartnersTitle: string;
   forPartnersBody: string;
   forPartnersCta: ProductCta;
@@ -39,179 +84,322 @@ const CONTACT_HREF = "/contact";
 export const PRODUCTS: Product[] = [
   {
     slug: "vodka",
-    name: "Vodka",
+    name: "COUSIN VODKA",
     metaTitle: "Premium Artisanal Vodka | 13-Stage Distilled | Cousins Distillery",
-    metaDescription:
-      "Cousins Distillery Vodka: The essence of purity. Small-batch craft vodka refined through thirteen stages for an exceptionally smooth, silky finish.",
+    metaDescription: "Cousins Distillery Vodka: The essence of purity. Small-batch craft vodka refined through thirteen stages.",
     metaKeywords: ["craft vodka", "small-batch vodka", "13-stage distillation", "premium spirit", "smooth vodka", "artisanal spirits"],
-    headline: "Cousins Distillery Vodka – The Essence of Purity",
-    subheading:
-      "Smooth, refined, and crafted through our meticulous 13-stage distillation process.",
+    headline: "COUSIN VODKA",
+    subheading: "Born from the fertile plains of our Spanish estate, Cousin Vodka begins with rare heritage varieties of corn — a grain rarely associated with premium spirits, but one we have coaxed into producing something remarkable. Thirteen precise distillation passes strip away all that is unnecessary and reveal the clean, silken spirit within.\n\nExpect an almost weightless texture, a gentle sweetness from the corn's natural sugars, and a finish that lingers far longer than any vodka should. This is vodka with genuine character — made to be savoured, not just mixed.",
     primaryCta: { label: "Shop Vodka", href: CONTACT_HREF },
-    secondaryCta: { label: "Try Our Signature Cocktail", href: CONTACT_HREF },
+    secondaryCta: { label: "See Experinces", href: CONTACT_HREF },
     image: "/vodka.png",
     sourceImage: "/cornone.jpg",
-    sections: [
-      {
-        title: "The spirit of purity",
-        body: "Cousins Distillery Vodka is the foundation of our house. It was the first expression of our vision: to create a spirit that feels as elegant as it tastes. Crafted from carefully selected grains and refined through all 13 stages of distillation, our vodka achieves exceptional clarity and a silky texture that elevates every sip—whether enjoyed neat, on ice, or in a meticulously crafted cocktail.",
-      },
-      {
-        title: "Crafted for refinement",
-        body: "Distilled from premium corn, our vodka is designed to be clean, balanced, and versatile, with a subtle character that shines through in classic and contemporary cocktails. At Cousins Distillery, we believe a great vodka should never overpower the moment. The 13-stage process ensures impurities are carefully removed, leaving a smooth, refined spirit with a clean finish and a refined mouthfeel.",
-      },
-      {
-        title: "Signature moments",
-        body: "Our vodka is made for those who appreciate the finer details:",
-        bullets: [
-          "A chilled neat pour, served in a cut-crystal glass",
-          "A perfectly balanced martini or vodka-soda",
-          "A signature house cocktail created with premium mixers and fresh ingredients",
-        ],
-        cta: { label: "Discover Our Cocktail Pairings", href: CONTACT_HREF },
-      },
+    eyebrow: "🌽  Heirloom Corn  ·  España",
+    subtitle: "Heirloom Corn Expression",
+    stats: [
+      { label: "Base", value: "Heirloom Corn" },
+      { label: "ABV", value: "40% vol." },
+      { label: "Stages", value: "13" },
+      { label: "Origin", value: "España" }
     ],
+    storySections: [
+      {
+        label: "The Ingredient",
+        title: "Why *corn?*",
+        body: [
+          "Corn vodka is one of the world's best-kept secrets. Unlike wheat or potato, quality heirloom corn brings a natural sweetness and body that creates a distinctly satisfying spirit with genuine personality. We grow heritage varieties on our Spanish estate — cultivars selected not for yield, but for flavour. The cobs are sun-dried, stone-milled, and mashed on-site within hours of processing, preserving every nuance of the grain's natural character.",
+          "The result is a vodka that stands apart in a cocktail as easily as it shines served neat over ice. Clean, but not empty. Pure, but not clinical."
+        ]
+      },
+      {
+        label: "The Process",
+        title: "Thirteen passes *to perfection*",
+        body: [
+          "Our master distillers run each batch of corn mash through thirteen distinct stages in our copper pot stills. Early stages build the base spirit; middle stages refine and concentrate; the final stages polish with surgical precision. Activated charcoal filtration at Stage 10 removes even trace impurities, leaving a vodka of astonishing clarity.",
+          "No additives. No flavour enhancers. Nothing added, nothing hidden. What you taste is purely the corn, purely our craft, and purely our land."
+        ]
+      }
+    ],
+    tastingNotes: {
+      label: "Tasting Notes",
+      title: "On the *glass*",
+      notes: [
+        {
+          type: "Nose",
+          title: "Delicate & Clean",
+          tags: ["Fresh grain", "Sweet cream", "Mild vanilla", "White pepper"],
+          body: "A light, inviting nose with the gentle sweetness of fresh-milled corn. Subtle vanilla undertones from the copper stills and a clean, crystalline quality that immediately signals exceptional purity. Restrained, precise, and quietly exciting."
+        },
+        {
+          type: "Palate",
+          title: "Silken & Warm",
+          tags: ["Sweet corn", "Lemon zest", "Soft butter", "Mineral stone"],
+          body: "An unexpectedly rounded texture — almost creamy. The corn character shines with natural sweetness balanced by subtle citrus brightness. Never harsh, always welcoming. The kind of vodka that converts people who claim they don't like vodka."
+        },
+        {
+          type: "Finish",
+          title: "Long & Memorable",
+          tags: ["Warm spice", "Clean grain", "Lingering sweet"],
+          body: "A long, satisfying finish with gentle warmth that builds slowly and fades gracefully. The mark of a truly premium spirit — the memory of it stays long after the glass is empty. Exceptional served neat at room temperature or chilled over large ice."
+        }
+      ]
+    },
+    sections: [],
     forPartnersTitle: "For bars and venues",
-    forPartnersBody:
-      "Cousins Distillery Vodka is ideal for luxury bars, fine-dining venues, and boutique hospitality partners who value consistency, quality, and elegance. We offer tailored bar programs, cocktail recommendations, and product support to help you present our vodka in the best possible light.",
+    forPartnersBody: "Cousins Distillery Vodka is ideal for luxury bars, fine-dining venues, and boutique hospitality partners who value consistency, quality, and elegance. We offer tailored bar programs, cocktail recommendations, and product support to help you present our vodka in the best possible light.",
     forPartnersCta: { label: "Enquire About Partnership", href: CONTACT_HREF },
     finalCtaHeadline: "Experience the purity of Cousins Distillery Vodka",
     finalCtaLabel: "Shop Vodka",
     finalCtaHref: "#",
   },
   {
-    slug: "blue-agave-spirit",
-    name: "Blue Agave Spirit",
-    metaTitle: "Blue Agave Spirit | Modern Agave Expression | Cousins Distillery",
-    metaDescription:
-      "Discover the rich, distinctive character of Cousins Distillery Blue Agave Spirit. A modern expression of agave, crafted with precision and heritage.",
-    metaKeywords: ["blue agave spirit", "agave spirit", "craft agave", "jalisco agave", "artisanal agave", "cousins distillery agave"],
-    headline: "Blue Agave Spirit by Cousins Distillery – Refined, Rich, Distinctive",
-    subheading:
-      "A modern expression of agave, crafted with precision through our 13-stage distillation process.",
-    primaryCta: { label: "Shop Blue Agave Spirit", href: CONTACT_HREF },
-    secondaryCta: { label: "See Tasting Notes", href: CONTACT_HREF },
-    image: "/blue-agave.png",
-    sourceImage: "/blue-agave.jpg",
-    sections: [
-      {
-        title: "A new expression of agave",
-        body: "Blue agave tequila is a distilled spirit made exclusively from the Agave tequilana Weber Azul plant, predominantly grown in Jalisco, Mexico. Where our cousins Blue agave is harvested. By law, it must contain at least 51% blue agave sugars (100% for premium versions), providing a distinctively earthy, sweet flavor profile developed over 6–8 years of plant maturation.",
-      },
-      {
-        title: "Key Facts & Production",
-        body: "Crafted from fresh agave and its natural juices, the heart of the plant—known as the piña—is harvested, roasted, crushed to release juice (aguamiel), fermented, and distilled. Our production honors the traditional geography and true essence of the agave.",
-        bullets: [
-          "100% Blue Agave: Highest quality, must be bottled within the region of origin.",
-          "Cousins Distillery Varieties: Crafted from 100% blue agave and typically rested for a minimum of 3 months to allow the spirit to settle.",
-          "Taste Profile: Bright herbal notes, subtle sweetness, and a crisp finish.",
-        ],
-        bodyAfter:
-          "Target Market: Tequila enthusiasts, mixologists, and consumers who appreciate a fresh, authentic agave-forward spirit. Ideal for cocktail bars, restaurants, and social gatherings.",
-      },
-      {
-        title: "Bottling and presentation",
-        body: "Packaged in a minimalist, premium bottle, Blue Agave Spirit is designed to sit comfortably on luxury bars and private collections. Rooted in family. Refined in spirit.",
-      },
-    ],
-    forPartnersTitle: "For partners and venues",
-    forPartnersBody:
-      "Cousins Distillery Blue Agave Spirit is crafted for trend-forward bars, cocktail lounges, and lifestyle venues that want a distinctive agave-based spirit with a clean, modern profile. We provide cocktail suggestions, pairing ideas, and product support.",
-    forPartnersCta: { label: "Enquire About Partnership", href: CONTACT_HREF },
-    finalCtaHeadline:
-      "Discover the refined character of Cousins Distillery Blue Agave Spirit",
-    finalCtaLabel: "Shop Blue Agave Spirit",
-    finalCtaHref: "#",
-  },
-  {
     slug: "tequila",
-    name: "Tequila",
+    name: "COUSIN TEQUILA",
     metaTitle: "Artisanal Tequila | Reposado & Extra Añejo | Cousins Distillery",
-    metaDescription:
-      "Refined Cousins Distillery Tequila. Experience our Reposado and Extra Añejo expressions, crafted for the discerning palate with respect for tradition.",
+    metaDescription: "Refined Cousins Distillery Tequila. Experience our Reposado and Extra Añejo expressions.",
     metaKeywords: ["premium tequila", "reposado tequila", "extra anejo tequila", "artisanal tequila", "small-batch tequila", "100% blue agave"],
-    headline: "Cousins Distillery Tequila – Crafted for the Discerning Palate",
-    subheading:
-      "A refined tequila range, crafted with respect for tradition and the agave.",
+    headline: "COUSIN TEQUILA",
+    subheading: "Our Blue Agave is sourced from the volcanic, mineral-rich soils of Jalisco, Mexico — the only region in the world legally recognised for tequila production. Made exclusively from 100% Agave tequilana Weber Azul, the plants mature for 6–8 years before harvest, accumulating complex sugars that no industrial shortcut can replicate.\n\nAvailable in three distinct expressions — Blanco, Reposado, and Extra Añejo — each one a different chapter of the same extraordinary story. From the bright purity of the Blanco to the rich, contemplative depth of the Extra Añejo.",
     primaryCta: { label: "Shop Tequila", href: CONTACT_HREF },
     secondaryCta: { label: "Explore Our Expressions", href: CONTACT_HREF },
     image: "/taquila.png",
     sourceImage: "/agave.jpg",
-    sections: [
-      {
-        title: "Our Reposado Expression",
-        body: "Aged a minimum of 3-6 months. Rested in oak barrels to develop a smooth balance between fresh agave character and subtle oak notes, with hints of vanilla and spice.",
-        bodyAfter: "Target Market: Young professionals, social drinkers, and tequila enthusiasts who enjoy premium spirits for cocktails or casual sipping. Reposado appeals strongly to cocktail bars, restaurants, and hospitality venues seeking a versatile, high-quality tequila."
-      },
-      {
-        title: "Extra Añejo (Aged 9–12 months)",
-        body: "Made from 100% blue agave and expertly aged, extended maturation enhances the tequila’s depth, creating richer notes of caramel, oak, and spice while maintaining the smooth, sweet character of the blue agave.",
-        bodyAfter: "Target Market: Premium spirit collectors, connoisseurs, and luxury consumers who appreciate sipping tequilas similar to fine whiskey or cognac. Ideal for high-end restaurants, specialty liquor retailers, and premium gift markets seeking an elevated tequila experience."
-      },
-      {
-        title: "Serving suggestions",
-        body: "Cousins Distillery Tequila is made for moments of appreciation:",
-        bullets: [
-          "Neat, in a tulip glass, to experience the full character",
-          "On the rocks, with a twist of citrus",
-          "In elevated cocktails like a refined margarita or tequila-based sour",
-        ],
-        cta: { label: "Discover Our Tequila Cocktails", href: CONTACT_HREF },
-      },
+    eyebrow: "🌵  100% Blue Agave  ·  Jalisco, México",
+    subtitle: "Blue Agave Reserve · Three Expressions",
+    stats: [
+      { label: "Base", value: "100% Blue Agave" },
+      { label: "Region", value: "Jalisco, MX" },
+      { label: "Expressions", value: "3 Varieties" },
+      { label: "Stages", value: "13" }
     ],
+    storySections: [
+      {
+        label: "The Ingredient",
+        title: "Eight years in *Jalisco's soil*",
+        body: [
+          "Blue Agave — Agave tequilana Weber Azul — is one of the world's most demanding crops. It demands volcanic soil, relentless sun, and above all, time. Our plants grow in the highlands of Jalisco, where the mineral-rich red clay soil imparts a distinctive earthy minerality found nowhere else on Earth. A mature plant accumulates 6–8 years of complex sugars in its piña (heart) before we harvest.",
+          "The piñas are slow-roasted in traditional stone ovens for 72 hours, then crushed, fermented with native yeasts, and distilled through our 13-stage process. Tradition and precision, in equal and uncompromising measure."
+        ]
+      },
+      {
+        label: "Our Standard",
+        title: "100% agave. *Zero compromise.*",
+        body: [
+          "By Mexican law, tequila must contain at least 51% blue agave — the remaining 49% can be other sugars. We use none of those other sugars. Every Cousin Tequila expression is made from 100% Agave tequilana Weber Azul, the highest standard in tequila production. It costs more. It takes longer. It is the only way we know how to work.",
+          "The Cousin family's deep roots in Spanish farming culture means we understand instinctively what it means to respect an agricultural product. We bring that same reverence to every piña we harvest in Jalisco."
+        ]
+      }
+    ],
+    varieties: [
+      {
+        number: "Expression No. 1",
+        subtitle: "Rested · Minimum 3 Months",
+        name: "Blanco",
+        type: "Blue Agave Tequila",
+        body: [
+          "Crafted from 100% Blue Agave and rested for a minimum of 3 months to allow the spirit to settle and develop a clean, vibrant profile. This expression highlights the natural character of the Agave tequilana Weber Azul with bright herbal notes, subtle sweetness, and a crisp, refreshing finish that speaks directly of the plant and its volcanic home.",
+          "The Blanco is Cousin Tequila at its most transparent and honest — unmasked by oak, unapologetic in its agave-forward identity. The purest window into the raw ingredient."
+        ],
+        idealForHeader: "Ideal For",
+        idealForBody: "Tequila enthusiasts, mixologists, and consumers who appreciate a fresh, authentic agave-forward spirit. Ideal for cocktail bars, premium restaurants, and social gatherings where a high-quality tequila elevates margaritas, palomas, and premium mixed drinks."
+      },
+      {
+        number: "Expression No. 2",
+        subtitle: "Oak Aged · 3 to 6 Months",
+        name: "Reposado",
+        type: "Rested Blue Agave Tequila",
+        body: [
+          "Rested in carefully selected oak barrels for 3–6 months, the Reposado develops a smooth, elegant balance between the vibrant freshness of blue agave and the gentle influence of wood. Hints of vanilla, caramel, and warm baking spice begin to emerge — a natural evolution that enriches without overwhelming.",
+          "The Reposado is the versatile heart of the Cousin Tequila range — equally at home in an elevated cocktail or sipped slowly on its own over a single large ice cube."
+        ],
+        idealForHeader: "Ideal For",
+        idealForBody: "Young professionals, social drinkers, and tequila enthusiasts who enjoy premium spirits for cocktails or casual sipping. Reposado appeals strongly to cocktail bars, restaurants, and hospitality venues seeking a versatile, high-quality tequila with broad appeal."
+      },
+      {
+        number: "Expression No. 3",
+        subtitle: "Extended Aging · 9 to 12 Months",
+        name: "Extra Añejo",
+        type: "Ultra-Aged Blue Agave Tequila",
+        body: [
+          "Extended aging of 9–12 months in premium oak barrels transforms the spirit into something of rare depth and distinction. Rich notes of dark caramel, toasted oak, dried fruit, and complex spice emerge — while the core blue agave character is never lost, only deepened. This is a tequila that demands to be sipped slowly, in the manner of fine cognac or aged single malt.",
+          "The Extra Añejo is our most contemplative expression — a tequila for those who understand that the finest things in life cannot be rushed."
+        ],
+        idealForHeader: "Ideal For",
+        idealForBody: "Premium spirit collectors, connoisseurs, and luxury consumers who appreciate sipping tequilas similar to fine whiskey or cognac. Ideal for high-end restaurants, specialty retailers, and premium gift markets seeking an elevated tequila experience."
+      }
+    ],
+    tastingNotes: {
+      label: "Tasting Notes · Blanco",
+      title: "On the *glass*",
+      notes: [
+        {
+          type: "Nose",
+          title: "Earthy & Floral",
+          tags: ["Agave blossom", "Citrus zest", "Roasted earth", "Green herbs"],
+          body: "The nose opens with the unmistakable perfume of agave blossom — wild, alive, slightly vegetal. Fresh citrus lifts the bouquet, while hints of roasted earth signal the 72-hour stone-oven roasting at the heart of our process. Complex and immediately captivating."
+        },
+        {
+          type: "Palate",
+          title: "Vivid & Alive",
+          tags: ["Roasted agave", "Black pepper", "Tropical fruit", "Volcanic mineral"],
+          body: "A palate of genuine complexity. Waves of roasted agave sweetness give way to tropical fruit, then a pleasantly assertive peppery bite. The mineral character of Jalisco's volcanic red clay soil comes through clearly and memorably in the mid-palate."
+        },
+        {
+          type: "Finish",
+          title: "Long & Botanical",
+          tags: ["Dried herbs", "White smoke", "Warm spice"],
+          body: "A long, warming finish that dries beautifully. Dried herbal notes linger with a faint smokiness from the stone ovens. The kind of finish that rewards patient sipping — one of those rare tequilas you want to understand, not simply consume."
+        }
+      ]
+    },
+    sections: [],
     forPartnersTitle: "For premium venues",
-    forPartnersBody:
-      "Cousins Distillery Tequila is crafted for luxury bars, cocktail dens, and high-end hospitality partners who value quality, story, and consistency. We support partners with tasting notes, pairing ideas, and tailored cocktail concepts.",
+    forPartnersBody: "Cousins Distillery Tequila is crafted for luxury bars, cocktail dens, and high-end hospitality partners who value quality, story, and consistency. We support partners with tasting notes, pairing ideas, and tailored cocktail concepts.",
     forPartnersCta: { label: "Enquire About Partnership", href: CONTACT_HREF },
-    finalCtaHeadline:
-      "Experience the refined character of Cousins Distillery Tequila",
+    finalCtaHeadline: "Experience the refined character of Cousins Distillery Tequila",
     finalCtaLabel: "Shop Tequila",
     finalCtaHref: "#",
   },
   {
     slug: "whiskey",
-    name: "Whiskey",
+    name: "COUSIN WHISKEY",
     metaTitle: "Premium Rye Whiskey | Depth, Warmth & Legacy | Cousins Distillery",
-    metaDescription:
-      "Cousins Distillery Whiskey: A legacy of depth and warmth. Meticulously crafted from high-quality rye and polished through thirteen stages of distillation.",
+    metaDescription: "Cousins Distillery Whiskey: A legacy of depth and warmth. Meticulously crafted from high-quality rye.",
     metaKeywords: ["rye whiskey", "premium whiskey", "craft whiskey", "small-batch whiskey", "aged whiskey", "legacy spirits"],
-    headline: "Cousins Distillery Whiskey – Depth, Warmth, Legacy",
-    subheading:
-      "A refined whiskey range, crafted with patience, tradition, and our 13-stage distillation process.",
+    headline: "COUSIN WHISKEY",
+    subheading: "Rye whiskey is the boldest spirit we make — and perhaps the one that most rewards patience and attention. Our rye is grown in the cool, elevated fields of our Spanish estate, where significant diurnal temperature shifts force the grain to develop a density of flavour rarely found in commercial crops.\n\nHarvested at peak ripeness, naturally fermented, distilled through thirteen copper stages, and rested in hand-selected Spanish oak barrels. A whiskey that is decidedly its own thing: Spanish in origin, classical in craft, and absolutely unapologetic in character.",
     primaryCta: { label: "Shop Whiskey", href: CONTACT_HREF },
     secondaryCta: { label: "Explore Our Range", href: CONTACT_HREF },
     image: "/wishky.png",
     sourceImage: "/rye.jpg",
-    sections: [
-      {
-        title: "The heart of the barrel",
-        body: "Cousins Distillery Whiskey is built on the harmony between grain and oak. We begin with selected grains, carefully fermented and distilled, then aged in premium barrels to develop rich, layered flavours. Each batch is further refined through our 13-stage distillation process, which polishes the spirit for a smooth, luxurious finish without losing depth or warmth.",
-      },
-      {
-        title: "Taste and character",
-        body: "Meticulously crafted from high-quality rye, our whiskey offers a remarkable spectrum of experience:",
-        bullets: [
-          "Striking balance of vanilla, caramel, and spice",
-          "Silky texture and a long, warming finish",
-          "Slight smokiness or oak character, depending on the expression",
-        ],
-        bodyAfter:
-          "It is designed for sipping slowly, not rushing through, and pairs beautifully with quiet evenings, conversation, or dessert.",
-      },
-      {
-        title: "For the connoisseur",
-        body: "Cousins Distillery Whiskey speaks to those who appreciate tradition, patience, and craftsmanship. From single-malt-inspired styles to blended, smooth expressions, each variant is crafted to be enjoyed in a way that suits the drinker—neat, with a drop of water, or on the rocks in a cut-glass tumbler.",
-      },
+    eyebrow: "🌾  Single Farm Rye  ·  España",
+    subtitle: "Single Farm Rye Expression",
+    stats: [
+      { label: "Base", value: "Single Farm Rye" },
+      { label: "ABV", value: "46% vol." },
+      { label: "Stages", value: "13" },
+      { label: "Barrel", value: "Spanish Oak" }
     ],
+    storySections: [
+      {
+        label: "The Ingredient",
+        title: "Rye grown *at altitude*",
+        body: [
+          "Rye is a grain of character — and ours grows in the cool, elevated fields of our Spanish estate where the temperature difference between day and night can exceed 20°C. These diurnal swings force the rye to develop greater aromatic density, deeper spice complexity, and a structural resilience that separates it entirely from commercially grown grain.",
+          "We plant heritage rye varieties that produce lower yields but vastly superior flavour. The grain is stone-milled and mashed on-site within 24 hours of harvest, naturally fermented using wild yeasts that express the unique terroir of our estate."
+        ]
+      },
+      {
+        label: "Oak Resting",
+        title: "Time in wood, *character for life*",
+        body: [
+          "After thirteen stages of distillation, our Cousin Whiskey rests in hand-selected Spanish oak barrels sourced from coopers we have worked with for years. Spain's dramatic climate — scorching summers and cool winters — drives steady, cyclical barrel absorption that deepens the spirit's evolution without forcing it.",
+          "We bottle when the whiskey tells us it is ready — not on a fixed schedule, not to meet a quarterly target. This singular patience is what separates Cousin Whiskey from everything else on the shelf."
+        ]
+      }
+    ],
+    tastingNotes: {
+      label: "Tasting Notes",
+      title: "On the *glass*",
+      notes: [
+        {
+          type: "Nose",
+          title: "Bold & Spiced",
+          tags: ["Dark caramel", "Toasted rye", "Cinnamon bark", "Dried cherry"],
+          body: "An immediately commanding nose — dark caramel and toasted rye bread lead, followed by warm cinnamon bark and clove. Hints of dried cherry and orange peel emerge with time in the glass. Deeply inviting and unlike any whiskey from Spanish hands you have encountered before."
+        },
+        {
+          type: "Palate",
+          title: "Rich & Layered",
+          tags: ["Toffee", "Black pepper", "Oak tannin", "Dried fruit"],
+          body: "A rich, layered palate with bold rye spice at the forefront — black pepper and cinnamon — softened by toffee sweetness and the gentle grip of Spanish oak tannins. The complexity builds with every sip. Never one-dimensional; always revealing something new."
+        },
+        {
+          type: "Finish",
+          title: "Long & Warming",
+          tags: ["Oak smoke", "Dark spice", "Vanilla cream"],
+          body: "A long, warming finish with satisfying oak dryness and lingering dark spice. A whisper of vanilla cream emerges at the very end, softening the close beautifully. The kind of finish that makes you place the glass down slowly and sit quietly with your thoughts."
+        }
+      ]
+    },
+    sections: [],
     forPartnersTitle: "For luxury hospitality",
-    forPartnersBody:
-      "Cousins Distillery Whiskey is ideal for private lounges, fine-dining bars, and members-only clubs that curate exceptional spirits. We collaborate with partners to provide curation notes, pairing ideas, and cocktail concepts that elevate the whiskey-serving experience.",
+    forPartnersBody: "Cousins Distillery Whiskey is ideal for private lounges, fine-dining bars, and members-only clubs that curate exceptional spirits. We collaborate with partners to provide curation notes, pairing ideas, and cocktail concepts that elevate the whiskey-serving experience.",
     forPartnersCta: { label: "Enquire About Partnership", href: CONTACT_HREF },
-    finalCtaHeadline:
-      "Discover the depth and warmth of Cousins Distillery Whiskey",
+    finalCtaHeadline: "Discover the depth and warmth of Cousins Distillery Whiskey",
     finalCtaLabel: "Shop Whiskey",
     finalCtaHref: "#",
   },
+  {
+    slug: "blue-agave-spirit",
+    name: "COUSIN AGAVE",
+    metaTitle: "Blue Agave Spirit | Modern Agave Expression | Cousins Distillery",
+    metaDescription: "Discover the rich, distinctive character of Cousins Distillery Blue Agave Spirit. A modern expression of agave.",
+    metaKeywords: ["blue agave spirit", "agave spirit", "craft agave", "jalisco agave", "artisanal agave", "cousins distillery agave"],
+    headline: "COUSIN AGAVE",
+    subheading: "Cousin Agave is our most untamed expression — a pure agave spirit that operates outside the categories and conventions of tequila, yet is made with every ounce of the same devotion. Agave plants cultivated on our Spanish estate over multiple years, harvested at peak maturity, and processed with a combination of traditional technique and our signature 13-stage distillation.\n\nThe result is something singular — wild, expressive, and unforgettable. Neither mezcal, nor tequila, nor anything that currently has a proper name. It is simply, completely, Cousin Agave.",
+    primaryCta: { label: "Shop Blue Agave Spirit", href: CONTACT_HREF },
+    secondaryCta: { label: "See Tasting Notes", href: CONTACT_HREF },
+    image: "/blue-agave.png",
+    sourceImage: "/blue-agave.jpg",
+    eyebrow: "🌿  Pure Agave  ·  España",
+    subtitle: "Pure Agave Blanco Spirit",
+    stats: [
+      { label: "Base", value: "Pure Agave" },
+      { label: "ABV", value: "42% vol." },
+      { label: "Ferment", value: "Open Air" },
+      { label: "Origin", value: "España" }
+    ],
+    storySections: [
+      {
+        label: "The Plant",
+        title: "Agave grown *on Spanish soil*",
+        body: [
+          "Agave is not native to Spain — but under the right conditions, it thrives. Our agave plants grow on the dry, well-drained, sun-exposed slopes of our estate, where the Mediterranean climate provides the intense heat and low rainfall that agave demands. We cultivate several agave species for this expression, selecting for flavour complexity rather than any single botanical profile.",
+          "The result is an agave spirit with a distinct Spanish character — reflecting both the volcanic, mineral quality of agave as a plant and the warm, dry terroir of our estate. It is at once familiar and entirely novel."
+        ]
+      },
+      {
+        label: "Open-Air Fermentation",
+        title: "Wild yeast. *Honest character.*",
+        body: [
+          "After the piñas are slow-roasted and crushed, the agave juice ferments in open-air stone vats — exposed to the wild yeasts that float through the air of our estate. This is perhaps the most ancient, least controlled step in our entire process, and it produces some of the most remarkable aromatic complexity we achieve.",
+          "Fermentation can take up to 7 days depending on the season and ambient conditions. No commercial yeast. No temperature control. Just agave, air, and time — doing what they have always done together."
+        ]
+      }
+    ],
+    tastingNotes: {
+      label: "Tasting Notes",
+      title: "On the *glass*",
+      notes: [
+        {
+          type: "Nose",
+          title: "Wild & Botanical",
+          tags: ["Roasted agave", "Wild herbs", "Stone fruit", "Sun-baked earth", "Light smoke"],
+          body: "A nose of genuine wildness — roasted agave, wild herbs, and subtle smokiness from the stone-roasting process. There is a sun-baked earthiness underneath it all that speaks unmistakably of Spanish landscape in summer heat. Complex, evolving, and deeply compelling."
+        },
+        {
+          type: "Palate",
+          title: "Intense & Expressive",
+          tags: ["Charred agave", "Citrus pith", "Sea minerals", "Green pepper"],
+          body: "An expressive palate with the intensity that open-air fermentation produces — charred agave sweetness, citrus pith, a pleasingly assertive vegetal quality, and an almost sea-mineral finish entirely unique to our Spanish terroir. This is a spirit for the curious and the brave."
+        },
+        {
+          type: "Finish",
+          title: "Dry & Lasting",
+          tags: ["Dried botanical", "Light smoke", "Mineral salt"],
+          body: "A long, dry, beautifully botanical finish. Light smoke, dried herbs, and a faint mineral saltiness that lingers and evolves over several minutes. The kind of finish that changes your understanding of what agave is capable of — and makes you immediately reach for another measure."
+        }
+      ]
+    },
+    sections: [],
+    forPartnersTitle: "For partners and venues",
+    forPartnersBody: "Cousins Distillery Blue Agave Spirit is crafted for trend-forward bars, cocktail lounges, and lifestyle venues that want a distinctive agave-based spirit with a clean, modern profile. We provide cocktail suggestions, pairing ideas, and product support.",
+    forPartnersCta: { label: "Enquire About Partnership", href: CONTACT_HREF },
+    finalCtaHeadline: "Discover the refined character of Cousins Distillery Blue Agave Spirit",
+    finalCtaLabel: "Shop Blue Agave Spirit",
+    finalCtaHref: "#",
+  }
 ];
 
 export function getProduct(slug: string): Product | null {

@@ -60,7 +60,7 @@ export function ExperienceSection() {
           <h2 className="font-heading text-[clamp(2rem,6vw,4rem)] font-bold text-white leading-tight mb-6">
             Spirit of <span className="italic text-[#D1BB8A]">Distinction.</span>
           </h2>
-          <p className="font-body text-[16px] lg:text-[18px] font-light text-white/50 leading-relaxed max-w-lg">
+          <p className="font-body text-[16px] lg:text-[18px] font-normal text-white/50 leading-relaxed max-w-lg">
             Exceptional smoothness and a finish that lingers. For those who acknowledge true craftsmanship.
           </p>
         </div>
@@ -70,11 +70,11 @@ export function ExperienceSection() {
 
           {/* Bottle Showcased */}
           <div className="lg:col-span-7 relative reveal reveal-delay-1 order-2 lg:order-1">
-            <div className="relative group max-h-[40vh] sm:max-h-[55vh] lg:max-h-[60vh] flex items-center">
+            <div className="relative group max-h-[70vh] sm:max-h-[55vh] lg:max-h-[60vh] flex items-center">
               <img
                 src="/all-bottole-transperent.png"
                 alt="Cousins Spirits"
-                className="w-full h-auto max-h-[40vh] sm:max-h-[55vh] object-contain mx-auto drop-shadow-[0_40px_100px_rgba(209,187,138,0.25)] mix-blend-screen animate-float"
+                className="w-full h-auto max-h-[70vh] sm:max-h-[75vh] object-contain mx-auto drop-shadow-[0_40px_100px_rgba(209,187,138,0.25)] mix-blend-screen animate-float"
               />
               <div className="absolute inset-0 bg-radial from-[#D1BB8A]/20 to-transparent opacity-40 blur-3xl pointer-events-none" />
             </div>
