@@ -65,7 +65,7 @@ export function Header() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 w-full border-b border-zinc-200 bg-white/95 backdrop-blur-md transition-[height,background-color] duration-500 ease-out ${
+        className={`sticky top-0 z-50 w-full border-b border-zinc-200 bg-white/70 backdrop-blur-xl transition-[height,background-color] duration-500 ease-out ${
           scrolled ? "h-20 sm:h-24 shadow-sm" : "h-28 sm:h-36"
         }`}
       >
