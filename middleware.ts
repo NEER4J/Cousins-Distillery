@@ -8,7 +8,11 @@ export function middleware(request: NextRequest) {
   const hostname = request.headers.get('host')?.split(':')[0] || '';
   
   // Define our production domains
-  const isProduction = hostname === 'cousinsdistillery.com' || hostname === 'www.cousinsdistillery.com';
+  const isProduction = 
+    hostname === 'cousinsdistillery.com' || 
+    hostname === 'www.cousinsdistillery.com' ||
+    hostname === 'cousinsdistilleryltd.com' ||
+    hostname === 'www.cousinsdistilleryltd.com';
   
   // If the request is for the main site (production) and NOT already on /coming-soon
   if (isProduction) {
