@@ -39,7 +39,7 @@ export function CuratedSpiritsSection() {
     <section
       id="our-spirits"
       ref={sectionRef}
-      className="relative bg-[#F9F8F3] px-4 py-20 lg:py-24 overflow-hidden scroll-mt-20"
+      className="relative bg-[#F9F8F3] px-6 lg:px-12 py-20 lg:py-24 overflow-hidden scroll-mt-20"
     >
       <div className="relative mx-auto max-w-[1400px]">
         {/* Header */}
@@ -52,7 +52,7 @@ export function CuratedSpiritsSection() {
               </p>
             </div>
             <h2 className="font-heading text-[clamp(2rem,5vw,3.5rem)] font-bold text-[#0F0A08] leading-tight mb-3">
-              Curated <span className="italic text-[#D1BB8A]">Collections.</span>
+              Curated <span className="text-[#D1BB8A]">Collections.</span>
             </h2>
             <p className="font-body text-[15px] lg:text-[16px] text-[#0F0A08]/70 max-w-md">
               Handpicked selections, perfectly balanced and ready to enjoy.

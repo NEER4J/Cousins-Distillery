@@ -124,7 +124,7 @@ export function Header() {
                     <div className="w-1/3 bg-[#0F0A08] p-12 lg:p-16 flex flex-col justify-center text-white relative overflow-hidden">
                         <div className="absolute inset-0 bg-[url('/corntwo.jpg')] opacity-20 mix-blend-overlay object-cover" />
                         <div className="relative z-10">
-                            <h3 className="font-heading text-[clamp(2rem,3vw,3rem)] italic leading-tight mb-6">
+                            <h3 className="font-heading text-[clamp(2rem,3vw,3rem)] font-bold leading-tight mb-6">
                                 The <br/> <span className="text-[#D1BB8A]">House</span> <br/> Classics.
                             </h3>
                             <p className="font-body text-[14px] text-white/60 leading-relaxed font-normal max-w-sm">
@@ -149,7 +149,7 @@ export function Header() {
 
                           {/* Bottom text block - flex column, no overlap */}
                           <div className="relative z-10 flex flex-col gap-1">
-                            <span className="font-heading text-[22px] font-bold italic text-zinc-900 block group-hover:text-[#9f860e] transition-colors">
+                            <span className="font-heading text-[22px] font-bold text-zinc-900 block group-hover:text-[#9f860e] transition-colors">
                               {product.name}
                             </span>
                             <span className="font-body text-[12px] text-zinc-500 leading-relaxed font-medium line-clamp-2">
@@ -208,7 +208,7 @@ export function Header() {
           className={`absolute top-0 right-0 h-full w-[85vw] max-w-[400px] bg-[#0F0A08] flex flex-col transition-transform duration-500 ease-out ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
         >
           <div className="flex items-center justify-between px-8 py-8 border-b border-white/10">
-            <span className="font-heading text-[24px] italic text-[#D1BB8A]">Cousins.</span>
+            <span className="font-heading text-[24px] font-bold text-[#D1BB8A]">Cousins.</span>
             <button
               onClick={() => setMenuOpen(false)}
               className="text-white hover:text-[#D1BB8A] transition-colors"
@@ -222,7 +222,7 @@ export function Header() {
             <a
               href={getHref("/")}
               onClick={() => setMenuOpen(false)}
-              className="font-heading text-[32px] italic text-white hover:text-[#D1BB8A] transition-colors py-4 border-b border-white/10"
+              className="font-heading text-[32px] font-bold text-white hover:text-[#D1BB8A] transition-colors py-4 border-b border-white/10"
             >
               Home
             </a>
@@ -231,7 +231,7 @@ export function Header() {
               <button
                 type="button"
                 onClick={() => setProductsMobileOpen((o) => !o)}
-                className="flex w-full items-center justify-between font-heading text-[32px] italic text-white hover:text-[#D1BB8A] transition-colors"
+                className="flex w-full items-center justify-between font-heading text-[32px] font-bold text-white hover:text-[#D1BB8A] transition-colors"
               >
                 Collection
                 <ChevronDown
@@ -266,7 +266,7 @@ export function Header() {
                 key={link.label}
                 href={getHref(link.href)}
                 onClick={() => setMenuOpen(false)}
-                className="font-heading text-[32px] italic text-white hover:text-[#D1BB8A] transition-colors py-4 border-b border-white/10 last:border-0"
+                className="font-heading text-[32px] font-bold text-white hover:text-[#D1BB8A] transition-colors py-4 border-b border-white/10 last:border-0"
               >
                 {link.label}
               </a>

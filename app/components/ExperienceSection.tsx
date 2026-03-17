@@ -38,7 +38,7 @@ export function ExperienceSection() {
     <section
       id="visit"
       ref={sectionRef}
-      className="relative bg-black px-4 py-16 lg:py-24 overflow-hidden scroll-mt-20 flex flex-col justify-center"
+      className="relative bg-black px-6 lg:px-12 py-20 lg:py-24 overflow-hidden scroll-mt-20 flex flex-col justify-center"
     >
       {/* Mega Background Text - Scale reduced */}
       <div className="absolute top-0 right-0 h-full flex flex-col justify-center pointer-events-none z-0">
@@ -58,9 +58,9 @@ export function ExperienceSection() {
             </p>
           </div>
           <h2 className="font-heading text-[clamp(2rem,6vw,4rem)] font-bold text-white leading-tight mb-6">
-            Spirit of <span className="italic text-[#D1BB8A]">Distinction.</span>
+            Spirit of <span className="text-[#D1BB8A]">Distinction.</span>
           </h2>
-          <p className="font-body text-[16px] lg:text-[18px] font-normal text-white/50 leading-relaxed max-w-lg">
+          <p className="font-body text-[15px] lg:text-[18px] font-normal text-white/50 leading-[1.8] max-w-lg">
             Exceptional smoothness and a finish that lingers. For those who acknowledge true craftsmanship.
           </p>
         </div>
@@ -95,7 +95,7 @@ export function ExperienceSection() {
                   <p className="font-body text-[9px] font-bold tracking-[0.3em] uppercase text-[#D1BB8A]/60 mb-1">
                     Feature
                   </p>
-                  <h4 className="font-heading text-[16px] sm:text-[20px] lg:text-[24px] font-bold italic text-white leading-none">
+                  <h4 className="font-heading text-[16px] sm:text-[20px] lg:text-[24px] font-bold text-white leading-none">
                     {item.label}
                   </h4>
                 </div>

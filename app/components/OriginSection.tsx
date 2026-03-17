@@ -34,7 +34,7 @@ export function OriginSection() {
     <section
       id="about"
       ref={sectionRef}
-      className="bg-[#FEFEF6] py-16 lg:py-20 overflow-hidden scroll-mt-20 px-4 sm:px-6 lg:px-8"
+      className="bg-[#FEFEF6] py-20 lg:py-24 overflow-hidden scroll-mt-20 px-6 lg:px-12"
     >
       <div className="mx-auto max-w-[1400px]">
         
@@ -44,11 +44,11 @@ export function OriginSection() {
           <div className="lg:col-span-6 reveal">
             <div className="flex items-center gap-4 mb-6">
               <span className="h-[1px] w-8 bg-[#9f860e]" aria-hidden />
-              <p className="font-heading text-[16px] lg:text-[20px] font-bold italic text-[#9f860e]">
+              <p className="font-body text-[11px] font-bold uppercase tracking-[0.4em] text-[#9f860e]">
                 House of Spirits
               </p>
             </div>
-            <h2 className="font-heading text-[clamp(2.5rem,5vw,3.5rem)] font-bold leading-[1.15] text-black mb-10 italic">
+            <h2 className="font-heading text-[clamp(2.5rem,5vw,3.5rem)] font-bold leading-[1.15] text-black mb-10">
               Cousins Distillery was born from a shared belief: spirits should be as refined as the moments they accompany.
             </h2>
             

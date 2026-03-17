@@ -54,24 +54,24 @@ export default function ContactPage() {
             <Header />
 
             {/* Hero Banner - Dark & Dramatic */}
-            <section className="relative bg-[#0F0A08] pt-24 pb-16 lg:pt-48 lg:pb-32 px-6 lg:px-12 text-center flex flex-col items-center overflow-hidden">
+            <section className="relative bg-[#0F0A08] pt-24 pb-20 lg:pt-32 lg:pb-24 px-6 lg:px-12 text-center flex flex-col items-center overflow-hidden">
             {/* Hero Background */}
                 <img src="/cornone.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-50" />
                 
                 <div className="relative z-10 mx-auto max-w-[1000px]">
                     <div className="flex items-center justify-center gap-6 mb-8">
                         <span className="h-[2px] w-16 bg-[#D1BB8A]" aria-hidden />
-                        <p className="font-body text-[12px] font-bold italic tracking-[0.4em] text-[#D1BB8A] uppercase">
+                        <p className="font-body text-[11px] font-bold uppercase tracking-[0.4em] text-[#D1BB8A]">
                             Get In Touch
                         </p>
                         <span className="h-[2px] w-16 bg-[#D1BB8A]" aria-hidden />
                     </div>
                     
-                    <h1 className="font-heading text-[clamp(4rem,10vw,8rem)] font-bold italic tracking-tight leading-[0.9] text-white mb-8">
+                    <h1 className="font-heading text-[clamp(4rem,10vw,8rem)] font-bold tracking-tight leading-[0.9] text-white mb-8">
                         Get In <span className="text-[#D1BB8A] block">Touch.</span>
                     </h1>
                     
-                    <p className="font-body text-[16px] lg:text-[18px] font-light text-white/70 leading-[1.8] max-w-2xl mx-auto">
+                    <p className="font-body text-[15px] lg:text-[18px] font-normal leading-[1.8] text-white/70 max-w-2xl mx-auto">
                         Whether you&apos;re inquiring about our exclusive collections, interested in private events, or seeking a partnership — we invite you to connect with our team.
                     </p>
                 </div>
@@ -85,15 +85,15 @@ export default function ContactPage() {
             </section>
 
             {/* Main Content — Asymmetric Form Layout */}
-            <section className="py-14 lg:py-32 px-6 lg:px-12 bg-[#FEFEF6] relative">
+            <section className="py-20 lg:py-24 px-6 lg:px-12 bg-[#FEFEF6] relative">
                 <div className="mx-auto max-w-[1400px] grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-24 items-start">
                     
                     {/* Left Column Text/Graphics */}
                     <div className="lg:col-span-5 flex flex-col justify-start">
-                        <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold italic text-zinc-900 leading-tight mb-8">
+                        <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold text-zinc-900 leading-tight mb-8">
                             We value every <br/> conversation.
                         </h2>
-                        <p className="font-body text-[16px] lg:text-[18px] text-zinc-600 font-light leading-[1.8] mb-12 max-w-md">
+                        <p className="font-body text-[15px] lg:text-[18px] font-normal leading-[1.8] text-zinc-600 mb-12 max-w-md">
                             We aim to respond to all inquiries within 1-2 business days. For immediate assistance regarding an existing order, please include your order number.
                         </p>
                         
@@ -122,7 +122,7 @@ export default function ContactPage() {
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                                         </svg>
                                     </div>
-                                    <h2 className="font-heading text-[40px] font-bold italic text-zinc-900">
+                                    <h2 className="font-heading text-[40px] font-bold text-zinc-900">
                                         Message Sent.
                                     </h2>
                                     <p className="font-body text-[16px] text-zinc-600 max-w-[400px] leading-[1.8] font-light">
@@ -138,7 +138,7 @@ export default function ContactPage() {
                             ) : (
                                 <>
                                     <div className="mb-10">
-                                        <h2 className="font-heading text-[32px] font-bold italic text-[#0F0A08] mb-2">
+                                        <h2 className="font-heading text-[32px] font-bold text-[#0F0A08] mb-2">
                                             Send a message
                                         </h2>
                                         <p className="font-body text-[14px] text-zinc-500 font-light">

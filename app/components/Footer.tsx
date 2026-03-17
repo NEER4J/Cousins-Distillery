@@ -63,7 +63,7 @@ export function Footer() {
     return (
         <>
                    {/* Join The Legacy CTA - Cinematic Moment */}
-            <section className="relative px-6 py-20 lg:py-48 text-center overflow-hidden bg-[#FEFEF6] flex items-center justify-center">
+            <section className="relative px-6 lg:px-12 py-20 lg:py-24 text-center overflow-hidden bg-[#FEFEF6] flex items-center justify-center">
                 <div className="absolute inset-0 bg-[url('/lady-with-glass.jpg')] opacity-10 scale-105 object-cover mix-blend-multiply" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#FEFEF6] via-[#FEFEF6]/80 to-transparent" />
                 
@@ -76,7 +76,7 @@ export function Footer() {
                         <span className="h-[2px] w-16 bg-[#D1BB8A]" aria-hidden />
                     </div>
 
-                    <h2 className="font-heading text-[clamp(2.5rem,6vw,4.5rem)] font-bold tracking-tight text-zinc-900 mb-8 leading-[1.1] italic">
+                    <h2 className="font-heading text-[clamp(2.5rem,6vw,4.5rem)] font-bold tracking-tight text-zinc-900 mb-8 leading-[1.1]">
                         Raise A Glass To Heritage.<br />
                         <span className="text-[#D1BB8A]">Honor Craftsmanship.</span>
                     </h2>
@@ -103,7 +103,7 @@ export function Footer() {
             </section>
 
             {/* Actual Footer - Light High Contrast */}
-            <footer className="bg-white px-6 py-20 lg:pt-32 lg:pb-12 border-t border-zinc-200 relative overflow-hidden">
+            <footer className="bg-white px-6 lg:px-12 py-20 lg:py-24 border-t border-zinc-200 relative overflow-hidden">
                 {/* Oversized Brand Backdrop */}
                 <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-full text-center pointer-events-none select-none opacity-[0.03]">
                     <span className="font-heading text-[18vw] font-bold whitespace-nowrap leading-none tracking-tighter text-zinc-900">

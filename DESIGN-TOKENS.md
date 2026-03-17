@@ -9,111 +9,129 @@ Reference for colors, typography, and UI tokens. Use this when building or updat
 | Token | Hex | Usage |
 |-------|-----|--------|
 | **Background (beige)** | `#FEFEF6` | Page / section backgrounds |
-| **Header button** | `#E2DAAF` | Header CTA / button background |
-| **Hero main button** | `#9f860e` | Hero CTA / primary button, accent (e.g. subtitle) |
+| **Gold / accent** | `#D1BB8A` | CTAs, subtitles, two-tone heading accents |
+| **Dark** | `#0F0A08` | Dark sections, text |
+| **Header / accent** | `#9f860e` | Header hover, some accents |
 
 ---
 
 ## Typography
 
+**Rule:** Headings use Cormorant Garamond bold (no italic). Subtitles above headings use Poppins. Paragraphs use Poppins. Two-tone color on headings is allowed (e.g. `<span className="text-[#D1BB8A]">`).
+
 ### H1 (main heading)
 
 - **Font:** Cormorant Garamond  
 - **Weight:** 700 (Bold)  
-- **Style:** Bold  
+- **Style:** normal (no italic)  
+- **Two-tone:** Allowed (e.g. second word or phrase in gold)
 
 ```css
-font-family: 'Cormorant Garamond', serif;
+font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
 font-weight: 700;
 font-style: normal;
 ```
+
+**Sizes in app:** Hero `clamp(3.5rem, 8vw, 7rem)`; contact/legal pages `clamp(2.5rem, 7vw, 5rem)` to `clamp(4rem, 10vw, 8rem)`.
 
 ---
 
 ### H2 (section heading)
 
-- **Font:** Poppins  
-- **Weight:** 600 (SemiBold)  
-- **Style:** SemiBold  
+- **Font:** Cormorant Garamond  
+- **Weight:** 700 (Bold)  
+- **Style:** normal (no italic)  
+- **Two-tone:** Allowed
 
 ```css
-font-family: 'Poppins', sans-serif;
-font-weight: 600;
+font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+font-weight: 700;
 font-style: normal;
 ```
 
+**Sizes in app:** Section titles `clamp(2rem, 5vw, 3.5rem)` to `clamp(2.5rem, 6vw, 4.5rem)`; legal pages `28px` / `lg:text-[32px]`.
+
 ---
 
-### Heading subtitle (above main heading)
+### H3
 
 - **Font:** Cormorant Garamond  
-- **Weight:** 600 (SemiBold)  
-- **Style:** Italic  
-- **Size:** 30px  
-- **Line height:** 100%  
-- **Letter spacing:** 10%  
-- **Align:** center  
-- **Vertical align:** middle  
-- **Transform:** capitalize  
-- **Color:** `#9f860e`  
+- **Weight:** 700 (Bold)  
+- **Style:** normal (no italic)
 
-```css
-font-family: 'Cormorant Garamond', serif;
-font-weight: 600;
-font-style: italic;
-font-size: 30px;
-line-height: 100%;
-letter-spacing: 0.1em;
-text-align: center;
-vertical-align: middle;
-text-transform: capitalize;
-color: #9f860e;
-```
+**Sizes in app:** e.g. `text-[24px] lg:text-[32px]`.
 
 ---
 
-### Body / paragraph (normal text)
+### Subtitle / overline (above headings)
 
 - **Font:** Poppins  
-- **Weight:** 300 (Light)  
-- **Style:** Light  
-- **Size:** 15px  
-- **Line height:** 125%  
-- **Letter spacing:** 10%  
-- **Vertical align:** middle  
-- **Transform:** capitalize  
+- **Weight:** 700 (Bold)  
+- **Style:** normal  
+- **Size:** 11px (consistent)  
+- **Transform:** uppercase  
+- **Letter-spacing:** 0.35em–0.4em  
+- **Color:** often `#D1BB8A` or `#9f860e`
 
 ```css
-font-family: 'Poppins', sans-serif;
-font-weight: 300;
-font-style: normal;
-font-size: 15px;
-line-height: 125%;
-letter-spacing: 0.1em;
-vertical-align: middle;
-text-transform: capitalize;
+font-family: var(--font-poppins), 'Poppins', sans-serif;
+font-weight: 700;
+font-size: 11px;
+text-transform: uppercase;
+letter-spacing: 0.35em;
 ```
+
+Use Tailwind: `font-body text-[11px] font-bold uppercase tracking-[0.4em] text-[#D1BB8A]`.
 
 ---
 
-## Quick reference (Tailwind / CSS vars)
+### Body / paragraph
 
-If you add these to `globals.css` or Tailwind theme:
+- **Font:** Poppins  
+- **Weight:** 400 (normal) or 300 (light where needed)  
+- **Style:** normal  
+- **Size:** 15px base, 18px at `lg`  
+- **Line-height:** 1.8
 
 ```css
-:root {
-  --color-bg: #FEFEF6;
-  --color-header-btn: #E2DAAF;
-  --color-hero-btn: #9f860e;
-  --font-heading: 'Cormorant Garamond', serif;
-  --font-body: 'Poppins', sans-serif;
-}
+font-family: var(--font-poppins), 'Poppins', sans-serif;
+font-size: 15px;
+line-height: 1.8;
 ```
 
-- **Background:** `#FEFEF6` or `var(--color-bg)`  
-- **Header button:** `#E2DAAF` or `var(--color-header-btn)`  
-- **Hero / accent:** `#9f860e` or `var(--color-hero-btn)`  
-- **H1:** Cormorant Garamond 700  
-- **H2:** Poppins 600  
-- **Subtitle:** Cormorant Garamond 600 italic, 30px, `#9f860e`  
-- **Body:** Poppins 300, 15px, line-height 125%, letter-spacing 10%
+**At lg breakpoint:** `font-size: 18px`. Use Tailwind: `font-body text-[15px] lg:text-[18px] font-normal leading-[1.8]`.
+
+---
+
+## Spacing
+
+### Section padding (consistent site-wide)
+
+- **Content sections:** `py-20 lg:py-24` (vertical), `px-6 lg:px-12` (horizontal).
+- **Page hero banners** (contact, privacy, terms): `pt-24 pb-20 lg:pt-32 lg:pb-24`, `px-6 lg:px-12`.
+- **Footer:** CTA block and footer strip both use `py-20 lg:py-24`, `px-6 lg:px-12`.
+
+Use the same scale everywhere so the layout feels unified.
+
+### In-section rhythm
+
+- **Section vertical rhythm:** `mb-6` or `mb-8` between blocks; `space-y-6` / `space-y-16` for content sections.
+- **Subtitle to heading:** e.g. `mb-4` or `mb-6`.
+- **Heading to paragraph:** e.g. `mb-6` or `mb-8`.
+
+---
+
+## Quick reference (Tailwind / globals.css)
+
+- **Heading font:** `font-heading` (Cormorant Garamond), always `font-bold`, no `italic`.
+- **Body / subtitle font:** `font-body` (Poppins).
+- **Subtitle style:** `font-body text-[11px] font-bold uppercase tracking-[0.4em]`.
+- **Body style:** `font-body text-[15px] lg:text-[18px] font-normal leading-[1.8]`.
+- **Utility classes in globals.css:** `.heading-1`, `.heading-2`, `.heading-3`, `.subtitle`, `.body-text`.
+
+---
+
+## Buttons & links
+
+- Primary CTAs (e.g. “Explore the Collection”, “Shop Now”) go to `/contact` or in-page sections (e.g. `/#our-spirits`, `#process`).
+- No placeholder `href="#"`; use real section anchors or `/contact`. Product `finalCtaHref` is set to `"/contact"`.

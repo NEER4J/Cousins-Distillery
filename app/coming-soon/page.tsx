@@ -63,7 +63,7 @@ export default function ComingSoonPage() {
                         </p>
                     </div>
 
-                    <h1 className="font-heading text-[clamp(3.5rem,8vw,6.5rem)] font-bold text-white leading-[0.9] italic tracking-tight mb-6 mt-4">
+                    <h1 className="font-heading text-[clamp(3.5rem,8vw,6.5rem)] font-bold text-white leading-[0.9] tracking-tight mb-6 mt-4">
                         Cultivating <br />
                         <span className="text-white/40">Something Special.</span>
                     </h1>
@@ -76,7 +76,7 @@ export default function ComingSoonPage() {
                     <div className="max-w-[500px]">
                         {status === "success" ? (
                             <div className="border border-[#D1BB8A]/30 bg-[#D1BB8A]/10 p-6 flex flex-col items-center justify-center text-center">
-                                <p className="font-heading text-[24px] italic text-[#D1BB8A] mb-2">Welcome to the inner circle.</p>
+                                <p className="font-body text-[18px] font-bold text-[#D1BB8A] mb-2">Welcome to the inner circle.</p>
                                 <p className="font-body text-[14px] text-white/70 font-light">{message}</p>
                             </div>
                         ) : (
@@ -112,10 +112,10 @@ export default function ComingSoonPage() {
             </section>
 
             {/* Footer */}
-            <footer className="absolute bottom-0 left-0 right-0 z-20 w-full p-6 lg:p-12 border-t border-white/5 flex flex-col items-center justify-center gap-4 bg-gradient-to-t from-[#0F0A08] to-transparent">
+            <footer className="absolute bottom-0 left-0 right-0 z-20 w-full px-6 lg:px-12 py-8 lg:py-10 border-t border-white/5 flex flex-col items-center justify-center gap-4 bg-gradient-to-t from-[#0F0A08] to-transparent">
                 <div className="flex gap-6">
-                    <a href="#" className="font-body text-[11px] font-bold uppercase tracking-[0.2em] text-white/60 hover:text-[#D1BB8A] transition-colors">Instagram</a>
-                    <a href="#" className="font-body text-[11px] font-bold uppercase tracking-[0.2em] text-white/60 hover:text-[#D1BB8A] transition-colors">Facebook</a>
+                    <a href="https://www.instagram.com/cousinsdistilleryltd?igsh=MXUyY3kzdmg4czZudw==" target="_blank" rel="noopener noreferrer" className="font-body text-[11px] font-bold uppercase tracking-[0.2em] text-white/60 hover:text-[#D1BB8A] transition-colors">Instagram</a>
+                    <a href="https://www.facebook.com/share/18Kx2THJ1e/" target="_blank" rel="noopener noreferrer" className="font-body text-[11px] font-bold uppercase tracking-[0.2em] text-white/60 hover:text-[#D1BB8A] transition-colors">Facebook</a>
                 </div>
             </footer>
         </main>

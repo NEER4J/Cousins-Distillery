@@ -32,7 +32,7 @@ function renderTitle(title: string) {
   return (
     <>
       {parts[0]}
-      <span className="italic block sm:inline">{parts[1]}</span>
+      <span className="block sm:inline">{parts[1]}</span>
       {parts[2]}
     </>
   );
@@ -52,7 +52,7 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
 
   return (
     <div ref={containerRef} className="bg-[#FEFEF6]">
-      <section className="relative min-h-[75svh] w-full overflow-hidden bg-[#0F0A08] flex items-center pt-16 pb-16 sm:pt-24 sm:pb-16">
+      <section className="relative min-h-[75svh] w-full overflow-hidden bg-[#0F0A08] flex items-center pt-24 pb-20 lg:pt-32 lg:pb-24">
         {/* Primary Source Image Background */}
         <div className="absolute inset-0 z-0">
           <img src={sourceImg} alt="Source Background" className="w-full h-full object-cover opacity-50" />
@@ -76,12 +76,12 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
             </h1>
 
             {product.subtitle && (
-              <p className="font-heading text-[1.2rem] sm:text-[1.8rem] italic font-bold text-[#AA921E] mb-6 reveal reveal-delay-2 drop-shadow-md">
+              <p className="font-body text-[1rem] sm:text-[1.25rem] font-bold text-[#AA921E] mb-6 reveal reveal-delay-2 drop-shadow-md">
                 {product.subtitle}
               </p>
             )}
 
-            <div className="max-w-3xl font-body text-[16px] sm:text-[18px] font-medium leading-[1.9] text-white/95 mb-10 reveal reveal-delay-2 whitespace-pre-wrap drop-shadow-md">
+            <div className="max-w-3xl font-body text-[15px] sm:text-[18px] font-normal leading-[1.8] text-white/95 mb-10 reveal reveal-delay-2 whitespace-pre-wrap drop-shadow-md">
               {product.subheading}
             </div>
 
@@ -118,7 +118,7 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
 
       {/* Story Sections */}
       {product.storySections && product.storySections.length > 0 && (
-        <section className="bg-[#1C1A14] py-24 lg:py-32 px-6 lg:px-12 relative">
+        <section className="bg-[#1C1A14] py-20 lg:py-24 px-6 lg:px-12 relative">
           <div className="mx-auto max-w-[1300px] grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
             {product.storySections.map((section, idx) => (
               <div key={idx} className={`reveal ${idx > 0 ? "reveal-delay-1" : ""}`}>
@@ -146,7 +146,7 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
 
       {/* Varieties (e.g. Tequila Expressions) */}
       {product.varieties && product.varieties.length > 0 && (
-        <section className="bg-[#13110C] py-24 lg:py-32 px-6 lg:px-12 relative overflow-hidden">
+        <section className="bg-[#13110C] py-20 lg:py-24 px-6 lg:px-12 relative overflow-hidden">
           <div className="mx-auto max-w-[1300px]">
             <div className="flex items-center gap-4 mb-4 reveal">
               <span className="h-[1px] w-8 bg-[#AA921E]" aria-hidden />
@@ -155,7 +155,7 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
               </p>
             </div>
             <h2 className="font-heading text-[clamp(2.5rem,5vw,3.5rem)] text-white mb-16 leading-[1.1] reveal">
-              One agave.<br /><span className="italic block mt-2 text-[#AA921E]">Three remarkable chapters.</span>
+              One agave.<br /><span className="block mt-2 text-[#AA921E]">Three remarkable chapters.</span>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#AA921E]/10 reveal reveal-delay-1">
@@ -172,7 +172,7 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
                   </div>
 
                   <h3 className="font-heading font-bold text-[28px] lg:text-[32px] text-white tracking-[0.02em] mb-2">{v.name}</h3>
-                  <div className="font-heading text-[16px] italic text-[#A09C96] mb-8">{v.type}</div>
+                  <div className="font-body text-[16px] text-[#A09C96] mb-8">{v.type}</div>
 
                   <div className="font-body text-[14px] lg:text-[15px] font-normal leading-[1.8] text-[#A09C96] flex-1 mb-8 space-y-4">
                     {v.body.map((para, idx) => (
@@ -195,7 +195,7 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
 
       {/* Tasting Notes */}
       {product.tastingNotes && (
-        <section className="bg-[#1C1A14] py-24 lg:py-32 px-6 lg:px-12 relative">
+        <section className="bg-[#1C1A14] py-20 lg:py-24 px-6 lg:px-12 relative">
           <div className="mx-auto max-w-[1300px]">
             <div className="flex items-center gap-4 mb-4 reveal">
               <span className="h-[1px] w-8 bg-[#AA921E]" aria-hidden />

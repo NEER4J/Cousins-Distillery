@@ -34,7 +34,7 @@ export default function PrivacyPolicy() {
             <Header />
 
             {/* Hero / Header Section */}
-            <section className="relative bg-[#0F0A08] pt-32 pb-20 lg:pt-48 lg:pb-32 px-6 lg:px-12 text-center overflow-hidden">
+            <section className="relative bg-[#0F0A08] pt-24 pb-20 lg:pt-32 lg:pb-24 px-6 lg:px-12 text-center overflow-hidden">
                 <img src="/cornone.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-20" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F0A08] via-transparent to-transparent" />
                 
@@ -46,18 +46,18 @@ export default function PrivacyPolicy() {
                         </p>
                         <span className="h-[1px] w-8 bg-[#D1BB8A]" />
                     </div>
-                    <h1 className="font-heading text-[clamp(2.5rem,7vw,5rem)] font-bold text-white tracking-tight leading-[1.1] italic">
+                    <h1 className="font-heading text-[clamp(2.5rem,7vw,5rem)] font-bold text-white tracking-tight leading-[1.1]">
                         Privacy <span className="text-[#D1BB8A]">Policy.</span>
                     </h1>
                 </div>
             </section>
 
             {/* Content Section */}
-            <section ref={sectionRef} className="py-20 lg:py-32 px-6 lg:px-12 max-w-4xl mx-auto">
+            <section ref={sectionRef} className="py-20 lg:py-24 px-6 lg:px-12 max-w-4xl mx-auto">
                 <div className="space-y-16 reveal reveal-delay-2">
                     
                     <div className="space-y-6">
-                        <h2 className="font-heading text-[28px] lg:text-[32px] font-bold text-zinc-900 italic">
+                        <h2 className="font-heading text-[28px] lg:text-[32px] font-bold text-zinc-900">
                             1. Introduction
                         </h2>
                         <p className="font-body text-[16px] lg:text-[18px] font-light leading-[1.8] text-zinc-700">
@@ -66,7 +66,7 @@ export default function PrivacyPolicy() {
                     </div>
 
                     <div className="space-y-6">
-                        <h2 className="font-heading text-[28px] lg:text-[32px] font-bold text-zinc-900 italic">
+                        <h2 className="font-heading text-[28px] lg:text-[32px] font-bold text-zinc-900">
                             2. Data Collection
                         </h2>
                         <p className="font-body text-[16px] lg:text-[18px] font-light leading-[1.8] text-zinc-700">
@@ -87,7 +87,7 @@ export default function PrivacyPolicy() {
                     </div>
 
                     <div className="space-y-6">
-                        <h2 className="font-heading text-[28px] lg:text-[32px] font-bold text-zinc-900 italic">
+                        <h2 className="font-heading text-[28px] lg:text-[32px] font-bold text-zinc-900">
                             3. Age Verification & Responsibility
                         </h2>
                         <p className="font-body text-[16px] lg:text-[18px] font-light leading-[1.8] text-zinc-700">
@@ -96,7 +96,7 @@ export default function PrivacyPolicy() {
                     </div>
 
                     <div className="space-y-6">
-                        <h2 className="font-heading text-[28px] lg:text-[32px] font-bold text-zinc-900 italic">
+                        <h2 className="font-heading text-[28px] lg:text-[32px] font-bold text-zinc-900">
                             4. Use of Information
                         </h2>
                         <p className="font-body text-[16px] lg:text-[18px] font-light leading-[1.8] text-zinc-700">
@@ -105,7 +105,7 @@ export default function PrivacyPolicy() {
                     </div>
 
                     <div className="space-y-6">
-                        <h2 className="font-heading text-[28px] lg:text-[32px] font-bold text-zinc-900 italic">
+                        <h2 className="font-heading text-[28px] lg:text-[32px] font-bold text-zinc-900">
                             5. Cookies
                         </h2>
                         <p className="font-body text-[16px] lg:text-[18px] font-light leading-[1.8] text-zinc-700">
@@ -113,8 +113,8 @@ export default function PrivacyPolicy() {
                         </p>
                     </div>
 
-                    <div className="space-p-6">
-                        <h2 className="font-heading text-[28px] lg:text-[32px] font-bold text-zinc-900 italic">
+                    <div className="space-y-6">
+                        <h2 className="font-heading text-[28px] lg:text-[32px] font-bold text-zinc-900">
                             6. Contact Us
                         </h2>
                         <p className="font-body text-[16px] lg:text-[18px] font-light leading-[1.8] text-zinc-700">

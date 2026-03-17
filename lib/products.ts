@@ -150,7 +150,7 @@ export const PRODUCTS: Product[] = [
     forPartnersCta: { label: "Enquire About Partnership", href: CONTACT_HREF },
     finalCtaHeadline: "Experience the purity of Cousins Distillery Vodka",
     finalCtaLabel: "Shop Vodka",
-    finalCtaHref: "#",
+    finalCtaHref: "/contact",
   },
   {
     slug: "tequila",
@@ -258,7 +258,7 @@ export const PRODUCTS: Product[] = [
     forPartnersCta: { label: "Enquire About Partnership", href: CONTACT_HREF },
     finalCtaHeadline: "Experience the refined character of Cousins Distillery Tequila",
     finalCtaLabel: "Shop Tequila",
-    finalCtaHref: "#",
+    finalCtaHref: "/contact",
   },
   {
     slug: "whiskey",
@@ -328,7 +328,7 @@ export const PRODUCTS: Product[] = [
     forPartnersCta: { label: "Enquire About Partnership", href: CONTACT_HREF },
     finalCtaHeadline: "Discover the depth and warmth of Cousins Distillery Whiskey",
     finalCtaLabel: "Shop Whiskey",
-    finalCtaHref: "#",
+    finalCtaHref: "/contact",
   },
   {
     slug: "blue-agave-spirit",
@@ -398,7 +398,7 @@ export const PRODUCTS: Product[] = [
     forPartnersCta: { label: "Enquire About Partnership", href: CONTACT_HREF },
     finalCtaHeadline: "Discover the refined character of Cousins Distillery Blue Agave Spirit",
     finalCtaLabel: "Shop Blue Agave Spirit",
-    finalCtaHref: "#",
+    finalCtaHref: "/contact",
   }
 ];
 

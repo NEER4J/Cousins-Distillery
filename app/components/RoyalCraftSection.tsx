@@ -46,7 +46,7 @@ export function RoyalCraftSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-[#0F0A08] px-4 py-16 lg:py-24 overflow-hidden"
+      className="relative bg-[#0F0A08] px-6 lg:px-12 py-20 lg:py-24 overflow-hidden"
       id="process"
     >
       {/* Massive Background Accent */}
@@ -67,7 +67,7 @@ export function RoyalCraftSection() {
           
           <h2 className="font-heading text-[clamp(2rem,6vw,4rem)] font-bold text-white leading-[1.05] mb-10 reveal reveal-delay-1">
             Thirteen stages. <br />
-            <span className="italic text-[#D1BB8A]">One obsession.</span>
+            <span className="text-[#D1BB8A]">One obsession.</span>
           </h2>
 
           <div className="reveal reveal-delay-2 max-w-xl mb-10">

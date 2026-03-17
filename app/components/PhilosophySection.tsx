@@ -32,7 +32,7 @@ export function PhilosophySection() {
     <section
       id="company"
       ref={sectionRef}
-      className="relative min-h-[75vh] lg:min-h-[85vh] flex items-center justify-center overflow-hidden bg-black py-20"
+      className="relative min-h-[75vh] lg:min-h-[85vh] flex items-center justify-center overflow-hidden bg-black px-6 lg:px-12 py-20 lg:py-24"
     >
       {/* Full-bleed background image - slightly darker */}
       <img
@@ -42,7 +42,7 @@ export function PhilosophySection() {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/70" />
 
-      <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
+      <div className="relative z-10 mx-auto max-w-5xl text-center">
         <div className="flex flex-col items-center">
           <div className="flex items-center gap-4 mb-6 reveal">
             <span className="h-[1px] w-12 bg-[#D1BB8A]" />
@@ -52,13 +52,13 @@ export function PhilosophySection() {
             <span className="h-[1px] w-12 bg-[#D1BB8A]" />
           </div>
 
-          <blockquote className="font-heading text-[clamp(2rem,5vw,4rem)] font-bold text-white leading-tight italic mb-10 reveal reveal-delay-1">
+          <blockquote className="font-heading text-[clamp(2rem,5vw,4rem)] font-bold text-white leading-tight mb-10 reveal reveal-delay-1">
             "Refinement is not <br /> extravagance — <br /> 
             <span className="text-[#D1BB8A]">It is discipline."</span>
           </blockquote>
 
           <div className="max-w-xl mx-auto space-y-6 reveal reveal-delay-2">
-            <p className="font-body text-[16px] lg:text-[19px] font-normal leading-relaxed text-white/70">
+            <p className="font-body text-[15px] lg:text-[18px] font-normal leading-[1.8] text-white/70">
               For those who recognize that true distinction is found in the spirit of unity and uncompromising craft.
             </p>
             

@@ -36,7 +36,7 @@ export function CraftSliderSection() {
             </p>
           </div>
           <h2 className="font-heading text-[clamp(2.5rem,6vw,4rem)] font-bold text-white leading-none">
-            The <span className="italic text-[#D1BB8A]">Collection.</span>
+            The <span className="text-[#D1BB8A]">Collection.</span>
           </h2>
         </div>
         
@@ -88,12 +88,12 @@ export function CraftSliderSection() {
                    <p className="font-body text-[10px] font-bold tracking-[0.3em] uppercase text-[#D1BB8A] mb-2">
                     {slide.sub}
                   </p>
-                  <h3 className="font-heading text-[24px] lg:text-[32px] font-bold text-white italic">
+                  <h3 className="font-heading text-[24px] lg:text-[32px] font-bold text-white">
                     {slide.label}
                   </h3>
                 </div>
 
-                <span className="absolute top-6 right-6 font-heading text-[20px] font-bold italic text-white/20">
+                <span className="absolute top-6 right-6 font-heading text-[20px] font-bold text-white/20">
                   {String(idx + 1).padStart(2, '0')}
                 </span>
               </div>

@@ -47,6 +47,43 @@ body {
   font-family: var(--font-poppins), "Poppins", sans-serif !important;
 }
 
+/* Shared typography: headings = Cormorant bold, subtitles/body = Poppins */
+.heading-1 {
+  font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+.heading-2 {
+  font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.1;
+}
+.heading-3 {
+  font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.subtitle {
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+}
+.body-text {
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+}
+@media (min-width: 1024px) {
+  .body-text {
+    font-size: 18px;
+  }
+}
+
 /* ── Keyframe Animations ─────────────────────────────────────────────────── */
 
 @keyframes fadeInUp {
