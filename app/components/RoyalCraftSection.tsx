@@ -2,22 +2,6 @@
 
 import { useEffect, useRef } from "react";
 
-const STEPS = [
-  "Milling & Mashing",
-  "Natural Ferment",
-  "First Distillation",
-  "Low Wine Sep.",
-  "Copper Still Pass",
-  "Heads Cut",
-  "Hearts Selection",
-  "Tails Cut",
-  "Rectification",
-  "Charcoal Filter",
-  "Oak Resting",
-  "Barrel Selection",
-  "Final Bottling"
-];
-
 function useScrollReveal(ref: React.RefObject<HTMLElement | null>) {
   useEffect(() => {
     const container = ref.current;
@@ -65,7 +49,7 @@ export function RoyalCraftSection() {
             </p>
           </div>
           
-          <h2 className="font-heading text-[clamp(2rem,6vw,4rem)] font-bold text-white leading-[1.05] mb-10 reveal reveal-delay-1">
+          <h2 className="font-heading text-[clamp(1.75rem,5.5vw,3.5rem)] font-semibold tracking-[1px] text-white leading-[1.5] mb-10 reveal reveal-delay-1">
             Thirteen stages. <br />
             <span className="text-[#D1BB8A]">One obsession.</span>
           </h2>
@@ -88,25 +72,6 @@ export function RoyalCraftSection() {
               alt="Cousins spirits: Vodka, Blue Agave, Tequila, and Whiskey — thirteen stages of refinement"
               className="w-full h-full object-cover object-center transition-transform duration-[2s] hover:scale-[1.02]"
             />
-          </div>
-        </div>
-
-        {/* 13 Stages List exactly like HTML */}
-        <div className="col-span-1 lg:col-span-12 relative mb-16 mt-12 w-full">
-          {/* Connecting Line (simulating .stk::before) */}
-          <div className="absolute top-[21px] left-[22px] right-[22px] h-[1px] bg-gradient-to-r from-[#D1BB8A]/80 to-[#D1BB8A]/10 z-0 hidden md:block" />
-          
-          <div className="grid grid-cols-4 md:grid-cols-7 xl:grid-cols-13 gap-x-2 gap-y-12 relative z-10 w-full px-2 sm:px-0">
-            {STEPS.map((step, i) => (
-               <div key={i} className="group flex flex-col items-center gap-[14px] cursor-default relative">
-                 <div className="w-[44px] h-[44px] rounded-full border border-[#D1BB8A]/30 bg-[#0F0A08] shrink-0 flex items-center justify-center font-heading text-[15px] font-normal text-[#D1BB8A] leading-none transition-all duration-300 group-hover:bg-[#D1BB8A] group-hover:text-[#1A130F] group-hover:border-[#D1BB8A] group-hover:scale-[1.12] group-hover:shadow-[0_0_24px_rgba(209,187,138,0.35)] relative z-10">
-                    {i + 1}
-                 </div>
-                 <span className="font-body text-[8px] sm:text-[9.5px] font-medium tracking-[0.1em] uppercase text-white/50 text-center leading-[1.4] transition-colors duration-300 group-hover:text-[#D1BB8A] px-1">
-                   {step}
-                 </span>
-               </div>
-            ))}
           </div>
         </div>
 

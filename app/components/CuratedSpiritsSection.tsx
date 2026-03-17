@@ -51,7 +51,7 @@ export function CuratedSpiritsSection() {
                 Our Spirits
               </p>
             </div>
-            <h2 className="font-heading text-[clamp(2rem,5vw,3.5rem)] font-bold text-[#0F0A08] leading-tight mb-3">
+            <h2 className="font-heading text-[clamp(1.75rem,4.5vw,3rem)] font-semibold tracking-[1px] text-[#0F0A08] leading-[1.5] mb-3">
               Curated <span className="text-[#D1BB8A]">Collections.</span>
             </h2>
             <p className="font-body text-[15px] lg:text-[16px] text-[#0F0A08]/70 max-w-md">

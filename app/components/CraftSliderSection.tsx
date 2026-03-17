@@ -35,7 +35,7 @@ export function CraftSliderSection() {
               Gallery of the House
             </p>
           </div>
-          <h2 className="font-heading text-[clamp(2.5rem,6vw,4rem)] font-bold text-white leading-none">
+          <h2 className="font-heading text-[clamp(2.2rem,5.5vw,3.5rem)] font-semibold tracking-[1px] text-white leading-[1.5]">
             The <span className="text-[#D1BB8A]">Collection.</span>
           </h2>
         </div>

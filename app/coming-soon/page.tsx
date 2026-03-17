@@ -63,7 +63,7 @@ export default function ComingSoonPage() {
                         </p>
                     </div>
 
-                    <h1 className="font-heading text-[clamp(3.5rem,8vw,6.5rem)] font-bold text-white leading-[0.9] tracking-tight mb-6 mt-4">
+                    <h1 className="font-heading text-[clamp(3.5rem,8vw,6.5rem)] font-bold text-white leading-[1.2] tracking-tight mb-6 mt-4">
                         Cultivating <br />
                         <span className="text-white/40">Something Special.</span>
                     </h1>

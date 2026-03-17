@@ -139,24 +139,24 @@ export function Header() {
                         <Link
                           key={product.slug}
                           href={`/${product.slug}`}
-                          className="group relative flex flex-col justify-end p-6 lg:p-8 border border-transparent hover:border-zinc-200 hover:bg-white bg-transparent transition-all overflow-hidden h-full"
+                          className="group relative flex flex-col p-6 lg:p-8 border border-zinc-200 bg-white overflow-hidden h-full min-h-[320px] transition-all duration-300 ease-out hover:border-zinc-300 hover:shadow-md"
                           onClick={() => setProductsOpen(false)}
                         >
-                           {/* Product Image preview - Large */}
-                          <div className="absolute inset-x-0 top-0 bottom-[130px] opacity-100 transition-all duration-500 transform group-hover:-translate-y-2 flex items-center justify-center p-6">
-                              <img src={product.image || "/bottle in field.png"} alt="" className="max-w-full max-h-full object-contain drop-shadow-2xl" />
+                           {/* Product Image - fixed height area, no overlap */}
+                          <div className="flex-1 min-h-[160px] flex items-center justify-center p-4 transition-transform duration-300 ease-out group-hover:-translate-y-1">
+                              <img src={product.image || "/bottle in field.png"} alt="" className="max-w-full max-h-[140px] object-contain drop-shadow-2xl" />
                           </div>
 
-                          {/* Bottom text block - flex column, no overlap */}
-                          <div className="relative z-10 flex flex-col gap-1">
-                            <span className="font-heading text-[22px] font-bold text-zinc-900 block group-hover:text-[#9f860e] transition-colors">
+                          {/* Text block - always below image */}
+                          <div className="flex flex-col gap-1 mt-4 flex-shrink-0">
+                            <span className="font-heading text-[22px] font-bold text-zinc-900 block transition-colors duration-300 group-hover:text-[#9f860e]">
                               {product.name}
                             </span>
                             <span className="font-body text-[12px] text-zinc-500 leading-relaxed font-medium line-clamp-2">
                               {product.metaDescription}
                             </span>
-                            <span className="font-body text-[11px] font-bold uppercase tracking-widest text-[#9f860e] mt-2 flex items-center gap-2 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                              Explore <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+                            <span className="font-body text-[11px] font-bold uppercase tracking-widest text-[#9f860e] mt-2 flex items-center gap-2 opacity-70 group-hover:opacity-100 transition-all duration-300">
+                              Explore <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
                             </span>
                           </div>
                         </Link>

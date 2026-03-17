@@ -52,7 +52,7 @@ export function PhilosophySection() {
             <span className="h-[1px] w-12 bg-[#D1BB8A]" />
           </div>
 
-          <blockquote className="font-heading text-[clamp(2rem,5vw,4rem)] font-bold text-white leading-tight mb-10 reveal reveal-delay-1">
+          <blockquote className="font-heading text-[clamp(1.75rem,4.5vw,3.5rem)] font-semibold tracking-[1px] text-white leading-[1.5] mb-10 reveal reveal-delay-1">
             "Refinement is not <br /> extravagance — <br /> 
             <span className="text-[#D1BB8A]">It is discipline."</span>
           </blockquote>

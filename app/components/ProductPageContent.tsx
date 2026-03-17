@@ -71,7 +71,7 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
 
 
 
-            <h1 className="font-heading font-bold text-white leading-[0.9] mb-4 reveal reveal-delay-1" style={{ fontSize: "clamp(3.5rem, 8vw, 5.5rem)" }}>
+            <h1 className="font-heading font-bold text-white leading-[1.2] mb-4 reveal reveal-delay-1" style={{ fontSize: "clamp(3.5rem, 8vw, 5.5rem)" }}>
               {product.headline}
             </h1>
 
@@ -128,7 +128,7 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
                     {section.label}
                   </p>
                 </div>
-                <h2 className="font-heading text-[clamp(2.2rem,4vw,3.5rem)] text-white mb-8 leading-[1.1]">
+                <h2 className="font-heading text-[clamp(2rem,3.5vw,3rem)] font-semibold tracking-[1px] text-white mb-8 leading-[1.5]">
                   {renderTitle(section.title)}
                 </h2>
                 <div className="space-y-6">
@@ -154,7 +154,7 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
                 Three Expressions
               </p>
             </div>
-            <h2 className="font-heading text-[clamp(2.5rem,5vw,3.5rem)] text-white mb-16 leading-[1.1] reveal">
+            <h2 className="font-heading text-[clamp(2.2rem,4.5vw,3rem)] font-semibold tracking-[1px] text-white mb-16 leading-[1.5] reveal">
               One agave.<br /><span className="block mt-2 text-[#AA921E]">Three remarkable chapters.</span>
             </h2>
 
@@ -203,7 +203,7 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
                 {product.tastingNotes.label}
               </p>
             </div>
-            <h2 className="font-heading text-[clamp(2.5rem,5vw,3.5rem)] text-white mb-16 leading-[1.1] reveal">
+            <h2 className="font-heading text-[clamp(2.2rem,4.5vw,3rem)] font-semibold tracking-[1px] text-white mb-16 leading-[1.5] reveal">
               {renderTitle(product.tastingNotes.title)}
             </h2>
 

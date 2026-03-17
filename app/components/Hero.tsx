@@ -72,7 +72,7 @@ export function Hero() {
 
           {/* Massive H1 */}
           <h1
-            className="font-heading font-bold text-white leading-[0.9] reveal reveal-delay-1"
+            className="font-heading font-bold text-white leading-[1.2] reveal reveal-delay-1"
             style={{ fontSize: "clamp(3.5rem, 8vw, 7rem)" }}
           >
             COUSIN<br />

@@ -76,7 +76,7 @@ export function Footer() {
                         <span className="h-[2px] w-16 bg-[#D1BB8A]" aria-hidden />
                     </div>
 
-                    <h2 className="font-heading text-[clamp(2.5rem,6vw,4.5rem)] font-bold tracking-tight text-zinc-900 mb-8 leading-[1.1]">
+                    <h2 className="font-heading text-[clamp(2.2rem,5.5vw,4rem)] font-semibold tracking-[1px] text-zinc-900 mb-8 leading-[1.5]">
                         Raise A Glass To Heritage.<br />
                         <span className="text-[#D1BB8A]">Honor Craftsmanship.</span>
                     </h2>

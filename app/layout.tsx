@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Cormorant_Garamond } from "next/font/google";
+import { Poppins, Noto_Serif } from "next/font/google";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -8,10 +8,10 @@ const poppins = Poppins({
   weight: ["300", "400", "600"],
 });
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
+const notoSerif = Noto_Serif({
+  variable: "--font-noto-serif",
   subsets: ["latin"],
-  weight: ["300", "600", "700"],
+  weight: ["400", "600", "700"],
   style: ["normal", "italic"],
 });
 
@@ -89,7 +89,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${cormorant.variable} antialiased`}>
+      <body className={`${poppins.variable} ${notoSerif.variable} antialiased`}>
         {children}
       </body>
     </html>

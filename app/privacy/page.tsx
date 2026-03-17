@@ -46,7 +46,7 @@ export default function PrivacyPolicy() {
                         </p>
                         <span className="h-[1px] w-8 bg-[#D1BB8A]" />
                     </div>
-                    <h1 className="font-heading text-[clamp(2.5rem,7vw,5rem)] font-bold text-white tracking-tight leading-[1.1]">
+                    <h1 className="font-heading text-[clamp(2.5rem,7vw,5rem)] font-bold text-white tracking-tight leading-[1.2]">
                         Privacy <span className="text-[#D1BB8A]">Policy.</span>
                     </h1>
                 </div>
@@ -57,7 +57,7 @@ export default function PrivacyPolicy() {
                 <div className="space-y-16 reveal reveal-delay-2">
                     
                     <div className="space-y-6">
-                        <h2 className="font-heading text-[28px] lg:text-[32px] font-bold text-zinc-900">
+                        <h2 className="font-heading text-[26px] lg:text-[30px] font-semibold tracking-[1px] text-zinc-900">
                             1. Introduction
                         </h2>
                         <p className="font-body text-[16px] lg:text-[18px] font-light leading-[1.8] text-zinc-700">
@@ -66,7 +66,7 @@ export default function PrivacyPolicy() {
                     </div>
 
                     <div className="space-y-6">
-                        <h2 className="font-heading text-[28px] lg:text-[32px] font-bold text-zinc-900">
+                        <h2 className="font-heading text-[26px] lg:text-[30px] font-semibold tracking-[1px] text-zinc-900">
                             2. Data Collection
                         </h2>
                         <p className="font-body text-[16px] lg:text-[18px] font-light leading-[1.8] text-zinc-700">
@@ -87,7 +87,7 @@ export default function PrivacyPolicy() {
                     </div>
 
                     <div className="space-y-6">
-                        <h2 className="font-heading text-[28px] lg:text-[32px] font-bold text-zinc-900">
+                        <h2 className="font-heading text-[26px] lg:text-[30px] font-semibold tracking-[1px] text-zinc-900">
                             3. Age Verification & Responsibility
                         </h2>
                         <p className="font-body text-[16px] lg:text-[18px] font-light leading-[1.8] text-zinc-700">
@@ -96,7 +96,7 @@ export default function PrivacyPolicy() {
                     </div>
 
                     <div className="space-y-6">
-                        <h2 className="font-heading text-[28px] lg:text-[32px] font-bold text-zinc-900">
+                        <h2 className="font-heading text-[26px] lg:text-[30px] font-semibold tracking-[1px] text-zinc-900">
                             4. Use of Information
                         </h2>
                         <p className="font-body text-[16px] lg:text-[18px] font-light leading-[1.8] text-zinc-700">
@@ -105,7 +105,7 @@ export default function PrivacyPolicy() {
                     </div>
 
                     <div className="space-y-6">
-                        <h2 className="font-heading text-[28px] lg:text-[32px] font-bold text-zinc-900">
+                        <h2 className="font-heading text-[26px] lg:text-[30px] font-semibold tracking-[1px] text-zinc-900">
                             5. Cookies
                         </h2>
                         <p className="font-body text-[16px] lg:text-[18px] font-light leading-[1.8] text-zinc-700">
@@ -114,7 +114,7 @@ export default function PrivacyPolicy() {
                     </div>
 
                     <div className="space-y-6">
-                        <h2 className="font-heading text-[28px] lg:text-[32px] font-bold text-zinc-900">
+                        <h2 className="font-heading text-[26px] lg:text-[30px] font-semibold tracking-[1px] text-zinc-900">
                             6. Contact Us
                         </h2>
                         <p className="font-body text-[16px] lg:text-[18px] font-light leading-[1.8] text-zinc-700">

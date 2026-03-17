@@ -67,7 +67,7 @@ export default function ContactPage() {
                         <span className="h-[2px] w-16 bg-[#D1BB8A]" aria-hidden />
                     </div>
                     
-                    <h1 className="font-heading text-[clamp(4rem,10vw,8rem)] font-bold tracking-tight leading-[0.9] text-white mb-8">
+                    <h1 className="font-heading text-[clamp(4rem,10vw,8rem)] font-bold tracking-tight leading-[1.2] text-white mb-8">
                         Get In <span className="text-[#D1BB8A] block">Touch.</span>
                     </h1>
                     
@@ -90,7 +90,7 @@ export default function ContactPage() {
                     
                     {/* Left Column Text/Graphics */}
                     <div className="lg:col-span-5 flex flex-col justify-start">
-                        <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold text-zinc-900 leading-tight mb-8">
+                        <h2 className="font-heading text-[clamp(2.2rem,4.5vw,3.5rem)] font-semibold tracking-[1px] text-zinc-900 leading-[1.5] mb-8">
                             We value every <br/> conversation.
                         </h2>
                         <p className="font-body text-[15px] lg:text-[18px] font-normal leading-[1.8] text-zinc-600 mb-12 max-w-md">
@@ -122,7 +122,7 @@ export default function ContactPage() {
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                                         </svg>
                                     </div>
-                                    <h2 className="font-heading text-[40px] font-bold text-zinc-900">
+                                    <h2 className="font-heading text-[36px] font-semibold tracking-[1px] text-zinc-900">
                                         Message Sent.
                                     </h2>
                                     <p className="font-body text-[16px] text-zinc-600 max-w-[400px] leading-[1.8] font-light">
@@ -138,7 +138,7 @@ export default function ContactPage() {
                             ) : (
                                 <>
                                     <div className="mb-10">
-                                        <h2 className="font-heading text-[32px] font-bold text-[#0F0A08] mb-2">
+                                        <h2 className="font-heading text-[28px] font-semibold tracking-[1px] text-[#0F0A08] mb-2">
                                             Send a message
                                         </h2>
                                         <p className="font-body text-[14px] text-zinc-500 font-light">

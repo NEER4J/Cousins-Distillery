@@ -57,7 +57,7 @@ export function ExperienceSection() {
               The Experience
             </p>
           </div>
-          <h2 className="font-heading text-[clamp(2rem,6vw,4rem)] font-bold text-white leading-tight mb-6">
+          <h2 className="font-heading text-[clamp(1.75rem,5.5vw,3.5rem)] font-semibold tracking-[1px] text-white leading-[1.5] mb-6">
             Spirit of <span className="text-[#D1BB8A]">Distinction.</span>
           </h2>
           <p className="font-body text-[15px] lg:text-[18px] font-normal text-white/50 leading-[1.8] max-w-lg">

@@ -48,7 +48,7 @@ export function OriginSection() {
                 House of Spirits
               </p>
             </div>
-            <h2 className="font-heading text-[clamp(2.5rem,5vw,3.5rem)] font-bold leading-[1.15] text-black mb-10">
+            <h2 className="font-heading text-[clamp(2.2rem,4.5vw,3rem)] font-semibold tracking-[1px] leading-[1.5] text-black mb-10">
               Cousins Distillery was born from a shared belief: spirits should be as refined as the moments they accompany.
             </h2>
             

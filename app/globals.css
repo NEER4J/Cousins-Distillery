@@ -10,7 +10,7 @@ html {
   --color-bg: #F9F8F3;
   --color-gold: #D1BB8A;
   --color-dark: #2C2E15;
-  --font-heading: var(--font-cormorant), serif;
+  --font-heading: var(--font-noto-serif), serif;
   --font-body: var(--font-poppins), sans-serif;
 }
 
@@ -20,9 +20,9 @@ html {
   --color-gold: var(--color-gold);
   --color-dark: var(--color-dark);
   --color-bg: var(--color-bg);
-  /* Design tokens: Cormorant Garamond for headings, Poppins for body */
+  /* Design tokens: Noto Serif for headings, Poppins for body */
   --font-sans: var(--font-poppins), sans-serif;
-  --font-heading: var(--font-cormorant), serif;
+  --font-heading: var(--font-noto-serif), serif;
   --font-body: var(--font-poppins), sans-serif;
 }
 
@@ -41,28 +41,29 @@ body {
 
 /* DESIGN-TOKENS: typography – use these classes for correct font families */
 .font-heading {
-  font-family: var(--font-cormorant), "Cormorant Garamond", serif !important;
+  font-family: var(--font-noto-serif), "Noto Serif", serif !important;
 }
 .font-body {
   font-family: var(--font-poppins), "Poppins", sans-serif !important;
 }
 
-/* Shared typography: headings = Cormorant bold, subtitles/body = Poppins */
+/* Shared typography: headings = Noto Serif, subtitles/body = Poppins */
 .heading-1 {
-  font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+  font-family: var(--font-noto-serif), "Noto Serif", serif;
   font-weight: 700;
   font-style: normal;
-  line-height: 0.95;
+  line-height: 1.2;
   letter-spacing: -0.02em;
 }
 .heading-2 {
-  font-family: var(--font-cormorant), "Cormorant Garamond", serif;
-  font-weight: 700;
+  font-family: var(--font-noto-serif), "Noto Serif", serif;
+  font-weight: 600;
   font-style: normal;
-  line-height: 1.1;
+  line-height: 1.5;
+  letter-spacing: 1px;
 }
 .heading-3 {
-  font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+  font-family: var(--font-noto-serif), "Noto Serif", serif;
   font-weight: 700;
   font-style: normal;
 }

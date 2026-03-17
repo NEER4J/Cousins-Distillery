@@ -155,11 +155,11 @@ export const PRODUCTS: Product[] = [
   {
     slug: "tequila",
     name: "COUSIN TEQUILA",
-    metaTitle: "Artisanal Tequila | Reposado & Extra Añejo | Cousins Distillery",
-    metaDescription: "Refined Cousins Distillery Tequila. Experience our Reposado and Extra Añejo expressions.",
-    metaKeywords: ["premium tequila", "reposado tequila", "extra anejo tequila", "artisanal tequila", "small-batch tequila", "100% blue agave"],
+    metaTitle: "Artisanal Tequila | Reposado & Primo Extra Añejo | Cousins Distillery",
+    metaDescription: "Refined Cousins Distillery Tequila. Reposado aged 6 months in oak; Primo Extra Añejo aged 4 years minimum. We age to perfection in oak barrels.",
+    metaKeywords: ["premium tequila", "reposado tequila", "extra anejo tequila", "primo tequila", "artisanal tequila", "small-batch tequila", "100% blue agave", "oak aged tequila"],
     headline: "COUSIN TEQUILA",
-    subheading: "Our Blue Agave is sourced from the volcanic, mineral-rich soils of Jalisco, Mexico — the only region in the world legally recognised for tequila production. Made exclusively from 100% Agave tequilana Weber Azul, the plants mature for 6–8 years before harvest, accumulating complex sugars that no industrial shortcut can replicate.\n\nAvailable in three distinct expressions — Blanco, Reposado, and Extra Añejo — each one a different chapter of the same extraordinary story. From the bright purity of the Blanco to the rich, contemplative depth of the Extra Añejo.",
+    subheading: "Our Blue Agave is sourced from the volcanic, mineral-rich soils of Jalisco, Mexico — the only region in the world legally recognised for tequila production. Made exclusively from 100% Agave tequilana Weber Azul, the plants mature for 6–8 years before harvest, accumulating complex sugars that no industrial shortcut can replicate.\n\nWe age each expression to perfection in oak barrels. Available in three distinct expressions — Blanco, Reposado, and Extra Añejo — each one a different chapter of the same extraordinary story. From the bright purity of the Blanco to the rich, contemplative depth of our Primo Extra Añejo.",
     primaryCta: { label: "Shop Tequila", href: CONTACT_HREF },
     secondaryCta: { label: "Explore Our Expressions", href: CONTACT_HREF },
     image: "/taquila.png",
@@ -205,11 +205,11 @@ export const PRODUCTS: Product[] = [
       },
       {
         number: "Expression No. 2",
-        subtitle: "Oak Aged · 3 to 6 Months",
+        subtitle: "Oak Aged · 6 Months",
         name: "Reposado",
         type: "Rested Blue Agave Tequila",
         body: [
-          "Rested in carefully selected oak barrels for 3–6 months, the Reposado develops a smooth, elegant balance between the vibrant freshness of blue agave and the gentle influence of wood. Hints of vanilla, caramel, and warm baking spice begin to emerge — a natural evolution that enriches without overwhelming.",
+          "Aged for 6 months in carefully selected oak barrels, our Reposado is brought to perfection through patient maturation. The wood imparts a smooth, elegant balance between the vibrant freshness of blue agave and the gentle influence of oak — hints of vanilla, caramel, and warm baking spice emerge naturally, enriching without overwhelming.",
           "The Reposado is the versatile heart of the Cousin Tequila range — equally at home in an elevated cocktail or sipped slowly on its own over a single large ice cube."
         ],
         idealForHeader: "Ideal For",
@@ -217,15 +217,15 @@ export const PRODUCTS: Product[] = [
       },
       {
         number: "Expression No. 3",
-        subtitle: "Extended Aging · 9 to 12 Months",
-        name: "Extra Añejo",
+        subtitle: "Primo · 4 Years Minimum in Oak",
+        name: "Primo Extra Añejo",
         type: "Ultra-Aged Blue Agave Tequila",
         body: [
-          "Extended aging of 9–12 months in premium oak barrels transforms the spirit into something of rare depth and distinction. Rich notes of dark caramel, toasted oak, dried fruit, and complex spice emerge — while the core blue agave character is never lost, only deepened. This is a tequila that demands to be sipped slowly, in the manner of fine cognac or aged single malt.",
-          "The Extra Añejo is our most contemplative expression — a tequila for those who understand that the finest things in life cannot be rushed."
+          "Our Primo Extra Añejo is aged a minimum of 4 years in premium oak barrels — we age to perfection. This extended maturation transforms the spirit into something of rare depth and distinction. Rich notes of dark caramel, toasted oak, dried fruit, and complex spice emerge, while the core blue agave character is never lost, only deepened. A tequila that demands to be sipped slowly, in the manner of fine cognac or aged single malt.",
+          "Primo is our highest-end expression — very high end, a higher price point, crafted for the real connoisseur who understands that the finest things in life cannot be rushed."
         ],
         idealForHeader: "Ideal For",
-        idealForBody: "Premium spirit collectors, connoisseurs, and luxury consumers who appreciate sipping tequilas similar to fine whiskey or cognac. Ideal for high-end restaurants, specialty retailers, and premium gift markets seeking an elevated tequila experience."
+        idealForBody: "Real connoisseurs and collectors who seek the highest-end sipping tequila. Primo appeals to luxury consumers, fine-dining establishments, and specialty retailers who value exceptional quality and are willing to invest in a truly premium, oak-aged experience."
       }
     ],
     tastingNotes: {

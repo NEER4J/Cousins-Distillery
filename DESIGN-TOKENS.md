@@ -17,19 +17,21 @@ Reference for colors, typography, and UI tokens. Use this when building or updat
 
 ## Typography
 
-**Rule:** Headings use Cormorant Garamond bold (no italic). Subtitles above headings use Poppins. Paragraphs use Poppins. Two-tone color on headings is allowed (e.g. `<span className="text-[#D1BB8A]">`).
+**Rule:** Headings use Noto Serif bold (no italic). Subtitles above headings use Poppins. Paragraphs use Poppins. Two-tone color on headings is allowed (e.g. `<span className="text-[#D1BB8A]">`).
 
 ### H1 (main heading)
 
-- **Font:** Cormorant Garamond  
+- **Font:** Noto Serif  
 - **Weight:** 700 (Bold)  
 - **Style:** normal (no italic)  
+- **Line-height:** 1.2  
 - **Two-tone:** Allowed (e.g. second word or phrase in gold)
 
 ```css
-font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+font-family: var(--font-noto-serif), 'Noto Serif', serif;
 font-weight: 700;
 font-style: normal;
+line-height: 1.2;
 ```
 
 **Sizes in app:** Hero `clamp(3.5rem, 8vw, 7rem)`; contact/legal pages `clamp(2.5rem, 7vw, 5rem)` to `clamp(4rem, 10vw, 8rem)`.
@@ -38,24 +40,28 @@ font-style: normal;
 
 ### H2 (section heading)
 
-- **Font:** Cormorant Garamond  
-- **Weight:** 700 (Bold)  
+- **Font:** Noto Serif  
+- **Weight:** 600 (SemiBold)  
 - **Style:** normal (no italic)  
+- **Letter-spacing:** 1px  
+- **Line-height:** 1.5  
 - **Two-tone:** Allowed
 
 ```css
-font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
-font-weight: 700;
+font-family: var(--font-noto-serif), 'Noto Serif', serif;
+font-weight: 600;
 font-style: normal;
+letter-spacing: 1px;
+line-height: 1.5;
 ```
 
-**Sizes in app:** Section titles `clamp(2rem, 5vw, 3.5rem)` to `clamp(2.5rem, 6vw, 4.5rem)`; legal pages `28px` / `lg:text-[32px]`.
+**Sizes in app:** Section titles `clamp(1.75rem, 4.5vw, 3rem)` to `clamp(2.2rem, 5.5vw, 4rem)`; legal pages `26px` / `lg:text-[30px]`.
 
 ---
 
 ### H3
 
-- **Font:** Cormorant Garamond  
+- **Font:** Noto Serif  
 - **Weight:** 700 (Bold)  
 - **Style:** normal (no italic)
 
@@ -123,7 +129,7 @@ Use the same scale everywhere so the layout feels unified.
 
 ## Quick reference (Tailwind / globals.css)
 
-- **Heading font:** `font-heading` (Cormorant Garamond), always `font-bold`, no `italic`.
+- **Heading font:** `font-heading` (Noto Serif), always `font-bold`, no `italic`.
 - **Body / subtitle font:** `font-body` (Poppins).
 - **Subtitle style:** `font-body text-[11px] font-bold uppercase tracking-[0.4em]`.
 - **Body style:** `font-body text-[15px] lg:text-[18px] font-normal leading-[1.8]`.
