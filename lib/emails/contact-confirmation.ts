@@ -7,7 +7,7 @@ function getLogoUrl(): string {
 }
 
 function getCollectionImageUrl(): string {
-    return `${getSiteUrl()}/all-bottles.jpeg`;
+    return `${getSiteUrl()}/all-bottles-mail.jpeg`;
 }
 
 function wrapEmailShell(title: string, contentHtml: string): string {
