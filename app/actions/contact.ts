@@ -8,7 +8,8 @@ import {
     contactInternalNotificationHtml,
 } from '@/lib/emails/contact-confirmation';
 
-const TEAM_EMAIL = 'hello@cousinsdistillery.com';
+const ADMIN_EMAIL = process.env.RESEND_ADMIN_EMAIL ?? 'Contact@cousinsdistilleryltd.com';
+const RESEND_FROM_EMAIL = process.env.RESEND_FROM_EMAIL ?? 'hello@cousinsdistillery.com';
 
 async function sendContactEmails(
     name: string,
@@ -26,7 +27,7 @@ async function sendContactEmails(
 
     // 1. Confirmation email to the user
     const { error: userEmailError } = await resend.emails.send({
-        from: 'Cousins Distillery <hello@cousinsdistillery.com>',
+        from: `Cousins Distillery <${RESEND_FROM_EMAIL}>`,
         to: email,
         subject: "We've received your message — Cousins Distillery",
         html: contactConfirmationHtml(name, email, message),
@@ -39,8 +40,8 @@ async function sendContactEmails(
 
     // 2. Internal notification to the team
     const { error: teamEmailError } = await resend.emails.send({
-        from: 'Cousins Distillery Website <hello@cousinsdistillery.com>',
-        to: TEAM_EMAIL,
+        from: `Cousins Distillery Website <${RESEND_FROM_EMAIL}>`,
+        to: ADMIN_EMAIL,
         subject: `New Contact: ${subject} — from ${name}`,
         html: contactInternalNotificationHtml(name, email, subject, message),
         text: `New contact form submission\n\nName: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage:\n${message}`,

@@ -72,7 +72,7 @@ export function Header() {
         <div className="mx-auto flex h-full max-w-[1400px] items-center justify-between px-6 lg:px-12">
           
           {/* Logo */}
-          <a href="/" className="relative flex shrink-0 items-center">
+          <Link href="/" className="relative flex shrink-0 items-center">
             <img
               src="/logo.svg"
               alt="Cousins Distillery Ltd. – Crafting Quality Spirits"
@@ -82,15 +82,15 @@ export function Header() {
                   : "h-[85px] max-w-[250px] sm:h-[100px] sm:max-w-[280px]"
               }`}
             />
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
           <div className="hidden xl:flex items-center gap-12">
             <nav className="flex items-center gap-10" aria-label="Main">
-              <a href={getHref("/")} className={linkClass}>
+              <Link href={getHref("/")} className={linkClass}>
                 Home
                 <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-[#9f860e] transition-all duration-300 group-hover:w-full" />
-              </a>
+              </Link>
               
               {/* Products Mega Menu */}
               <div
@@ -167,14 +167,14 @@ export function Header() {
               </div>
 
               {NAV_LINKS.map((link) => (
-                <a
+                <Link
                   key={link.label}
                   href={getHref(link.href)}
                   className={linkClass}
                 >
                   {link.label}
                   <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-[#9f860e] transition-all duration-300 group-hover:w-full" />
-                </a>
+                </Link>
               ))}
             </nav>
 
@@ -219,13 +219,13 @@ export function Header() {
           </div>
 
           <nav className="flex flex-col gap-0 px-8 py-10 overflow-y-auto" aria-label="Mobile navigation">
-            <a
+            <Link
               href={getHref("/")}
               onClick={() => setMenuOpen(false)}
               className="font-heading text-[32px] font-bold text-white hover:text-[#D1BB8A] transition-colors py-4 border-b border-white/10"
             >
               Home
-            </a>
+            </Link>
             
             <div className="border-b border-white/10 py-4">
               <button
@@ -262,14 +262,14 @@ export function Header() {
             </div>
 
             {NAV_LINKS.map((link) => (
-              <a
+              <Link
                 key={link.label}
                 href={getHref(link.href)}
                 onClick={() => setMenuOpen(false)}
                 className="font-heading text-[32px] font-bold text-white hover:text-[#D1BB8A] transition-colors py-4 border-b border-white/10 last:border-0"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 

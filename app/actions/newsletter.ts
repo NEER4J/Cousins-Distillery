@@ -5,9 +5,14 @@ import { getSupabaseClient } from '@/lib/supabase';
 import {
     newsletterConfirmationHtml,
     newsletterConfirmationText,
+    newsletterInternalNotificationHtml,
+    newsletterInternalNotificationText,
 } from '@/lib/emails/newsletter-confirmation';
 
-async function sendNewsletterConfirmationEmail(email: string) {
+const ADMIN_EMAIL = process.env.RESEND_ADMIN_EMAIL ?? 'Contact@cousinsdistilleryltd.com';
+const RESEND_FROM_EMAIL = process.env.RESEND_FROM_EMAIL ?? 'hello@cousinsdistillery.com';
+
+async function sendNewsletterEmails(email: string) {
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) {
         console.error('[newsletter] RESEND_API_KEY is not set');
@@ -17,7 +22,7 @@ async function sendNewsletterConfirmationEmail(email: string) {
     const resend = new Resend(apiKey);
 
     const { data, error } = await resend.emails.send({
-        from: 'Cousins Distillery <hello@cousinsdistillery.com>',
+        from: `Cousins Distillery <${RESEND_FROM_EMAIL}>`,
         to: email,
         subject: "You're subscribed to the Cousins Distillery newsletter",
         html: newsletterConfirmationHtml(email),
@@ -28,6 +33,20 @@ async function sendNewsletterConfirmationEmail(email: string) {
         console.error('[newsletter] Resend error:', JSON.stringify(error));
     } else {
         console.log('[newsletter] Email sent, id:', data?.id);
+    }
+
+    // Admin/internal notification (dedicated wording).
+    const { error: adminError } = await resend.emails.send({
+        from: `Cousins Distillery Website <${RESEND_FROM_EMAIL}>`,
+        to: ADMIN_EMAIL,
+        subject: `New newsletter subscription received — ${email}`,
+        html: newsletterInternalNotificationHtml(email),
+        text: newsletterInternalNotificationText(email),
+        replyTo: email,
+    });
+
+    if (adminError) {
+        console.error('[newsletter] Admin email error:', JSON.stringify(adminError));
     }
 }
 
@@ -50,7 +69,7 @@ export async function subscribeNewsletter(
         if (dbError) {
             if (dbError.code === '23505') {
                 // Already subscribed — resend confirmation anyway
-                await sendNewsletterConfirmationEmail(trimmed);
+                await sendNewsletterEmails(trimmed);
                 return {
                     success: true,
                     message: "You're already subscribed. Check your inbox for our latest updates.",
@@ -61,7 +80,7 @@ export async function subscribeNewsletter(
             return { success: false, message: 'Something went wrong. Please try again.' };
         }
 
-        await sendNewsletterConfirmationEmail(trimmed);
+        await sendNewsletterEmails(trimmed);
 
         return {
             success: true,

@@ -105,7 +105,7 @@ export default function ContactPage() {
                             <div>
                                 <h3 className="font-body text-[11px] font-bold uppercase tracking-[0.3em] text-[#D1BB8A] mb-3">Direct Inquiries</h3>
                                 <p className="font-body text-[15px] text-zinc-800 font-medium">
-                                    <a href="mailto:Contact@cousinsdistilleryltd.com" className="hover:text-[#D1BB8A] transition-colors">Contact@cousinsdistilleryltd.com</a>
+                                    <a href="mailto:contact@cousinsdistilleryltd.com" className="hover:text-[#D1BB8A] transition-colors">contact@cousinsdistilleryltd.com</a>
                                     <br />
                                     <a href="tel:+19055125943" className="hover:text-[#D1BB8A] transition-colors">+1 905 512 5943</a>
                                 </p>

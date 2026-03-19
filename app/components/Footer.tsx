@@ -132,7 +132,7 @@ export function Footer() {
                                 <p className="font-body text-[13px] text-zinc-800 font-medium">Cousins Distillery LTD</p>
                                 <p className="font-body text-[13px] text-zinc-600">747 Appleby Line<br />Burlington, ON L7L 2Y6</p>
                                 <p className="font-body text-[13px] text-zinc-600">
-                                    <a href="mailto:Contact@cousinsdistilleryltd.com" className="hover:text-[#D1BB8A] transition-colors">Contact@cousinsdistilleryltd.com</a>
+                                    <a href="mailto:contact@cousinsdistilleryltd.com" className="hover:text-[#D1BB8A] transition-colors">contact@cousinsdistilleryltd.com</a>
                                 </p>
                                 <p className="font-body text-[13px] text-zinc-600">
                                     <a href="tel:+19055125943" className="hover:text-[#D1BB8A] transition-colors">+1 905 512 5943</a>
