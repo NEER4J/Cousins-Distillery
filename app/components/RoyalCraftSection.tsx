@@ -69,7 +69,7 @@ export function RoyalCraftSection() {
           <div className="relative aspect-[4/3] max-h-[70vh] overflow-hidden mx-auto lg:ml-auto">
             <img
               src="/all-bottles.jpeg"
-              alt="Cousins spirits: Vodka, Blue Agave, Tequila, and Whiskey — thirteen stages of refinement"
+              alt="Cousins spirits: Vodka, Blue Agave, and Tequila — thirteen stages of refinement"
               className="w-full h-full object-cover object-center transition-transform duration-[2s] hover:scale-[1.02]"
             />
           </div>

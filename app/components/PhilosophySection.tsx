@@ -59,7 +59,7 @@ export function PhilosophySection() {
 
           <div className="max-w-xl mx-auto space-y-6 reveal reveal-delay-2">
             <p className="font-body text-[15px] lg:text-[18px] font-normal leading-[1.8] text-white/70">
-              For those who recognize that true distinction is found in the spirit of unity and uncompromising craft.
+              For those who recognize that true distinction is found in the spirit of unity and uncompromising craft. Home-grown. Authentically sourced. Masterfully distilled.
             </p>
             
             <Link

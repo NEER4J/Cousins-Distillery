@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contact Us | Cousins Distillery",
     description:
-      "Connect with our team for inquiries about craft vodka, whiskey, private events, and wholesale partnerships.",
+      "Connect with our team for inquiries about craft vodka, tequila, private events, and wholesale partnerships.",
     url: `${siteUrl}/contact`,
     images: [{ url: "/bottle%20in%20field.png", alt: "Cousins Distillery Contact" }],
   },

@@ -125,9 +125,19 @@ export function Footer() {
                                     className="h-[60px] w-auto object-contain object-left opacity-90"
                                 />
                             </Link>
-                            <p className="font-body text-[14px] text-zinc-600 leading-[1.9] font-normal max-w-sm mb-10">
-                                At Cousins Distillery, vodka is not merely distilled — it is cultivated. Crafted through devotion, refined through thirteen stages, and destined for those who recognize true distinction.
+                            <p className="font-body text-[14px] text-zinc-600 leading-[1.9] font-normal max-w-sm mb-6">
+                                At Cousins Distillery, Canadian corn and rye. Mexican tequila. Thirteen stages of unwavering devotion. Distilled from our own farms, crafted by family, destined for those who recognize true distinction.
                             </p>
+                            <div className="mb-10 space-y-2">
+                                <p className="font-body text-[13px] text-zinc-800 font-medium">Cousins Distillery LTD</p>
+                                <p className="font-body text-[13px] text-zinc-600">747 Appleby Line<br />Burlington, ON L7L 2Y6</p>
+                                <p className="font-body text-[13px] text-zinc-600">
+                                    <a href="mailto:Contact@cousinsdistilleryltd.com" className="hover:text-[#D1BB8A] transition-colors">Contact@cousinsdistilleryltd.com</a>
+                                </p>
+                                <p className="font-body text-[13px] text-zinc-600">
+                                    <a href="tel:+19055125943" className="hover:text-[#D1BB8A] transition-colors">+1 905 512 5943</a>
+                                </p>
+                            </div>
                             {/* Social Icons */}
                             <div className="flex gap-4">
                                 <Link
@@ -221,7 +231,7 @@ export function Footer() {
                     {/* Bottom Bar */}
                     <div className="border-t border-zinc-200 pt-8 pb-4 flex flex-col sm:flex-row justify-between items-center gap-6">
                         <p className="font-body text-[12px] text-zinc-400 uppercase tracking-widest font-semibold">
-                            © {new Date().getFullYear()} Cousins Distillery Ltd.
+                            © 2026 Cousins Distillery Ltd. All rights reserved.
                         </p>
                         <div className="flex gap-8">
                             <Link href="/privacy" className="font-body text-[11px] text-zinc-400 uppercase tracking-widest font-semibold hover:text-[#D1BB8A] transition-colors">Privacy Policy</Link>

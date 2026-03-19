@@ -24,12 +24,11 @@ export const metadata: Metadata = {
     template: "%s | Cousins Distillery",
   },
   description:
-    "Cousins Distillery: Cultivating premium small-batch spirits including Vodka, Whiskey, and Tequila. Crafted through 13 stages of refinement from bloodline to bottle.",
+    "Cousins Distillery: Cultivating premium small-batch spirits including Vodka and Tequila. Crafted through 13 stages of refinement from bloodline to bottle.",
   keywords: [
     "Cousins Distillery",
     "Small-batch spirits",
     "Craft Vodka",
-    "Premium Whiskey",
     "Blue Agave Spirit",
     "Artisanal Tequila",
     "Distillery North America",
@@ -44,7 +43,7 @@ export const metadata: Metadata = {
     siteName: "Cousins Distillery",
     title: "Cousins Distillery | Small-Batch Craft Spirits",
     description:
-      "Cultivating premium spirits through 13 stages of refinement. Discover our craft vodka, whiskey, and agave spirits.",
+      "Cultivating premium spirits through 13 stages of refinement. Discover our craft vodka, tequila, and agave spirits.",
     images: [
       {
         url: "/bottle%20in%20field.png",
@@ -58,7 +57,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Cousins Distillery | Small-Batch Craft Spirits",
     description:
-      "Cultivating premium spirits through 13 stages of refinement. Discover our craft vodka, whiskey, and agave spirits.",
+      "Cultivating premium spirits through 13 stages of refinement. Discover our craft vodka, tequila, and agave spirits.",
     images: ["/bottle%20in%20field.png"],
   },
   icons: {
@@ -67,11 +66,11 @@ export const metadata: Metadata = {
     apple: "/logo.svg",
   },
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
     googleBot: {
-      index: true,
-      follow: true,
+      index: false,
+      follow: false,
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,

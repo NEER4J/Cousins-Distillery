@@ -119,7 +119,7 @@ export function Header() {
                   }`}
                   style={{ '--header-height': scrolled ? '80px' : '112px' } as any}
                 >
-                  <div className="mx-auto max-w-[1400px] flex min-h-[450px]">
+                  <div className="mx-auto max-w-[1400px] flex min-h-[520px]">
                     {/* Featured side menu */}
                     <div className="w-1/3 bg-[#0F0A08] p-12 lg:p-16 flex flex-col justify-center text-white relative overflow-hidden">
                         <div className="absolute inset-0 bg-[url('/corntwo.jpg')] opacity-20 mix-blend-overlay object-cover" />
@@ -133,29 +133,29 @@ export function Header() {
                         </div>
                     </div>
 
-                    {/* Products Grid */}
-                    <div className="w-2/3 grid grid-cols-2 lg:grid-cols-4 p-8 lg:p-12 gap-6 bg-[#FEFEF6]">
+                    {/* Products Grid - 3 columns for larger cards */}
+                    <div className="w-2/3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-8 lg:p-10 gap-8 lg:gap-10 bg-[#FEFEF6]">
                       {PRODUCTS.map((product) => (
                         <Link
                           key={product.slug}
                           href={`/${product.slug}`}
-                          className="group relative flex flex-col p-6 lg:p-8 border border-zinc-200 bg-white overflow-hidden h-full min-h-[320px] transition-all duration-300 ease-out hover:border-zinc-300 hover:shadow-md"
+                          className="group relative flex flex-col p-8 lg:p-10 border border-zinc-200 bg-white overflow-hidden h-full min-h-[380px] transition-all duration-300 ease-out hover:border-zinc-300 hover:shadow-md"
                           onClick={() => setProductsOpen(false)}
                         >
-                           {/* Product Image - fixed height area, no overlap */}
-                          <div className="flex-1 min-h-[160px] flex items-center justify-center p-4 transition-transform duration-300 ease-out group-hover:-translate-y-1">
-                              <img src={product.image || "/bottle in field.png"} alt="" className="max-w-full max-h-[140px] object-contain drop-shadow-2xl" />
+                           {/* Product Image - larger area */}
+                          <div className="flex-1 min-h-[220px] flex items-center justify-center p-6 transition-transform duration-300 ease-out group-hover:-translate-y-1">
+                              <img src={product.image || "/bottle in field.png"} alt="" className="max-w-full max-h-[200px] object-contain drop-shadow-2xl" />
                           </div>
 
                           {/* Text block - always below image */}
-                          <div className="flex flex-col gap-1 mt-4 flex-shrink-0">
-                            <span className="font-heading text-[22px] font-bold text-zinc-900 block transition-colors duration-300 group-hover:text-[#9f860e]">
+                          <div className="flex flex-col gap-2 mt-6 flex-shrink-0">
+                            <span className="font-heading text-[24px] lg:text-[26px] font-bold text-zinc-900 block transition-colors duration-300 group-hover:text-[#9f860e]">
                               {product.name}
                             </span>
-                            <span className="font-body text-[12px] text-zinc-500 leading-relaxed font-medium line-clamp-2">
+                            <span className="font-body text-[13px] lg:text-[14px] text-zinc-500 leading-relaxed font-medium line-clamp-2">
                               {product.metaDescription}
                             </span>
-                            <span className="font-body text-[11px] font-bold uppercase tracking-widest text-[#9f860e] mt-2 flex items-center gap-2 opacity-70 group-hover:opacity-100 transition-all duration-300">
+                            <span className="font-body text-[11px] font-bold uppercase tracking-widest text-[#9f860e] mt-3 flex items-center gap-2 opacity-70 group-hover:opacity-100 transition-all duration-300">
                               Explore <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
                             </span>
                           </div>

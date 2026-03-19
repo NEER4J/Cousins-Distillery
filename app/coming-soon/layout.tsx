@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Cousins Distillery | Coming Soon',
-  description: 'Cousins Distillery is cultivating something special. Our premium craft spirits—Vodka, Whiskey, and Tequila—will be available soon.',
+  description: 'Cousins Distillery is cultivating something special. Our premium craft spirits—Vodka, Blue Agave, and Tequila—will be available soon.',
   robots: {
     index: true,
     follow: true,

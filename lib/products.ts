@@ -1,4 +1,4 @@
-export type ProductSlug = "vodka" | "blue-agave-spirit" | "tequila" | "whiskey";
+export type ProductSlug = "vodka" | "blue-agave-spirit" | "tequila";
 
 export interface ProductSection {
   title: string;
@@ -258,76 +258,6 @@ export const PRODUCTS: Product[] = [
     forPartnersCta: { label: "Enquire About Partnership", href: CONTACT_HREF },
     finalCtaHeadline: "Experience the refined character of Cousins Distillery Tequila",
     finalCtaLabel: "Shop Tequila",
-    finalCtaHref: "/contact",
-  },
-  {
-    slug: "whiskey",
-    name: "COUSIN WHISKEY",
-    metaTitle: "Premium Rye Whiskey | Depth, Warmth & Legacy | Cousins Distillery",
-    metaDescription: "Cousins Distillery Whiskey: A legacy of depth and warmth. Meticulously crafted from high-quality rye.",
-    metaKeywords: ["rye whiskey", "premium whiskey", "craft whiskey", "small-batch whiskey", "aged whiskey", "legacy spirits"],
-    headline: "COUSIN WHISKEY",
-    subheading: "Rye whiskey is the boldest spirit we make — and perhaps the one that most rewards patience and attention. Our rye is grown in the cool, elevated fields of our Spanish estate, where significant diurnal temperature shifts force the grain to develop a density of flavour rarely found in commercial crops.\n\nHarvested at peak ripeness, naturally fermented, distilled through thirteen copper stages, and rested in hand-selected Spanish oak barrels. A whiskey that is decidedly its own thing: Spanish in origin, classical in craft, and absolutely unapologetic in character.",
-    primaryCta: { label: "Shop Whiskey", href: CONTACT_HREF },
-    secondaryCta: { label: "Explore Our Range", href: CONTACT_HREF },
-    image: "/wishky.png",
-    sourceImage: "/rye.jpg",
-    eyebrow: "🌾  Single Farm Rye  ·  España",
-    subtitle: "Single Farm Rye Expression",
-    stats: [
-      { label: "Base", value: "Single Farm Rye" },
-      { label: "ABV", value: "46% vol." },
-      { label: "Stages", value: "13" },
-      { label: "Barrel", value: "Spanish Oak" }
-    ],
-    storySections: [
-      {
-        label: "The Ingredient",
-        title: "Rye grown *at altitude*",
-        body: [
-          "Rye is a grain of character — and ours grows in the cool, elevated fields of our Spanish estate where the temperature difference between day and night can exceed 20°C. These diurnal swings force the rye to develop greater aromatic density, deeper spice complexity, and a structural resilience that separates it entirely from commercially grown grain.",
-          "We plant heritage rye varieties that produce lower yields but vastly superior flavour. The grain is stone-milled and mashed on-site within 24 hours of harvest, naturally fermented using wild yeasts that express the unique terroir of our estate."
-        ]
-      },
-      {
-        label: "Oak Resting",
-        title: "Time in wood, *character for life*",
-        body: [
-          "After thirteen stages of distillation, our Cousin Whiskey rests in hand-selected Spanish oak barrels sourced from coopers we have worked with for years. Spain's dramatic climate — scorching summers and cool winters — drives steady, cyclical barrel absorption that deepens the spirit's evolution without forcing it.",
-          "We bottle when the whiskey tells us it is ready — not on a fixed schedule, not to meet a quarterly target. This singular patience is what separates Cousin Whiskey from everything else on the shelf."
-        ]
-      }
-    ],
-    tastingNotes: {
-      label: "Tasting Notes",
-      title: "On the *glass*",
-      notes: [
-        {
-          type: "Nose",
-          title: "Bold & Spiced",
-          tags: ["Dark caramel", "Toasted rye", "Cinnamon bark", "Dried cherry"],
-          body: "An immediately commanding nose — dark caramel and toasted rye bread lead, followed by warm cinnamon bark and clove. Hints of dried cherry and orange peel emerge with time in the glass. Deeply inviting and unlike any whiskey from Spanish hands you have encountered before."
-        },
-        {
-          type: "Palate",
-          title: "Rich & Layered",
-          tags: ["Toffee", "Black pepper", "Oak tannin", "Dried fruit"],
-          body: "A rich, layered palate with bold rye spice at the forefront — black pepper and cinnamon — softened by toffee sweetness and the gentle grip of Spanish oak tannins. The complexity builds with every sip. Never one-dimensional; always revealing something new."
-        },
-        {
-          type: "Finish",
-          title: "Long & Warming",
-          tags: ["Oak smoke", "Dark spice", "Vanilla cream"],
-          body: "A long, warming finish with satisfying oak dryness and lingering dark spice. A whisper of vanilla cream emerges at the very end, softening the close beautifully. The kind of finish that makes you place the glass down slowly and sit quietly with your thoughts."
-        }
-      ]
-    },
-    sections: [],
-    forPartnersTitle: "For luxury hospitality",
-    forPartnersBody: "Cousins Distillery Whiskey is ideal for private lounges, fine-dining bars, and members-only clubs that curate exceptional spirits. We collaborate with partners to provide curation notes, pairing ideas, and cocktail concepts that elevate the whiskey-serving experience.",
-    forPartnersCta: { label: "Enquire About Partnership", href: CONTACT_HREF },
-    finalCtaHeadline: "Discover the depth and warmth of Cousins Distillery Whiskey",
-    finalCtaLabel: "Shop Whiskey",
     finalCtaHref: "/contact",
   },
   {

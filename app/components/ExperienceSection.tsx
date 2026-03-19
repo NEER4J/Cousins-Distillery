@@ -24,9 +24,9 @@ function useScrollReveal(ref: React.RefObject<HTMLElement | null>) {
 }
 
 const ITEMS = [
-  { icon: "/noun-gluten-free.png", label: "Pure Ingredients" },
+  { icon: "/noun-gluten-free.png", label: "Pure Canadian Corn & Rye" },
+  { icon: "/noun-corn.png", label: "100% Mexican Blue Agave" },
   { icon: "/noun-distillation.png", label: "13-Stage Process" },
-  { icon: "/noun-corn.png", label: "Finest Grains & Agave" },
   { icon: "/noun-prepared-in-small-batches.png", label: "Small Batch" },
 ];
 
@@ -61,7 +61,7 @@ export function ExperienceSection() {
             Spirit of <span className="text-[#D1BB8A]">Distinction.</span>
           </h2>
           <p className="font-body text-[15px] lg:text-[18px] font-normal text-white/50 leading-[1.8] max-w-lg">
-            Exceptional smoothness and a finish that lingers. For those who acknowledge true craftsmanship.
+            Exceptional smoothness and a finish that lingers. For those who acknowledge true craftsmanship, provenance, and patience.
           </p>
         </div>
 

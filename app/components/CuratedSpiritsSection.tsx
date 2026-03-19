@@ -7,7 +7,6 @@ const SPIRITS = [
   { name: "Blue Agave", href: "/blue-agave-spirit", image: "/blue-agave.png" },
   { name: "Vodka", href: "/vodka", image: "/vodka.png" },
   { name: "Tequila", href: "/tequila", image: "/taquila.png" },
-  { name: "Whiskey", href: "/whiskey", image: "/wishky.png" },
 ];
 
 function useScrollReveal(ref: React.RefObject<HTMLElement | null>) {
@@ -55,7 +54,7 @@ export function CuratedSpiritsSection() {
               Curated <span className="text-[#D1BB8A]">Collections.</span>
             </h2>
             <p className="font-body text-[15px] lg:text-[16px] text-[#0F0A08]/70 max-w-md">
-              Handpicked selections, perfectly balanced and ready to enjoy.
+              Handpicked selections, perfectly balanced and ready to enjoy. Canadian grain spirits. Authentic Mexican tequila. All refined through thirteen stages of unwavering craft.
             </p>
           </div>
           <Link
