@@ -65,23 +65,23 @@ export function CuratedSpiritsSection() {
           </Link>
         </div>
 
-        {/* Cards grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        {/* Cards grid - 3 columns for larger cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {SPIRITS.map((spirit, i) => (
             <Link
               key={spirit.href}
               href={spirit.href}
               className="group block reveal reveal-delay-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D1BB8A] focus-visible:ring-offset-2"
             >
-              <div className="relative aspect-[3/4] overflow-hidden bg-[#0F0A08]/5">
+              <div className="relative min-h-[500px] max-h-[500px] overflow-hidden bg-[#0F0A08]/5 pb-6">
                 <img
                   src={spirit.image}
                   alt={`Cousins ${spirit.name}`}
-                  className="absolute inset-0 w-[80%] h-[80%] m-auto object-contain object-center drop-shadow-2xl transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-2"
+                  className="absolute inset-0 w-[85%] h-[85%] m-auto object-contain object-center drop-shadow-2xl transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-2 pb-6 mt-3"
                 />
                 {/* Flat overlay bar at bottom - no gradient */}
-                <div className="absolute inset-x-0 bottom-0 bg-[#0F0A08] py-4 px-5">
-                  <span className="font-heading text-[20px] lg:text-[22px] font-bold text-white">
+                <div className="absolute inset-x-0 bottom-0 bg-[#0F0A08] py-5 px-6">
+                  <span className="font-heading text-[22px] lg:text-[26px] font-bold text-white">
                     {spirit.name}
                   </span>
                 </div>

@@ -134,7 +134,7 @@ export function Header() {
                     </div>
 
                     {/* Products Grid - 3 columns for larger cards */}
-                    <div className="w-2/3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-8 lg:p-10 gap-8 lg:gap-10 bg-[#FEFEF6]">
+                    <div className="w-2/3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-6 lg:p-8 gap-8 lg:gap-10 bg-[#FEFEF6]">
                       {PRODUCTS.map((product) => (
                         <Link
                           key={product.slug}
@@ -143,13 +143,13 @@ export function Header() {
                           onClick={() => setProductsOpen(false)}
                         >
                            {/* Product Image - larger area */}
-                          <div className="flex-1 min-h-[220px] flex items-center justify-center p-6 transition-transform duration-300 ease-out group-hover:-translate-y-1">
-                              <img src={product.image || "/bottle in field.png"} alt="" className="max-w-full max-h-[200px] object-contain drop-shadow-2xl" />
+                          <div className="flex-1 min-h-[100px] flex items-center justify-center p-6 transition-transform duration-300 ease-out group-hover:-translate-y-1">
+                              <img src={product.image || "/bottle in field.png"} alt="" className="max-w-full object-contain drop-shadow-2xl" />
                           </div>
 
                           {/* Text block - always below image */}
                           <div className="flex flex-col gap-2 mt-6 flex-shrink-0">
-                            <span className="font-heading text-[24px] lg:text-[26px] font-bold text-zinc-900 block transition-colors duration-300 group-hover:text-[#9f860e]">
+                            <span className="font-heading text-[20px] lg:text-[20px] font-bold text-zinc-900 block transition-colors duration-300 group-hover:text-[#9f860e]">
                               {product.name}
                             </span>
                             <span className="font-body text-[13px] lg:text-[14px] text-zinc-500 leading-relaxed font-medium line-clamp-2">
