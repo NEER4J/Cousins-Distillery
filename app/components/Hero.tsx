@@ -75,17 +75,17 @@ export function Hero() {
             className="font-heading font-bold text-white leading-[1.2] reveal reveal-delay-1"
             style={{ fontSize: "clamp(3.5rem, 8vw, 7rem)" }}
           >
-            COUSIN<br />
-            DISTILLERY
+            COUSINS DISTILLERY<br />
+            LTD.
           </h1>
 
           <p className="font-body text-[1rem] sm:text-[1.25rem] font-bold text-[#D1BB8A] mt-6 reveal reveal-delay-2 tracking-wide">
-            Field to Bottle · Canada & Mexico · Est. 2019
+            Field to Bottle - Est. 2019
           </p>
 
           {/* Body copy */}
           <p className="max-w-2xl mx-auto font-body text-[15px] lg:text-[18px] font-normal leading-[1.8] text-white/80 mt-8 mb-12 reveal reveal-delay-3">
-            Two cousins. Three premium spirits. Thirteen stages of unwavering obsession. Canadian corn and rye. Mexican tequila. Distilled from our own farms — nothing in between.
+            Two cousins. Three premium spirits. Thirteen stages of unwavering obsession. Distilled from our own organic farms in rural Spain — nothing in between.
           </p>
 
           {/* CTAs */}

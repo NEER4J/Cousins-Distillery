@@ -59,7 +59,7 @@ export function RoyalCraftSection() {
               Most distilleries stop at three or four passes through the still. We run every spirit through thirteen precisely controlled stages — each one removing what is unwanted and concentrating what is extraordinary.
             </p>
             <p className="font-body text-[15px] lg:text-[18px] font-normal text-white/70 leading-[1.8]">
-              The result is a depth of purity and flavour that cannot be replicated any other way. This is not efficiency. This is devotion.
+              The result is a depth of purity and flavor that cannot be replicated any other way. This is not about efficiency; this is about devotion.
             </p>
           </div>
         </div>

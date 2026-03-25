@@ -49,11 +49,11 @@ export function OriginSection() {
               </p>
             </div>
             <h2 className="font-heading text-[clamp(2.2rem,4.5vw,3rem)] font-semibold tracking-[1px] leading-[1.5] text-black mb-10">
-              Cousins Distillery was born from a shared belief: spirits should be as refined as the moments they accompany.
+              Cousins Distillery Ltd. was born from a shared belief: spirits should be as refined as the moments they accompany.
             </h2>
             
             <p className="font-body text-[16px] lg:text-[18px] font-normal leading-[1.8] text-zinc-700 mb-6">
-              Founded by kindred spirits with a deep respect for craftsmanship, we began with a simple but demanding vision—to create spirits of exceptional purity, balance, and character. This led us to develop a 13-stage distillation process, a disciplined method that removes impurities while preserving the subtle aromas and silky texture that define our house style.
+              Founded by kindred spirits with a deep respect for craftsmanship, we began with a vision to create spirits of exceptional purity, balance, and character. This commitment led us to develop our signature 13-stage distillation process, a disciplined method that removes impurities while preserving the subtle aromas and silky texture that define our house style.
             </p>
             <p className="font-body text-[16px] lg:text-[18px] font-normal leading-[1.8] text-zinc-700">
               Today, Cousins Distillery is home-grown in Canada and authentically rooted in Mexico. Our vodka is born from Canadian heirloom corn. Our tequila from 100% Blue Agave sourced from the volcanic soils of Jalisco, Mexico—the only region in the world legally recognized for tequila production. All crafted under the same exacting standards. All bound by the same thirteen-stage devotion.

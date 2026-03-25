@@ -118,7 +118,7 @@ export default function PrivacyPolicy() {
                             6. Contact Us
                         </h2>
                         <p className="font-body text-[16px] lg:text-[18px] font-light leading-[1.8] text-zinc-700">
-                            If you have any questions about this Privacy Policy or our data practices, please contact us at <a href="mailto:hello@cousinsdistillery.com" className="text-[#D1BB8A] hover:underline">hello@cousinsdistillery.com</a>.
+                            If you have any questions about this Privacy Policy or our data practices, please contact us at <a href="mailto:contact@cousinsdistilleryltd.com" className="text-[#D1BB8A] hover:underline">contact@cousinsdistilleryltd.com</a>.
                         </p>
                     </div>
 

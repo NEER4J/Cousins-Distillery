@@ -54,7 +54,7 @@ export function CuratedSpiritsSection() {
               Curated <span className="text-[#D1BB8A]">Collections.</span>
             </h2>
             <p className="font-body text-[15px] lg:text-[16px] text-[#0F0A08]/70 max-w-md">
-              Handpicked selections, perfectly balanced and ready to enjoy. Canadian grain spirits. Authentic Mexican tequila. All refined through thirteen stages of unwavering craft.
+              Handpicked selections, perfectly balanced and ready to enjoy.
             </p>
           </div>
           <Link

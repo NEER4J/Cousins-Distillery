@@ -84,30 +84,30 @@ const CONTACT_HREF = "/contact";
 export const PRODUCTS: Product[] = [
   {
     slug: "vodka",
-    name: "COUSIN VODKA",
+    name: "COUSINS VODKA",
     metaTitle: "Premium Artisanal Vodka | 13-Stage Distilled | Cousins Distillery",
     metaDescription: "Cousins Distillery Vodka: The essence of purity. Small-batch craft vodka refined through thirteen stages.",
     metaKeywords: ["craft vodka", "small-batch vodka", "13-stage distillation", "premium spirit", "smooth vodka", "artisanal spirits"],
-    headline: "COUSIN VODKA",
-    subheading: "Born from the fertile plains of our Spanish estate, Cousin Vodka begins with rare heritage varieties of corn — a grain rarely associated with premium spirits, but one we have coaxed into producing something remarkable. Thirteen precise distillation passes strip away all that is unnecessary and reveal the clean, silken spirit within.\n\nExpect an almost weightless texture, a gentle sweetness from the corn's natural sugars, and a finish that lingers far longer than any vodka should. This is vodka with genuine character — made to be savoured, not just mixed.",
+    headline: "COUSINS VODKA",
+    subheading: "Born from the fertile plains of our Canadian farmer partners, our vodka is crafted from rare heritage varieties of corn — a grain we have coaxed into producing a truly remarkable spirit. Through thirteen precise distillation passes, we reveal a clean, silken spirit with an almost weightless texture and a gentle sweetness from the corn's natural sugars. The result is vodka with genuine character and a finish that lingers far longer than traditional spirits. Cousins Vodka is made to be savored, not just mixed.",
     primaryCta: { label: "Shop Vodka", href: CONTACT_HREF },
     secondaryCta: { label: "See Experinces", href: CONTACT_HREF },
     image: "/vodka.png",
     sourceImage: "/cornone.jpg",
-    eyebrow: "🌽  Heirloom Corn  ·  España",
+    eyebrow: "🌽  Heirloom Corn  ·  Canada",
     subtitle: "Heirloom Corn Expression",
     stats: [
       { label: "Base", value: "Heirloom Corn" },
       { label: "ABV", value: "40% vol." },
       { label: "Stages", value: "13" },
-      { label: "Origin", value: "España" }
+      { label: "Origin", value: "Canada" }
     ],
     storySections: [
       {
         label: "The Ingredient",
         title: "Why *corn?*",
         body: [
-          "Corn vodka is one of the world's best-kept secrets. Unlike wheat or potato, quality heirloom corn brings a natural sweetness and body that creates a distinctly satisfying spirit with genuine personality. We grow heritage varieties on our Spanish estate — cultivars selected not for yield, but for flavour. The cobs are sun-dried, stone-milled, and mashed on-site within hours of processing, preserving every nuance of the grain's natural character.",
+          "Corn vodka is one of the world's best-kept secrets. Unlike wheat or potato, quality heirloom corn brings a natural sweetness and body that creates a distinctly satisfying spirit with genuine personality. We grow heritage varieties on our Canadian farmer partners' plains — cultivars selected not for yield, but for flavor. The cobs are sun-dried, stone-milled, and mashed on-site within hours of processing, preserving every nuance of the grain's natural character.",
           "The result is a vodka that stands apart in a cocktail as easily as it shines served neat over ice. Clean, but not empty. Pure, but not clinical."
         ]
       },
@@ -154,12 +154,12 @@ export const PRODUCTS: Product[] = [
   },
   {
     slug: "tequila",
-    name: "COUSIN TEQUILA",
-    metaTitle: "Artisanal Tequila | Reposado & Primo Extra Añejo | Cousins Distillery",
-    metaDescription: "Refined Cousins Distillery Tequila. Reposado aged 6 months in oak; Primo Extra Añejo aged 4 years minimum. We age to perfection in oak barrels.",
-    metaKeywords: ["premium tequila", "reposado tequila", "extra anejo tequila", "primo tequila", "artisanal tequila", "small-batch tequila", "100% blue agave", "oak aged tequila"],
-    headline: "COUSIN TEQUILA",
-    subheading: "Our Blue Agave is sourced from the volcanic, mineral-rich soils of Jalisco, Mexico — the only region in the world legally recognised for tequila production. Made exclusively from 100% Agave tequilana Weber Azul, the plants mature for 6–8 years before harvest, accumulating complex sugars that no industrial shortcut can replicate.\n\nWe age each expression to perfection in oak barrels. Available in three distinct expressions — Blanco, Reposado, and Extra Añejo — each one a different chapter of the same extraordinary story. From the bright purity of the Blanco to the rich, contemplative depth of our Primo Extra Añejo.",
+    name: "COUSINS TEQUILA",
+    metaTitle: "Artisanal Tequila | Blue Agave Reserve | Cousins Distillery",
+    metaDescription: "Refined Cousins Distillery Tequila crafted from 100% Blue Agave in Jalisco, Mexico, with three distinctive expressions.",
+    metaKeywords: ["premium tequila", "reposado tequila", "extra anejo tequila", "artisanal tequila", "small-batch tequila", "100% blue agave", "jalisco tequila"],
+    headline: "COUSINS TEQUILA",
+    subheading: "Our Blue Agave is sourced from the volcanic, mineral-rich soils of Jalisco, Mexico — the only region in the world legally recognized for tequila production. Made exclusively from 100% Agave tequilana Weber Azul, the plants mature for six to eight years before harvest to develop complex sugars that industrial shortcuts cannot replicate. We offer three distinct expressions — Blanco, Reposado, and Extra Añejo — each representing a different chapter of this extraordinary process.",
     primaryCta: { label: "Shop Tequila", href: CONTACT_HREF },
     secondaryCta: { label: "Explore Our Expressions", href: CONTACT_HREF },
     image: "/taquila.png",
@@ -193,11 +193,11 @@ export const PRODUCTS: Product[] = [
     varieties: [
       {
         number: "Expression No. 1",
-        subtitle: "Rested · Minimum 3 Months",
+        subtitle: "Known for bright purity · Rested for 7 months",
         name: "Blanco",
         type: "Blue Agave Tequila",
         body: [
-          "Crafted from 100% Blue Agave and rested for a minimum of 3 months to allow the spirit to settle and develop a clean, vibrant profile. This expression highlights the natural character of the Agave tequilana Weber Azul with bright herbal notes, subtle sweetness, and a crisp, refreshing finish that speaks directly of the plant and its volcanic home.",
+          "Crafted from 100% Blue Agave to develop a clean and vibrant profile, this expression highlights the natural character of Agave tequilana Weber Azul with bright herbal notes, subtle sweetness, and a crisp, refreshing finish.",
           "The Blanco is Cousin Tequila at its most transparent and honest — unmasked by oak, unapologetic in its agave-forward identity. The purest window into the raw ingredient."
         ],
         idealForHeader: "Ideal For",
@@ -205,11 +205,11 @@ export const PRODUCTS: Product[] = [
       },
       {
         number: "Expression No. 2",
-        subtitle: "Oak Aged · 6 Months",
+        subtitle: "Balanced and refined · Aged 3 to 6 months",
         name: "Reposado",
         type: "Rested Blue Agave Tequila",
         body: [
-          "Aged for 6 months in carefully selected oak barrels, our Reposado is brought to perfection through patient maturation. The wood imparts a smooth, elegant balance between the vibrant freshness of blue agave and the gentle influence of oak — hints of vanilla, caramel, and warm baking spice emerge naturally, enriching without overwhelming.",
+          "Our Reposado is oak-aged in carefully selected barrels for 3 to 6 months. The wood imparts a smooth, elegant balance between the vibrant freshness of blue agave and the gentle influence of oak, with notes of vanilla, caramel, and warm baking spices that enrich without overwhelming.",
           "The Reposado is the versatile heart of the Cousin Tequila range — equally at home in an elevated cocktail or sipped slowly on its own over a single large ice cube."
         ],
         idealForHeader: "Ideal For",
@@ -217,15 +217,15 @@ export const PRODUCTS: Product[] = [
       },
       {
         number: "Expression No. 3",
-        subtitle: "Primo · 4 Years Minimum in Oak",
-        name: "Primo Extra Añejo",
+        subtitle: "Contemplative depth · Aged 3+ years",
+        name: "Extra Añejo",
         type: "Ultra-Aged Blue Agave Tequila",
         body: [
-          "Our Primo Extra Añejo is aged a minimum of 4 years in premium oak barrels — we age to perfection. This extended maturation transforms the spirit into something of rare depth and distinction. Rich notes of dark caramel, toasted oak, dried fruit, and complex spice emerge, while the core blue agave character is never lost, only deepened. A tequila that demands to be sipped slowly, in the manner of fine cognac or aged single malt.",
-          "Primo is our highest-end expression — very high end, a higher price point, crafted for the real connoisseur who understands that the finest things in life cannot be rushed."
+          "Our Extra Añejo undergoes extended aging in premium oak barrels for 3+ years, transforming the spirit into one of rare depth and distinction. Rich notes of dark caramel, toasted oak, dried fruit, and complex spice emerge while deepening the core blue agave character.",
+          "Crafted for slow sipping, this contemplative expression is for those who appreciate that the finest things in life cannot be rushed."
         ],
         idealForHeader: "Ideal For",
-        idealForBody: "Real connoisseurs and collectors who seek the highest-end sipping tequila. Primo appeals to luxury consumers, fine-dining establishments, and specialty retailers who value exceptional quality and are willing to invest in a truly premium, oak-aged experience."
+        idealForBody: "Connoisseurs and collectors who seek a premium sipping tequila with rare depth and oak-aged complexity."
       }
     ],
     tastingNotes: {
@@ -262,39 +262,39 @@ export const PRODUCTS: Product[] = [
   },
   {
     slug: "blue-agave-spirit",
-    name: "COUSIN AGAVE",
+    name: "COUSINS AGAVE",
     metaTitle: "Blue Agave Spirit | Modern Agave Expression | Cousins Distillery",
     metaDescription: "Discover the rich, distinctive character of Cousins Distillery Blue Agave Spirit. A modern expression of agave.",
     metaKeywords: ["blue agave spirit", "agave spirit", "craft agave", "jalisco agave", "artisanal agave", "cousins distillery agave"],
-    headline: "COUSIN AGAVE",
-    subheading: "Cousin Agave is our most untamed expression — a pure agave spirit that operates outside the categories and conventions of tequila, yet is made with every ounce of the same devotion. Agave plants cultivated on our Spanish estate over multiple years, harvested at peak maturity, and processed with a combination of traditional technique and our signature 13-stage distillation.\n\nThe result is something singular — wild, expressive, and unforgettable. Neither mezcal, nor tequila, nor anything that currently has a proper name. It is simply, completely, Cousin Agave.",
+    headline: "COUSINS AGAVE",
+    subheading: "Cousins Agave is our most untamed expression. While it operates outside the traditional categories of tequila, this 100% pure agave spirit is crafted with the same level of devotion. Cultivated in the fields of Jalisco, Mexico, for five to eight years and harvested at peak maturity, our agave is processed using traditional techniques and our signature distillation process.\n\nThe result is a singular spirit — wild, expressive, and unforgettable. It is neither mezcal nor tequila, but something entirely unique: Cousins Agave.",
     primaryCta: { label: "Shop Blue Agave Spirit", href: CONTACT_HREF },
     secondaryCta: { label: "See Tasting Notes", href: CONTACT_HREF },
     image: "/blue-agave.png",
     sourceImage: "/blue-agave.jpg",
-    eyebrow: "🌿  Pure Agave  ·  España",
+    eyebrow: "🌿  Pure Agave  ·  Jalisco, Mexico",
     subtitle: "Pure Agave Blanco Spirit",
     stats: [
       { label: "Base", value: "Pure Agave" },
-      { label: "ABV", value: "42% vol." },
+      { label: "ABV", value: "40% vol." },
       { label: "Ferment", value: "Open Air" },
-      { label: "Origin", value: "España" }
+      { label: "Origin", value: "Jalisco, Mexico" }
     ],
     storySections: [
       {
         label: "The Plant",
-        title: "Agave grown *on Spanish soil*",
+        title: "Agave grown *on Mexican soil*",
         body: [
-          "Agave is not native to Spain — but under the right conditions, it thrives. Our agave plants grow on the dry, well-drained, sun-exposed slopes of our estate, where the Mediterranean climate provides the intense heat and low rainfall that agave demands. We cultivate several agave species for this expression, selecting for flavour complexity rather than any single botanical profile.",
-          "The result is an agave spirit with a distinct Spanish character — reflecting both the volcanic, mineral quality of agave as a plant and the warm, dry terroir of our estate. It is at once familiar and entirely novel."
+          "Native to Mexico, agave thrives in high temperatures without the need for additional water. Our plants grow on dry, well-drained, sun-exposed slopes in Jalisco, where intense heat and low rainfall create ideal conditions.",
+          "We cultivate several agave species for this expression, prioritizing flavor complexity over any single botanical profile. The result is a spirit with a distinct Mexican character that reflects both volcanic minerality and warm, dry terroir."
         ]
       },
       {
         label: "Open-Air Fermentation",
         title: "Wild yeast. *Honest character.*",
         body: [
-          "After the piñas are slow-roasted and crushed, the agave juice ferments in open-air stone vats — exposed to the wild yeasts that float through the air of our estate. This is perhaps the most ancient, least controlled step in our entire process, and it produces some of the most remarkable aromatic complexity we achieve.",
-          "Fermentation can take up to 7 days depending on the season and ambient conditions. No commercial yeast. No temperature control. Just agave, air, and time — doing what they have always done together."
+          "Our piñas are slow-roasted and crushed before the juice ferments in open-air stone vats, exposed to wild yeasts on the estate.",
+          "As the most traditional and least controlled step in our process, this natural fermentation allows remarkable aromatic complexity. Depending on season and ambient conditions, this stage can take up to seven days. No commercial yeast. No temperature control."
         ]
       }
     ],

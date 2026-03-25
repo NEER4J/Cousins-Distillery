@@ -72,7 +72,7 @@ export default function ContactPage() {
                     </h1>
                     
                     <p className="font-body text-[15px] lg:text-[18px] font-normal leading-[1.8] text-white/70 max-w-2xl mx-auto">
-                        Whether you&apos;re inquiring about our exclusive collections, interested in private events, or seeking a partnership — we invite you to connect with our team.
+                        Whether you are inquiring about our exclusive collections, interested in private events, or seeking a partnership, we invite you to connect with our team. Please let us know how we can assist you, and we look forward to hearing from you.
                     </p>
                 </div>
 
@@ -100,7 +100,7 @@ export default function ContactPage() {
                         <div className="border-t border-zinc-200 pt-10 space-y-8">
                             <div>
                                 <h3 className="font-body text-[11px] font-bold uppercase tracking-[0.3em] text-[#D1BB8A] mb-3">Distillery Location</h3>
-                                <p className="font-body text-[15px] text-zinc-800 font-medium">Cousins Distillery LTD<br />747 Appleby Line<br />Burlington, ON L7L 2Y6</p>
+                                <p className="font-body text-[15px] text-zinc-800 font-medium">747 Appleby Line<br />Burlington, Ontario L7L 2Y6</p>
                             </div>
                             <div>
                                 <h3 className="font-body text-[11px] font-bold uppercase tracking-[0.3em] text-[#D1BB8A] mb-3">Direct Inquiries</h3>

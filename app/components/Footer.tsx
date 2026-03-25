@@ -82,7 +82,7 @@ export function Footer() {
                     </h2>
 
                     <p className="font-body text-[15px] lg:text-[18px] font-normal tracking-wide text-zinc-600 leading-[1.8] mb-12 max-w-2xl mx-auto">
-                        Cousins Vodka offers a gentle sweetness, exceptional smoothness, and a finish that lingers with quiet authority. This is not just vodka. This is cultivated excellence.
+                        From bloodline to bottle, each spirit is crafted with devotion and refined through thirteen meticulous stages for those who recognize true distinction.
                     </p>
 
                         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 justify-center">
@@ -126,7 +126,7 @@ export function Footer() {
                                 />
                             </Link>
                             <p className="font-body text-[14px] text-zinc-600 leading-[1.9] font-normal max-w-sm mb-6">
-                                At Cousins Distillery, Canadian corn and rye. Mexican tequila. Thirteen stages of unwavering devotion. Distilled from our own farms, crafted by family, destined for those who recognize true distinction.
+                                At Cousins Distillery, our vodka, tequila, and agave spirit are more than just distilled—they are cultivated. Crafted with devotion and refined through thirteen meticulous stages, our spirits are designed for those who recognize true distinction.
                             </p>
                             <div className="mb-10 space-y-2">
                                 <p className="font-body text-[13px] text-zinc-800 font-medium">Cousins Distillery LTD</p>
