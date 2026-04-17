@@ -35,7 +35,7 @@ export default function TermsConditions() {
 
             {/* Hero / Header Section */}
             <section className="relative bg-[#0F0A08] pt-24 pb-20 lg:pt-32 lg:pb-24 px-6 lg:px-12 text-center overflow-hidden">
-                <img src="/agave.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-20" />
+                <img src="/agave-v2.png" alt="" className="absolute inset-0 w-full h-full object-cover opacity-20" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F0A08] via-transparent to-transparent" />
                 
                 <div className="relative z-10 mx-auto max-w-4xl">

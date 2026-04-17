@@ -162,8 +162,8 @@ export const PRODUCTS: Product[] = [
     subheading: "Our Blue Agave is sourced from the volcanic, mineral-rich soils of Jalisco, Mexico — the only region in the world legally recognized for tequila production. Made exclusively from 100% Agave tequilana Weber Azul, the plants mature for six to eight years before harvest to develop complex sugars that industrial shortcuts cannot replicate. We offer three distinct expressions — Blanco, Reposado, and Extra Añejo — each representing a different chapter of this extraordinary process.",
     primaryCta: { label: "Shop Tequila", href: CONTACT_HREF },
     secondaryCta: { label: "Explore Our Expressions", href: CONTACT_HREF },
-    image: "/taquila.png",
-    sourceImage: "/agave.jpg",
+    image: "/taquila-v2.png",
+    sourceImage: "/agave-v2.png",
     eyebrow: "🌵  100% Blue Agave  ·  Jalisco, México",
     subtitle: "Blue Agave Reserve · Three Expressions",
     stats: [
@@ -270,8 +270,8 @@ export const PRODUCTS: Product[] = [
     subheading: "Cousins Agave is our most untamed expression. While it operates outside the traditional categories of tequila, this 100% pure agave spirit is crafted with the same level of devotion. Cultivated in the fields of Jalisco, Mexico, for five to eight years and harvested at peak maturity, our agave is processed using traditional techniques and our signature distillation process.\n\nThe result is a singular spirit — wild, expressive, and unforgettable. It is neither mezcal nor tequila, but something entirely unique: Cousins Agave.",
     primaryCta: { label: "Shop Blue Agave Spirit", href: CONTACT_HREF },
     secondaryCta: { label: "See Tasting Notes", href: CONTACT_HREF },
-    image: "/blue-agave.png",
-    sourceImage: "/blue-agave.jpg",
+    image: "/agave-v2.png",
+    sourceImage: "/agave-v2.png",
     eyebrow: "🌿  Pure Agave  ·  Jalisco, Mexico",
     subtitle: "Pure Agave Blanco Spirit",
     stats: [

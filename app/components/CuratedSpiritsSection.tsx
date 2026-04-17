@@ -4,9 +4,9 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 const SPIRITS = [
-  { name: "Blue Agave", href: "/blue-agave-spirit", image: "/blue-agave.png" },
+  { name: "Blue Agave", href: "/blue-agave-spirit", image: "/agave-v2.png" },
   { name: "Vodka", href: "/vodka", image: "/vodka.png" },
-  { name: "Tequila", href: "/tequila", image: "/taquila.png" },
+  { name: "Tequila", href: "/tequila", image: "/taquila-v2.png" },
 ];
 
 function useScrollReveal(ref: React.RefObject<HTMLElement | null>) {

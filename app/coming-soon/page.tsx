@@ -38,7 +38,7 @@ export default function ComingSoonPage() {
             {/* Background Image & Overlay */}
             <div className="absolute inset-0 z-0">
                 <img
-                    src="/agave.jpg"
+                    src="/agave-v2.png"
                     alt=""
                     className="w-full h-full object-cover object-center opacity-40 mix-blend-luminosity scale-105 animate-[pulse_10s_ease-in-out_infinite]"
                 />
