@@ -230,9 +230,19 @@ export function Footer() {
 
                     {/* Bottom Bar */}
                     <div className="border-t border-zinc-200 pt-8 pb-4 flex flex-col sm:flex-row justify-between items-center gap-6">
-                        <p className="font-body text-[12px] text-zinc-400 uppercase tracking-widest font-semibold">
-                            © 2026 Cousins Distillery Ltd. All rights reserved.
-                        </p>
+                        <div className="flex flex-col items-center sm:items-start gap-2">
+                            <p className="font-body text-[12px] text-zinc-400 uppercase tracking-widest font-semibold">
+                                © 2026 Cousins Distillery Ltd. All rights reserved.
+                            </p>
+                            <a
+                                href="https://speediq.ai/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="font-body text-[11px] text-zinc-400 uppercase tracking-widest font-semibold hover:text-[#D1BB8A] transition-colors"
+                            >
+                                Powered by SpeedIQ
+                            </a>
+                        </div>
                         <div className="flex gap-8">
                             <Link href="/privacy" className="font-body text-[11px] text-zinc-400 uppercase tracking-widest font-semibold hover:text-[#D1BB8A] transition-colors">Privacy Policy</Link>
                             <Link href="/terms" className="font-body text-[11px] text-zinc-400 uppercase tracking-widest font-semibold hover:text-[#D1BB8A] transition-colors">Terms &amp; Conditions</Link>

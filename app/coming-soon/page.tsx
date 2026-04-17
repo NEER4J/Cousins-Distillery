@@ -117,6 +117,14 @@ export default function ComingSoonPage() {
                     <a href="https://www.instagram.com/cousinsdistilleryltd?igsh=MXUyY3kzdmg4czZudw==" target="_blank" rel="noopener noreferrer" className="font-body text-[11px] font-bold uppercase tracking-[0.2em] text-white/60 hover:text-[#D1BB8A] transition-colors">Instagram</a>
                     <a href="https://www.facebook.com/share/18Kx2THJ1e/" target="_blank" rel="noopener noreferrer" className="font-body text-[11px] font-bold uppercase tracking-[0.2em] text-white/60 hover:text-[#D1BB8A] transition-colors">Facebook</a>
                 </div>
+                <a
+                    href="https://speediq.ai/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-body text-[10px] font-semibold uppercase tracking-[0.2em] text-white/50 hover:text-[#D1BB8A] transition-colors"
+                >
+                    Powered by SpeedIQ
+                </a>
             </footer>
         </main>
     );
