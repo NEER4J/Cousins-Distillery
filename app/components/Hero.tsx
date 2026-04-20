@@ -85,7 +85,7 @@ export function Hero() {
 
           {/* Body copy */}
           <p className="max-w-2xl mx-auto font-body text-[15px] lg:text-[18px] font-normal leading-[1.8] text-white/80 mt-8 mb-12 reveal reveal-delay-3">
-            Two cousins. Three premium spirits. Thirteen stages of unwavering obsession. Distilled from our own organic farms in rural Spain — nothing in between.
+            Two cousins. Four premium spirits. Thirteen stages of unwavering obsession. Our spirits are distilled directly from our partner-owned organic farms in rural Mexico and Canada, ensuring exceptional quality by managing every step of the process.
           </p>
 
           {/* CTAs */}

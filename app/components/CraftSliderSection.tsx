@@ -1,18 +1,19 @@
 "use client";
 
-import { useRef, useCallback, useState, useEffect } from "react";
+import { useRef, useCallback, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import type { SwiperRef } from "swiper/react";
 import "swiper/css";
 
 const SLIDES = [
-  { id: 1, type: "video", url: "main-vid.mp4", label: "The Barrels", sub: "Noble Oak Maturation" },
-  { id: 2, type: "video", url: "main-vid.mp4", label: "The Mill", sub: "Grain to Gold" },
-  { id: 3, type: "video", url: "main-vid.mp4", label: "The Stills", sub: "Ethereal Vapor" },
-  { id: 4, type: "video", url: "main-vid.mp4", label: "The Process", sub: "Pure Alchemy" },
+  { id: 1, type: "video", url: "/new-media/the-barrels.mp4", label: "The Barrels", sub: "Noble Oak Maturation" },
+  { id: 2, type: "video", url: "/new-media/the-mills.mp4", label: "The Mill", sub: "Grain to Gold" },
+  { id: 3, type: "video", url: "/new-media/the-stills.mp4", label: "The Stills", sub: "Ethereal Vapor" },
+  { id: 4, type: "video", url: "/main-vid.mp4", label: "The Process", sub: "Pure Alchemy" },
 ];
 
 export function CraftSliderSection() {
-  const swiperRef = useRef<any>(null);
+  const swiperRef = useRef<SwiperRef>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handlePrev = useCallback(() => {

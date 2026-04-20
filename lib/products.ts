@@ -1,4 +1,4 @@
-export type ProductSlug = "vodka" | "blue-agave-spirit" | "tequila";
+export type ProductSlug = "vodka" | "blue-agave-spirit" | "tequila" | "whiskey";
 
 export interface ProductSection {
   title: string;
@@ -91,7 +91,7 @@ export const PRODUCTS: Product[] = [
     headline: "COUSINS VODKA",
     subheading: "Born from the fertile plains of our Canadian farmer partners, our vodka is crafted from rare heritage varieties of corn — a grain we have coaxed into producing a truly remarkable spirit. Through thirteen precise distillation passes, we reveal a clean, silken spirit with an almost weightless texture and a gentle sweetness from the corn's natural sugars. The result is vodka with genuine character and a finish that lingers far longer than traditional spirits. Cousins Vodka is made to be savored, not just mixed.",
     primaryCta: { label: "Shop Vodka", href: CONTACT_HREF },
-    secondaryCta: { label: "See Experinces", href: CONTACT_HREF },
+    secondaryCta: { label: "See Experiences", href: CONTACT_HREF },
     image: "/vodka.png",
     sourceImage: "/cornone.jpg",
     eyebrow: "🌽  Heirloom Corn  ·  Canada",
@@ -122,7 +122,7 @@ export const PRODUCTS: Product[] = [
     ],
     tastingNotes: {
       label: "Tasting Notes",
-      title: "On the *glass*",
+      title: "In the *glass*",
       notes: [
         {
           type: "Nose",
@@ -163,7 +163,7 @@ export const PRODUCTS: Product[] = [
     primaryCta: { label: "Shop Tequila", href: CONTACT_HREF },
     secondaryCta: { label: "Explore Our Expressions", href: CONTACT_HREF },
     image: "/taquila-v2.png",
-    sourceImage: "/agave-v2.png",
+    sourceImage: "/cornone.jpg",
     eyebrow: "🌵  100% Blue Agave  ·  Jalisco, México",
     subtitle: "Blue Agave Reserve · Three Expressions",
     stats: [
@@ -185,8 +185,8 @@ export const PRODUCTS: Product[] = [
         label: "Our Standard",
         title: "100% agave. *Zero compromise.*",
         body: [
-          "By Mexican law, tequila must contain at least 51% blue agave — the remaining 49% can be other sugars. We use none of those other sugars. Every Cousin Tequila expression is made from 100% Agave tequilana Weber Azul, the highest standard in tequila production. It costs more. It takes longer. It is the only way we know how to work.",
-          "The Cousin family's deep roots in Spanish farming culture means we understand instinctively what it means to respect an agricultural product. We bring that same reverence to every piña we harvest in Jalisco."
+          "By Mexican law, tequila must contain at least 51% blue agave — the remaining 49% can be other sugars. We use none of those other sugars. Every Cousins Tequila expression is made from 100% Agave tequilana Weber Azul, the highest standard in tequila production. It costs more. It takes longer. It is the only way we know how to work.",
+          "The Cousins family's deep roots in farming culture means we understand instinctively what it means to respect an agricultural product. We bring that same reverence to every piña we harvest in Jalisco."
         ]
       }
     ],
@@ -198,7 +198,7 @@ export const PRODUCTS: Product[] = [
         type: "Blue Agave Tequila",
         body: [
           "Crafted from 100% Blue Agave to develop a clean and vibrant profile, this expression highlights the natural character of Agave tequilana Weber Azul with bright herbal notes, subtle sweetness, and a crisp, refreshing finish.",
-          "The Blanco is Cousin Tequila at its most transparent and honest — unmasked by oak, unapologetic in its agave-forward identity. The purest window into the raw ingredient."
+          "The Blanco is Cousins Tequila at its most transparent and honest — unmasked by oak, unapologetic in its agave-forward identity. The purest window into the raw ingredient."
         ],
         idealForHeader: "Ideal For",
         idealForBody: "Tequila enthusiasts, mixologists, and consumers who appreciate a fresh, authentic agave-forward spirit. Ideal for cocktail bars, premium restaurants, and social gatherings where a high-quality tequila elevates margaritas, palomas, and premium mixed drinks."
@@ -210,7 +210,7 @@ export const PRODUCTS: Product[] = [
         type: "Rested Blue Agave Tequila",
         body: [
           "Our Reposado is oak-aged in carefully selected barrels for 3 to 6 months. The wood imparts a smooth, elegant balance between the vibrant freshness of blue agave and the gentle influence of oak, with notes of vanilla, caramel, and warm baking spices that enrich without overwhelming.",
-          "The Reposado is the versatile heart of the Cousin Tequila range — equally at home in an elevated cocktail or sipped slowly on its own over a single large ice cube."
+          "The Reposado is the versatile heart of the Cousins Tequila range — equally at home in an elevated cocktail or sipped slowly on its own over a single large ice cube."
         ],
         idealForHeader: "Ideal For",
         idealForBody: "Young professionals, social drinkers, and tequila enthusiasts who enjoy premium spirits for cocktails or casual sipping. Reposado appeals strongly to cocktail bars, restaurants, and hospitality venues seeking a versatile, high-quality tequila with broad appeal."
@@ -230,7 +230,7 @@ export const PRODUCTS: Product[] = [
     ],
     tastingNotes: {
       label: "Tasting Notes · Blanco",
-      title: "On the *glass*",
+      title: "In the *glass*",
       notes: [
         {
           type: "Nose",
@@ -271,7 +271,7 @@ export const PRODUCTS: Product[] = [
     primaryCta: { label: "Shop Blue Agave Spirit", href: CONTACT_HREF },
     secondaryCta: { label: "See Tasting Notes", href: CONTACT_HREF },
     image: "/agave-v2.png",
-    sourceImage: "/agave-v2.png",
+    sourceImage: "/blue-agave.jpg",
     eyebrow: "🌿  Pure Agave  ·  Jalisco, Mexico",
     subtitle: "Pure Agave Blanco Spirit",
     stats: [
@@ -300,19 +300,19 @@ export const PRODUCTS: Product[] = [
     ],
     tastingNotes: {
       label: "Tasting Notes",
-      title: "On the *glass*",
+      title: "In the *glass*",
       notes: [
         {
           type: "Nose",
           title: "Wild & Botanical",
           tags: ["Roasted agave", "Wild herbs", "Stone fruit", "Sun-baked earth", "Light smoke"],
-          body: "A nose of genuine wildness — roasted agave, wild herbs, and subtle smokiness from the stone-roasting process. There is a sun-baked earthiness underneath it all that speaks unmistakably of Spanish landscape in summer heat. Complex, evolving, and deeply compelling."
+          body: "A nose of genuine wildness — roasted agave, wild herbs, and subtle smokiness from the stone-roasting process. There is a sun-baked earthiness underneath it all that speaks unmistakably of the Mexican landscape in summer heat. Complex, evolving, and deeply compelling."
         },
         {
           type: "Palate",
           title: "Intense & Expressive",
           tags: ["Charred agave", "Citrus pith", "Sea minerals", "Green pepper"],
-          body: "An expressive palate with the intensity that open-air fermentation produces — charred agave sweetness, citrus pith, a pleasingly assertive vegetal quality, and an almost sea-mineral finish entirely unique to our Spanish terroir. This is a spirit for the curious and the brave."
+          body: "An expressive palate with the intensity that open-air fermentation produces — charred agave sweetness, citrus pith, a pleasingly assertive vegetal quality, and an almost sea-mineral finish entirely unique to our Mexican climate. This is a spirit for the curious and the brave."
         },
         {
           type: "Finish",
@@ -328,6 +328,76 @@ export const PRODUCTS: Product[] = [
     forPartnersCta: { label: "Enquire About Partnership", href: CONTACT_HREF },
     finalCtaHeadline: "Discover the refined character of Cousins Distillery Blue Agave Spirit",
     finalCtaLabel: "Shop Blue Agave Spirit",
+    finalCtaHref: "/contact",
+  },
+  {
+    slug: "whiskey",
+    name: "COUSINS WHISKEY",
+    metaTitle: "Bourbon Whiskey | Single Farm Rye Expression | Cousins Distillery",
+    metaDescription: "Discover Cousins Bourbon Whiskey: a bold single farm rye expression, naturally fermented, 13-stage distilled, and rested in hand-selected bourbon oak barrels.",
+    metaKeywords: ["bourbon whiskey", "rye whiskey", "single farm rye", "craft whiskey", "small-batch whiskey", "cousins distillery whiskey"],
+    headline: "COUSINS WHISKEY",
+    subheading: "Rye whiskey is the boldest spirit we make, rewarding patience and attention. Our rye is grown in the cool, elevated fields of our Canadian estate, where significant diurnal temperature shifts force the grain to develop a density of flavor rarely found in commercial crops. Harvested at peak ripeness, our whiskey is naturally fermented, distilled through thirteen copper stages, and rested in hand-selected bourbon oak barrels. The result is a spirit that is decidedly its own: Canadian in origin, classical in craft, and absolutely unapologetic in character.",
+    primaryCta: { label: "Shop Bourbon Whiskey", href: CONTACT_HREF },
+    secondaryCta: { label: "See Tasting Notes", href: CONTACT_HREF },
+    image: "/whiskey.png",
+    sourceImage: "/cornone.jpg",
+    eyebrow: "🥃  Single Farm Rye  ·  Canada",
+    subtitle: "Bourbon Whiskey · Single Farm Rye Expression",
+    stats: [
+      { label: "Base", value: "Single Farm Rye" },
+      { label: "ABV", value: "40% vol." },
+      { label: "Stages", value: "13" },
+      { label: "Barrel", value: "Bourbon Oak" }
+    ],
+    storySections: [
+      {
+        label: "The Grain",
+        title: "Rye grown *at altitude*",
+        body: [
+          "Grown in cool elevated fields where diurnal temperature swings can exceed 20°C, our rye develops aromatic density and deep spice complexity. Combined with lower-yield heritage varieties, this creates a flavor profile far beyond commercial grain.",
+          "To preserve this quality, the grain is stone-milled and mashed on-site within 24 hours of harvest. Natural fermentation with wild yeasts helps express the terroir of our estate in every batch."
+        ]
+      },
+      {
+        label: "Bourbon Oak Resting",
+        title: "Patience in *every barrel*",
+        body: [
+          "Cousins Whiskey rests in hand-selected bourbon oak barrels sourced from coopers we have partnered with for years. Seasonal climate shifts drive steady, cyclical barrel absorption that deepens the spirit's natural evolution.",
+          "We bottle only when the whiskey is ready, not on a fixed schedule or quarterly target. This patience is what sets Cousins Whiskey apart."
+        ]
+      }
+    ],
+    tastingNotes: {
+      label: "Tasting Notes",
+      title: "In the *glass*",
+      notes: [
+        {
+          type: "Nose",
+          title: "Bold & Spiced",
+          tags: ["Dark caramel", "Toasted rye", "Cinnamon bark", "Dried cherry"],
+          body: "A commanding nose of dark caramel and toasted rye bread, followed by cinnamon bark and clove. With time in the glass, hints of dried cherry and orange peel emerge."
+        },
+        {
+          type: "Palate",
+          title: "Rich & Layered",
+          tags: ["Toffee", "Black pepper", "Oak tannin", "Dried fruit"],
+          body: "The palate is rich and layered with bold rye spice at the forefront. Notes of black pepper and cinnamon are balanced by toffee sweetness and the gentle grip of oak tannins."
+        },
+        {
+          type: "Finish",
+          title: "Long & Warming",
+          tags: ["Oak smoke", "Dark spice", "Vanilla cream"],
+          body: "A long, warming finish with satisfying oak dryness and lingering dark spice. A whisper of vanilla cream emerges at the close, leaving a smooth, contemplative impression."
+        }
+      ]
+    },
+    sections: [],
+    forPartnersTitle: "For premium bars and lounges",
+    forPartnersBody: "Cousins Bourbon Whiskey is crafted for high-end bars, private clubs, and hospitality partners seeking a bold, premium rye expression with exceptional structure and smoothness.",
+    forPartnersCta: { label: "Enquire About Partnership", href: CONTACT_HREF },
+    finalCtaHeadline: "Discover the bold character of Cousins Bourbon Whiskey",
+    finalCtaLabel: "Shop Bourbon Whiskey",
     finalCtaHref: "/contact",
   }
 ];

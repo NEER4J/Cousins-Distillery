@@ -7,6 +7,7 @@ const SPIRITS = [
   { name: "Blue Agave", href: "/blue-agave-spirit", image: "/agave-v2.png" },
   { name: "Vodka", href: "/vodka", image: "/vodka.png" },
   { name: "Tequila", href: "/tequila", image: "/taquila-v2.png" },
+  { name: "Bourbon Whiskey", href: "/whiskey", image: "/whiskey.png" },
 ];
 
 function useScrollReveal(ref: React.RefObject<HTMLElement | null>) {
@@ -65,9 +66,9 @@ export function CuratedSpiritsSection() {
           </Link>
         </div>
 
-        {/* Cards grid - 3 columns for larger cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-          {SPIRITS.map((spirit, i) => (
+        {/* Cards grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+          {SPIRITS.map((spirit) => (
             <Link
               key={spirit.href}
               href={spirit.href}

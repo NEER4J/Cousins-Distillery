@@ -69,12 +69,12 @@ export function ExperienceSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-12 lg:gap-8">
 
           {/* Bottle Showcased */}
-          <div className="lg:col-span-7 relative reveal reveal-delay-1 order-2 lg:order-1">
-            <div className="relative group max-h-[70vh] sm:max-h-[55vh] lg:max-h-[60vh] flex items-center">
+            <div className="lg:col-span-7 relative reveal reveal-delay-1 order-2 lg:order-1">
+              <div className="relative group h-full w-full flex items-center">
               <img
-                src="/all-bottole-transperent.png"
+                src="/new-media/4-bottom-with-bg.jpeg"
                 alt="Cousins Spirits"
-                className="w-full h-auto max-h-[70vh] sm:max-h-[75vh] object-contain mx-auto drop-shadow-[0_40px_100px_rgba(209,187,138,0.25)] mix-blend-screen animate-float"
+                className="w-full h-full object-cover object-center transition-transform duration-[2s] hover:scale-[1.02] aspect-[4/4]"
               />
               <div className="absolute inset-0 bg-radial from-[#D1BB8A]/20 to-transparent opacity-40 blur-3xl pointer-events-none" />
             </div>

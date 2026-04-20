@@ -114,48 +114,30 @@ export function Header() {
 
                 {/* Mega Menu Panel - Full Width Modern */}
                 <div
-                  className={`fixed left-0 right-0 top-[var(--header-height)] w-screen bg-white shadow-2xl transition-all duration-300 ease-out origin-top border-t border-zinc-200 ${
+                  className={`fixed left-0 right-0 w-screen bg-white shadow-2xl transition-all duration-300 ease-out origin-top border-t border-zinc-200 ${
+                    scrolled ? "top-20" : "top-28"
+                  } ${
                     productsOpen ? "opacity-100 visible scale-y-100" : "opacity-0 invisible pointer-events-none scale-y-95"
                   }`}
-                  style={{ '--header-height': scrolled ? '80px' : '112px' } as any}
                 >
-                  <div className="mx-auto max-w-[1400px] flex min-h-[520px]">
-                    {/* Featured side menu */}
-                    <div className="w-1/3 bg-[#0F0A08] p-12 lg:p-16 flex flex-col justify-center text-white relative overflow-hidden">
-                        <div className="absolute inset-0 bg-[url('/corntwo.jpg')] opacity-20 mix-blend-overlay object-cover" />
-                        <div className="relative z-10">
-                            <h3 className="font-heading text-[clamp(2rem,3vw,3rem)] font-bold leading-tight mb-6">
-                                The <br/> <span className="text-[#D1BB8A]">House</span> <br/> Classics.
-                            </h3>
-                            <p className="font-body text-[14px] text-white/60 leading-relaxed font-normal max-w-sm">
-                                Discover our meticulously categorized expressions of purity, grain, and agave.
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* Products Grid - 3 columns for larger cards */}
-                    <div className="w-2/3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-6 lg:p-8 gap-8 lg:gap-10 bg-[#FEFEF6]">
+                  <div className="mx-auto max-w-[1400px] w-full bg-[#FEFEF6] p-6 lg:p-8">
+                    <div className="grid grid-cols-4 gap-6">
                       {PRODUCTS.map((product) => (
                         <Link
                           key={product.slug}
                           href={`/${product.slug}`}
-                          className="group relative flex flex-col p-8 lg:p-10 border border-zinc-200 bg-white overflow-hidden h-full min-h-[380px] transition-all duration-300 ease-out hover:border-zinc-300 hover:shadow-md"
+                          className="group relative flex flex-col p-5 lg:p-6 border border-zinc-200 bg-white overflow-hidden h-full min-h-[280px] transition-all duration-300 ease-out hover:border-zinc-300 hover:shadow-md"
                           onClick={() => setProductsOpen(false)}
                         >
-                           {/* Product Image - larger area */}
-                          <div className="flex-1 min-h-[100px] flex items-center justify-center p-6 transition-transform duration-300 ease-out group-hover:-translate-y-1">
-                              <img src={product.image || "/bottle in field.png"} alt="" className="max-w-full object-contain drop-shadow-2xl" />
+                          <div className="flex-1 min-h-[120px] flex items-center justify-center p-3 transition-transform duration-300 ease-out group-hover:-translate-y-1">
+                              <img src={product.image || "/bottle in field.png"} alt="" className="max-w-full max-h-[170px] object-contain drop-shadow-2xl" />
                           </div>
 
-                          {/* Text block - always below image */}
-                          <div className="flex flex-col gap-2 mt-6 flex-shrink-0">
-                            <span className="font-heading text-[20px] lg:text-[20px] font-bold text-zinc-900 block transition-colors duration-300 group-hover:text-[#9f860e]">
+                          <div className="flex flex-col gap-1 mt-3 flex-shrink-0">
+                            <span className="font-heading text-[18px] font-bold text-zinc-900 block transition-colors duration-300 group-hover:text-[#9f860e]">
                               {product.name}
                             </span>
-                            <span className="font-body text-[13px] lg:text-[14px] text-zinc-500 leading-relaxed font-medium line-clamp-2">
-                              {product.metaDescription}
-                            </span>
-                            <span className="font-body text-[11px] font-bold uppercase tracking-widest text-[#9f860e] mt-3 flex items-center gap-2 opacity-70 group-hover:opacity-100 transition-all duration-300">
+                            <span className="font-body text-[11px] font-bold uppercase tracking-widest text-[#9f860e] mt-2 flex items-center gap-2 opacity-70 group-hover:opacity-100 transition-all duration-300">
                               Explore <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
                             </span>
                           </div>

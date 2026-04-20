@@ -24,13 +24,14 @@ export const metadata: Metadata = {
     template: "%s | Cousins Distillery",
   },
   description:
-    "Cousins Distillery: Cultivating premium small-batch spirits including Vodka and Tequila. Crafted through 13 stages of refinement from bloodline to bottle.",
+    "Cousins Distillery: Cultivating premium small-batch spirits including Vodka, Tequila, Blue Agave Spirit, and Bourbon Whiskey. Crafted through 13 stages of refinement from bloodline to bottle.",
   keywords: [
     "Cousins Distillery",
     "Small-batch spirits",
     "Craft Vodka",
     "Blue Agave Spirit",
     "Artisanal Tequila",
+    "Bourbon Whiskey",
     "Distillery North America",
     "Luxury Spirits",
   ],
@@ -43,13 +44,13 @@ export const metadata: Metadata = {
     siteName: "Cousins Distillery",
     title: "Cousins Distillery | Small-Batch Craft Spirits",
     description:
-      "Cultivating premium spirits through 13 stages of refinement. Discover our craft vodka, tequila, and agave spirits.",
+      "Cultivating premium spirits through 13 stages of refinement. Discover our craft vodka, tequila, agave spirit, and bourbon whiskey.",
     images: [
       {
-        url: "/bottle%20in%20field.png",
+        url: "/new-media/4-bottom-with-bg.jpeg",
         width: 1200,
         height: 630,
-        alt: "Cousins Vodka bottle in a golden field — craft spirits from the land.",
+        alt: "Cousins Distillery premium spirits collection.",
       },
     ],
   },
@@ -57,8 +58,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Cousins Distillery | Small-Batch Craft Spirits",
     description:
-      "Cultivating premium spirits through 13 stages of refinement. Discover our craft vodka, tequila, and agave spirits.",
-    images: ["/bottle%20in%20field.png"],
+      "Cultivating premium spirits through 13 stages of refinement. Discover our craft vodka, tequila, agave spirit, and bourbon whiskey.",
+    images: ["/new-media/4-bottom-with-bg.jpeg"],
   },
   icons: {
     icon: "/logo.svg",

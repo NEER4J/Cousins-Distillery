@@ -66,11 +66,11 @@ export function RoyalCraftSection() {
 
         {/* Right Imagery - Full range */}
         <div className="lg:col-span-5 relative reveal reveal-delay-2 mt-8 lg:mt-0">
-          <div className="relative aspect-[4/3] max-h-[70vh] overflow-hidden mx-auto lg:ml-auto">
+          <div className="relative group h-full w-full flex items-center">
             <img
-              src="/all-bottles.jpeg"
-              alt="Cousins spirits: Vodka, Blue Agave, and Tequila — thirteen stages of refinement"
-              className="w-full h-full object-cover object-center transition-transform duration-[2s] hover:scale-[1.02]"
+              src="/new-media/4-bottom-with-bg.jpeg"
+              alt="Cousins spirits collection — vodka, blue agave, tequila, and whiskey"
+              className="w-full h-full object-cover object-center transition-transform duration-[2s] hover:scale-[1.02] aspect-[4/4]"
             />
           </div>
         </div>

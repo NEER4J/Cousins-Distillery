@@ -1,15 +1,5 @@
 import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
-
-export function middleware(request: NextRequest) {
-  const url = request.nextUrl.clone();
-
-  // Redirect /whiskey to home (product no longer available)
-  if (url.pathname === "/whiskey") {
-    url.pathname = "/";
-    return NextResponse.redirect(url);
-  }
-
+export function middleware() {
   // Allow the request to proceed (site is live, no coming-soon redirect)
   const response = NextResponse.next();
 

@@ -91,7 +91,7 @@ export default function TermsConditions() {
                             4. Use license
                         </h2>
                         <p className="font-body text-[16px] lg:text-[18px] font-light leading-[1.8] text-zinc-700">
-                            Permission is granted to temporarily download one copy of the materials on Cousins Distillery's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title.
+                            Permission is granted to temporarily download one copy of the materials on Cousins Distillery&apos;s website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title.
                         </p>
                     </div>
 
@@ -100,7 +100,7 @@ export default function TermsConditions() {
                             5. Disclaimer
                         </h2>
                         <p className="font-body text-[16px] lg:text-[18px] font-light leading-[1.8] text-zinc-700">
-                            The materials on this website are provided on an 'as is' basis. Cousins Distillery Ltd. makes no warranties, expressed or implied, and hereby disclaims all other warranties including, without limitation, implied warranties of merchantability or fitness for a particular purpose.
+                            The materials on this website are provided on an &apos;as is&apos; basis. Cousins Distillery Ltd. makes no warranties, expressed or implied, and hereby disclaims all other warranties including, without limitation, implied warranties of merchantability or fitness for a particular purpose.
                         </p>
                     </div>
 
@@ -109,7 +109,7 @@ export default function TermsConditions() {
                             6. Governing Law
                         </h2>
                         <p className="font-body text-[16px] lg:text-[18px] font-light leading-[1.8] text-zinc-700">
-                            Any claim relating to Cousins Distillery's website shall be governed by the laws of the country in which the distillery is registered, without regard to its conflict of law provisions.
+                            Any claim relating to Cousins Distillery&apos;s website shall be governed by the laws of the country in which the distillery is registered, without regard to its conflict of law provisions.
                         </p>
                     </div>
 

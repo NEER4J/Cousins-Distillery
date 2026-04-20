@@ -77,12 +77,12 @@ export function Footer() {
                     </div>
 
                     <h2 className="font-heading text-[clamp(2.2rem,5.5vw,4rem)] font-semibold tracking-[1px] text-zinc-900 mb-8 leading-[1.5]">
-                        Raise A Glass To Heritage.<br />
+                        Raise A Glass To Our Heritage.<br />
                         <span className="text-[#D1BB8A]">Honor Craftsmanship.</span>
                     </h2>
 
                     <p className="font-body text-[15px] lg:text-[18px] font-normal tracking-wide text-zinc-600 leading-[1.8] mb-12 max-w-2xl mx-auto">
-                        From bloodline to bottle, each spirit is crafted with devotion and refined through thirteen meticulous stages for those who recognize true distinction.
+                        At Cousins Distillery, our vodka, tequila, and agave spirits are more than just distilled—they are cultivated. Crafted with devotion and refined through thirteen meticulous stages, our spirits are designed for those who recognize true distinction.
                     </p>
 
                         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 justify-center">
@@ -126,10 +126,10 @@ export function Footer() {
                                 />
                             </Link>
                             <p className="font-body text-[14px] text-zinc-600 leading-[1.9] font-normal max-w-sm mb-6">
-                                At Cousins Distillery, our vodka, tequila, and agave spirit are more than just distilled—they are cultivated. Crafted with devotion and refined through thirteen meticulous stages, our spirits are designed for those who recognize true distinction.
+                                At Cousins Distillery, our vodka, tequila, and agave spirits are more than just distilled—they are cultivated. Crafted with devotion and refined through thirteen meticulous stages, our spirits are designed for those who recognize true distinction.
                             </p>
                             <div className="mb-10 space-y-2">
-                                <p className="font-body text-[13px] text-zinc-800 font-medium">Cousins Distillery LTD</p>
+                                <p className="font-body text-[13px] text-zinc-800 font-medium">Cousins Distillery LTD.</p>
                                 <p className="font-body text-[13px] text-zinc-600">747 Appleby Line<br />Burlington, ON L7L 2Y6</p>
                                 <p className="font-body text-[13px] text-zinc-600">
                                     <a href="mailto:contact@cousinsdistilleryltd.com" className="hover:text-[#D1BB8A] transition-colors">contact@cousinsdistilleryltd.com</a>
