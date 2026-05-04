@@ -24,14 +24,14 @@ export const metadata: Metadata = {
     template: "%s | Cousins Distillery",
   },
   description:
-    "Cousins Distillery: Cultivating premium small-batch spirits including Vodka, Tequila, Blue Agave Spirit, and Bourbon Whiskey. Crafted through 13 stages of refinement from bloodline to bottle.",
+    "Cousins Distillery: Cultivating premium small-batch spirits including Vodka, Tequila, Blue Agave Spirit, and Rye Whiskey. Crafted through 13 stages of refinement from bloodline to bottle.",
   keywords: [
     "Cousins Distillery",
     "Small-batch spirits",
     "Craft Vodka",
     "Blue Agave Spirit",
     "Artisanal Tequila",
-    "Bourbon Whiskey",
+    "Rye Whiskey",
     "Distillery North America",
     "Luxury Spirits",
   ],
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     siteName: "Cousins Distillery",
     title: "Cousins Distillery | Small-Batch Craft Spirits",
     description:
-      "Cultivating premium spirits through 13 stages of refinement. Discover our craft vodka, tequila, agave spirit, and bourbon whiskey.",
+      "Cultivating premium spirits through 13 stages of refinement. Discover our craft vodka, tequila, agave spirit, and rye whiskey.",
     images: [
       {
         url: "/new-media/4-bottom-with-bg.jpeg",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Cousins Distillery | Small-Batch Craft Spirits",
     description:
-      "Cultivating premium spirits through 13 stages of refinement. Discover our craft vodka, tequila, agave spirit, and bourbon whiskey.",
+      "Cultivating premium spirits through 13 stages of refinement. Discover our craft vodka, tequila, agave spirit, and rye whiskey.",
     images: ["/new-media/4-bottom-with-bg.jpeg"],
   },
   icons: {

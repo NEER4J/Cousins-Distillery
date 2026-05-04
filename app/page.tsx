@@ -11,7 +11,7 @@ import { Footer } from "./components/Footer";
 
 export const metadata: Metadata = {
   title: "Cousins Distillery | Premium Craft Spirits & Small-Batch Vodka",
-  description: "Cousins Distillery: Experience the art of craft spirits. From our 13-stage distillation process to our heritage-inspired blends, discover vodka, tequila, blue agave spirit, and bourbon whiskey.",
+  description: "Cousins Distillery: Experience the art of craft spirits. From our 13-stage distillation process to our heritage-inspired blends, discover vodka, tequila, blue agave spirit, and rye whiskey.",
   alternates: {
     canonical: "/",
   }

@@ -333,38 +333,37 @@ export const PRODUCTS: Product[] = [
   {
     slug: "whiskey",
     name: "COUSINS WHISKEY",
-    metaTitle: "Bourbon Whiskey | Single Farm Rye Expression | Cousins Distillery",
-    metaDescription: "Discover Cousins Bourbon Whiskey: a bold single farm rye expression, naturally fermented, 13-stage distilled, and rested in hand-selected bourbon oak barrels.",
-    metaKeywords: ["bourbon whiskey", "rye whiskey", "single farm rye", "craft whiskey", "small-batch whiskey", "cousins distillery whiskey"],
+    metaTitle: "Rye Whiskey | Single Farm Rye Expression | Cousins Distillery",
+    metaDescription: "Discover Cousins Whiskey: a bold single farm rye expression, naturally fermented and rested in hand-selected oak barrels.",
+    metaKeywords: ["rye whiskey", "single farm rye", "craft whiskey", "small-batch whiskey", "cousins distillery whiskey"],
     headline: "COUSINS WHISKEY",
-    subheading: "Rye whiskey is the boldest spirit we make, rewarding patience and attention. Our rye is grown in the cool, elevated fields of our Canadian estate, where significant diurnal temperature shifts force the grain to develop a density of flavor rarely found in commercial crops. Harvested at peak ripeness, our whiskey is naturally fermented, distilled through thirteen copper stages, and rested in hand-selected bourbon oak barrels. The result is a spirit that is decidedly its own: Canadian in origin, classical in craft, and absolutely unapologetic in character.",
-    primaryCta: { label: "Shop Bourbon Whiskey", href: CONTACT_HREF },
+    subheading: "Rye whiskey is the boldest spirit we make, rewarding patience and attention. Our rye is grown in the cool, elevated fields of our Canadian Partnered estates in the Prairies, where significant diurnal temperature shifts force the grain to develop a density of flavor rarely found in commercial crops. Harvested at peak ripeness, our whiskey is naturally fermented and rested in hand-selected oak barrels. The result is a spirit that is decidedly its own: Canadian in origin, classical in craft, and absolutely unapologetic in character.",
+    primaryCta: { label: "Shop Whiskey", href: CONTACT_HREF },
     secondaryCta: { label: "See Tasting Notes", href: CONTACT_HREF },
     image: "/whiskey.png",
     sourceImage: "/cornone.jpg",
     eyebrow: "🥃  Single Farm Rye  ·  Canada",
-    subtitle: "Bourbon Whiskey · Single Farm Rye Expression",
+    subtitle: "Rye Whiskey · Single Farm Rye Expression",
     stats: [
       { label: "Base", value: "Single Farm Rye" },
       { label: "ABV", value: "40% vol." },
-      { label: "Stages", value: "13" },
-      { label: "Barrel", value: "Bourbon Oak" }
+      { label: "Barrel", value: "Oak" }
     ],
     storySections: [
       {
         label: "The Grain",
         title: "Rye grown *at altitude*",
         body: [
-          "Grown in cool elevated fields where diurnal temperature swings can exceed 20°C, our rye develops aromatic density and deep spice complexity. Combined with lower-yield heritage varieties, this creates a flavor profile far beyond commercial grain.",
-          "To preserve this quality, the grain is stone-milled and mashed on-site within 24 hours of harvest. Natural fermentation with wild yeasts helps express the terroir of our estate in every batch."
+          "Grown in cool, elevated fields where diurnal temperature swings can exceed 20°C, our rye develops exceptional aromatic density and deep spice complexity. By combining these conditions with lower-yield heritage varieties, we create a flavor profile that far exceeds commercial grain standards.",
+          "To preserve this quality, the grain is stone-milled and mashed on-site within 24 hours of harvest. We use natural fermentation with wild yeasts to ensure every batch expresses the unique terroir of our estate."
         ]
       },
       {
-        label: "Bourbon Oak Resting",
+        label: "Oak Resting",
         title: "Patience in *every barrel*",
         body: [
-          "Cousins Whiskey rests in hand-selected bourbon oak barrels sourced from coopers we have partnered with for years. Seasonal climate shifts drive steady, cyclical barrel absorption that deepens the spirit's natural evolution.",
-          "We bottle only when the whiskey is ready, not on a fixed schedule or quarterly target. This patience is what sets Cousins Whiskey apart."
+          "Cousins Whiskey is aged in hand-selected new oak barrels to preserve its uncompromised taste. Our process relies on seasonal climate shifts to drive the steady, cyclical barrel absorption that deepens the spirit's natural evolution.",
+          "We bottle only when the whiskey is ready, rather than following a fixed schedule or quarterly target. This commitment to patience is what sets Cousins Whiskey apart."
         ]
       }
     ],
@@ -394,10 +393,10 @@ export const PRODUCTS: Product[] = [
     },
     sections: [],
     forPartnersTitle: "For premium bars and lounges",
-    forPartnersBody: "Cousins Bourbon Whiskey is crafted for high-end bars, private clubs, and hospitality partners seeking a bold, premium rye expression with exceptional structure and smoothness.",
+    forPartnersBody: "Cousins Whiskey is crafted for high-end bars, private clubs, and hospitality partners seeking a bold, premium rye expression with exceptional structure and smoothness.",
     forPartnersCta: { label: "Enquire About Partnership", href: CONTACT_HREF },
-    finalCtaHeadline: "Discover the bold character of Cousins Bourbon Whiskey",
-    finalCtaLabel: "Shop Bourbon Whiskey",
+    finalCtaHeadline: "Discover the bold character of Cousins Whiskey",
+    finalCtaLabel: "Shop Whiskey",
     finalCtaHref: "/contact",
   }
 ];
