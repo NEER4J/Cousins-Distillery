@@ -49,7 +49,7 @@ export function Hero() {
         className="absolute inset-0 h-full w-full object-cover opacity-50"
         aria-hidden
       >
-        <source src="/main-vid.mp4" type="video/mp4" />
+        <source src="/tequila-video.mp4" type="video/mp4" />
       </video>
 
       {/* Dark overlay — flat */}

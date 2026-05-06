@@ -9,7 +9,7 @@ const SLIDES = [
   { id: 1, type: "video", url: "/new-media/the-barrels.mp4", label: "The Barrels", sub: "Noble Oak Maturation" },
   { id: 2, type: "video", url: "/new-media/the-mills.mp4", label: "The Mill", sub: "Grain to Gold" },
   { id: 3, type: "video", url: "/new-media/the-stills.mp4", label: "The Stills", sub: "Ethereal Vapor" },
-  { id: 4, type: "video", url: "/main-vid.mp4", label: "The Process", sub: "Pure Alchemy" },
+  { id: 4, type: "video", url: "/tequila-video.mp4", label: "The Process", sub: "Pure Alchemy" },
 ];
 
 export function CraftSliderSection() {
