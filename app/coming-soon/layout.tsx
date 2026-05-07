@@ -4,8 +4,8 @@ export const metadata: Metadata = {
   title: 'Cousins Distillery | Coming Soon',
   description: 'Cousins Distillery is cultivating something special. Our premium craft spirits—Vodka, Blue Agave, and Tequila—will be available soon.',
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
   },
 };
 

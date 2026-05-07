@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: product.metaTitle,
   description: product.metaDescription,
   keywords: product.metaKeywords,
+  alternates: { canonical: "/blue-agave-spirit" },
   openGraph: {
     title: product.metaTitle,
     description: product.metaDescription,

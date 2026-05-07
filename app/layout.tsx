@@ -67,11 +67,11 @@ export const metadata: Metadata = {
     apple: "/logo.svg",
   },
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
     googleBot: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
@@ -82,6 +82,33 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${siteUrl}/#organization`,
+  "name": "Cousins Distillery",
+  "description": "Premium small-batch craft spirits distillery producing vodka, tequila, blue agave spirit, and rye whiskey through a 13-stage refinement process.",
+  "url": siteUrl,
+  "logo": `${siteUrl}/logo.svg`,
+  "image": `${siteUrl}/new-media/4-bottom-with-bg.jpeg`,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "747 Appleby Line",
+    "addressLocality": "Burlington",
+    "addressRegion": "Ontario",
+    "postalCode": "L7L 2Y6",
+    "addressCountry": "CA"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-905-512-5943",
+    "contactType": "customer service",
+    "email": "contact@cousinsdistilleryltd.com"
+  },
+  "priceRange": "$$$$",
+  "servesCuisine": "Distillery",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -89,6 +116,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+      </head>
       <body className={`${poppins.variable} ${notoSerif.variable} antialiased`}>
         {children}
       </body>
