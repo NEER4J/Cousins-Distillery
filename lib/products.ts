@@ -59,7 +59,8 @@ export interface Product {
   secondaryCta: ProductCta;
   image: string;
   sourceImage: string;
-  
+  videoUrl?: string;
+
   // New structured properties from HTML
   eyebrow: string;
   subtitle: string;
@@ -94,6 +95,7 @@ export const PRODUCTS: Product[] = [
     secondaryCta: { label: "See Experiences", href: CONTACT_HREF },
     image: "/vodka.png",
     sourceImage: "/cornone.jpg",
+    videoUrl: "/main-vid.mp4",
     eyebrow: "🌽  Heirloom Corn  ·  Canada",
     subtitle: "Heirloom Corn Expression",
     stats: [
@@ -164,6 +166,7 @@ export const PRODUCTS: Product[] = [
     secondaryCta: { label: "Explore Our Expressions", href: CONTACT_HREF },
     image: "/taquila-v2.png",
     sourceImage: "/cornone.jpg",
+    videoUrl: "/tequila-video.mp4",
     eyebrow: "🌵  100% Blue Agave  ·  Jalisco, México",
     subtitle: "Blue Agave Reserve · Three Expressions",
     stats: [

@@ -116,6 +116,45 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
         </div>
       </section>
 
+      {/* Video Showcase */}
+      {product.videoUrl && (
+        <section className="bg-[#0F0A08] py-20 lg:py-24 px-6 lg:px-12 relative overflow-hidden">
+          <div className="mx-auto max-w-[1300px]">
+            <div className="flex items-center gap-4 mb-4 reveal">
+              <span className="h-[1px] w-8 bg-[#AA921E]" aria-hidden />
+              <p className="font-body text-[11px] font-bold uppercase tracking-[0.3em] text-[#AA921E]">
+                Behind The Craft
+              </p>
+            </div>
+            <h2 className="font-heading text-[clamp(2.2rem,4.5vw,3rem)] font-semibold tracking-[1px] text-white mb-12 leading-[1.5] reveal max-w-3xl">
+              From our hands<br />
+              <span className="text-[#AA921E]">to your glass.</span>
+            </h2>
+
+            <div className="relative w-full aspect-video overflow-hidden border border-[#AA921E]/20 reveal reveal-delay-1 bg-black">
+              <video
+                key={product.videoUrl}
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+                className="absolute inset-0 h-full w-full object-cover"
+              >
+                <source src={product.videoUrl} type="video/mp4" />
+              </video>
+            </div>
+          </div>
+
+          {/* Faint accent label, mirrors hero */}
+          <div className="absolute bottom-6 right-6 lg:right-12 pointer-events-none hidden lg:block">
+            <p className="font-heading text-[clamp(3rem,7vw,6rem)] font-bold text-white/[0.04] leading-none select-none tracking-tighter">
+              {accentLabel}
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* Story Sections */}
       {product.storySections && product.storySections.length > 0 && (
         <section className="bg-[#1C1A14] py-20 lg:py-24 px-6 lg:px-12 relative">
