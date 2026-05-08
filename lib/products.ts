@@ -275,6 +275,7 @@ export const PRODUCTS: Product[] = [
     secondaryCta: { label: "See Tasting Notes", href: CONTACT_HREF },
     image: "/agave-v2.png",
     sourceImage: "/blue-agave.jpg",
+    videoUrl: "/tequila-video.mp4",
     eyebrow: "🌿  Pure Agave  ·  Jalisco, Mexico",
     subtitle: "Pure Agave Blanco Spirit",
     stats: [
