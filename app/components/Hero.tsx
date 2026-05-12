@@ -80,7 +80,7 @@ export function Hero() {
           </h1>
 
           <p className="font-body text-[1rem] sm:text-[1.25rem] font-bold text-[#D1BB8A] mt-6 reveal reveal-delay-2 tracking-wide">
-            Field to Bottle - Est. 2019
+            Field to Bottle - Est. 2025
           </p>
 
           {/* Body copy */}
