@@ -50,6 +50,8 @@ export interface ProductCta {
 export interface Product {
   slug: ProductSlug;
   name: string;
+  shortName: string;
+  retailPrice: number;
   metaTitle: string;
   metaDescription: string;
   metaKeywords: string[];
@@ -86,6 +88,8 @@ export const PRODUCTS: Product[] = [
   {
     slug: "vodka",
     name: "COUSINS VODKA",
+    shortName: "Vodka",
+    retailPrice: 59.95,
     metaTitle: "Premium Artisanal Vodka | 13-Stage Distilled | Cousins Distillery",
     metaDescription: "Cousins Distillery Vodka: The essence of purity. Small-batch craft vodka refined through thirteen stages.",
     metaKeywords: ["craft vodka", "small-batch vodka", "13-stage distillation", "premium spirit", "smooth vodka", "artisanal spirits"],
@@ -157,6 +161,8 @@ export const PRODUCTS: Product[] = [
   {
     slug: "tequila",
     name: "COUSINS TEQUILA",
+    shortName: "Tequila Reposado",
+    retailPrice: 139.95,
     metaTitle: "Artisanal Tequila | Blue Agave Reserve | Cousins Distillery",
     metaDescription: "Refined Cousins Distillery Tequila crafted from 100% Blue Agave in Jalisco, Mexico, with three distinctive expressions.",
     metaKeywords: ["premium tequila", "reposado tequila", "extra anejo tequila", "artisanal tequila", "small-batch tequila", "100% blue agave", "jalisco tequila"],
@@ -266,6 +272,8 @@ export const PRODUCTS: Product[] = [
   {
     slug: "blue-agave-spirit",
     name: "COUSINS AGAVE",
+    shortName: "Blue Agave Spirit",
+    retailPrice: 79.95,
     metaTitle: "Blue Agave Spirit | Modern Agave Expression | Cousins Distillery",
     metaDescription: "Discover the rich, distinctive character of Cousins Distillery Blue Agave Spirit. A modern expression of agave.",
     metaKeywords: ["blue agave spirit", "agave spirit", "craft agave", "jalisco agave", "artisanal agave", "cousins distillery agave"],
@@ -337,6 +345,8 @@ export const PRODUCTS: Product[] = [
   {
     slug: "whiskey",
     name: "COUSINS WHISKEY",
+    shortName: "Whiskey",
+    retailPrice: 59.95,
     metaTitle: "Rye Whiskey | Single Farm Rye Expression | Cousins Distillery",
     metaDescription: "Discover Cousins Whiskey: a bold single farm rye expression, naturally fermented and rested in hand-selected oak barrels.",
     metaKeywords: ["rye whiskey", "single farm rye", "craft whiskey", "small-batch whiskey", "cousins distillery whiskey"],

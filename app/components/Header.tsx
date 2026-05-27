@@ -160,8 +160,8 @@ export function Header() {
               ))}
             </nav>
 
-            <Link href="/contact" className={ctaClass}>
-              <span className="relative z-10">Shop Now</span>
+            <Link href="/shop" className={ctaClass}>
+              <span className="relative z-10">Order Now</span>
               <ArrowRight size={16} className="relative z-10 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
@@ -257,11 +257,11 @@ export function Header() {
 
           <div className="px-8 mt-auto pb-12 pt-6">
             <Link
-              href="/contact"
+              href="/shop"
               className="flex w-full items-center justify-center border border-[#D1BB8A] bg-[#D1BB8A] h-[56px] px-10 font-body text-[13px] font-bold uppercase tracking-[0.2em] text-black hover:bg-white transition-all"
               onClick={() => setMenuOpen(false)}
             >
-              Shop Now
+              Order Now
             </Link>
           </div>
         </div>
