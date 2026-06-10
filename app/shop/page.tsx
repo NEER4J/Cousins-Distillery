@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { Header } from "@/app/components/Header";
 import { Footer } from "@/app/components/Footer";
 import { PRODUCTS } from "@/lib/products";
@@ -33,6 +32,15 @@ export default function ShopPage() {
                     <p className="font-body text-[15px] lg:text-[18px] font-normal leading-[1.8] text-white/70 max-w-2xl mx-auto">
                         Four small-batch expressions, each refined through our thirteen-stage process. Browse the retail collection below and place an order — our team will follow up to confirm payment and delivery.
                     </p>
+
+                    <div className="mt-10 inline-flex flex-col items-center gap-3 rounded-sm border border-[#D1BB8A]/40 bg-[#D1BB8A]/10 px-8 py-5 backdrop-blur-sm">
+                        <p className="font-body text-[10px] font-bold uppercase tracking-[0.4em] text-[#D1BB8A]">
+                            Coming Soon
+                        </p>
+                        <p className="font-body text-[13px] lg:text-[15px] font-medium text-white/90">
+                            Online ordering &amp; availability at <span className="text-[#D1BB8A] font-bold">LCBO</span>.
+                        </p>
+                    </div>
                 </div>
 
                 {/* Decorative Accent Label */}
@@ -98,13 +106,12 @@ export default function ShopPage() {
                                         </span>
                                     </div>
 
-                                    <Link
-                                        href={`/shop/order?product=${product.slug}`}
-                                        className="group/btn flex items-center justify-center gap-3 w-full h-[52px] bg-[#0F0A08] text-white font-body text-[12px] font-bold uppercase tracking-[0.2em] transition-all hover:bg-[#D1BB8A] hover:text-black mt-1"
+                                    <div
+                                        aria-disabled="true"
+                                        className="flex items-center justify-center gap-3 w-full h-[52px] bg-zinc-200 text-zinc-500 font-body text-[12px] font-bold uppercase tracking-[0.2em] cursor-not-allowed mt-1"
                                     >
-                                        Order Now
-                                        <ArrowRight size={14} className="transition-transform group-hover/btn:translate-x-1" />
-                                    </Link>
+                                        Ordering — Coming Soon
+                                    </div>
 
                                     <Link
                                         href={`/${product.slug}`}
@@ -133,20 +140,19 @@ export default function ShopPage() {
                     </div>
 
                     <h2 className="font-heading text-[clamp(2rem,5vw,3.5rem)] font-semibold tracking-[1px] text-white leading-[1.4] mb-8">
-                        Ready to <span className="text-[#D1BB8A]">order?</span>
+                        Ordering is <span className="text-[#D1BB8A]">coming soon.</span>
                     </h2>
 
                     <p className="font-body text-[15px] lg:text-[17px] text-white/70 leading-[1.8] mb-12 max-w-xl mx-auto">
-                        Tell us what you&rsquo;d like and where to send it. Our team will reach out within 1&ndash;2 business days to confirm payment and delivery details.
+                        Online ordering and availability at <span className="text-white font-semibold">LCBO</span> are on the way. Check back shortly to place your order.
                     </p>
 
-                    <Link
-                        href="/shop/order"
-                        className="group inline-flex items-center justify-center gap-3 h-[56px] px-12 bg-[#D1BB8A] text-black font-body text-[13px] font-bold uppercase tracking-[0.2em] transition-all hover:bg-white"
+                    <div
+                        aria-disabled="true"
+                        className="inline-flex items-center justify-center gap-3 h-[56px] px-12 bg-white/10 text-white/60 border border-white/20 font-body text-[13px] font-bold uppercase tracking-[0.2em] cursor-not-allowed"
                     >
-                        Start Your Order
-                        <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-                    </Link>
+                        Coming Soon
+                    </div>
                 </div>
             </section>
 
