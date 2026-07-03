@@ -24,9 +24,20 @@ function useScrollReveal(ref: React.RefObject<HTMLElement | null>) {
   }, [ref]);
 }
 
+// Responsive whiskey hero video — served by screen size to save bandwidth.
+// (1080 master is kept out of git — too large for GitHub; 720 HD covers desktop.)
+const HERO_VIDEO_DESKTOP = "/new-media/Whiskey%20720.mp4"; // ≥768px — 720 HD
+const HERO_VIDEO_PHONE = "/new-media/Whiskey%20Phone.mp4"; // <768px — low-res
+
+function pickHeroVideo(width: number) {
+  if (width < 768) return HERO_VIDEO_PHONE;
+  return HERO_VIDEO_DESKTOP;
+}
+
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const [scrolled, setScrolled] = useState(false);
+  const [videoSrc, setVideoSrc] = useState<string | null>(null);
   useScrollReveal(sectionRef);
 
   useEffect(() => {
@@ -35,22 +46,31 @@ export function Hero() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Choose the whiskey video variant matching the current viewport.
+  useEffect(() => {
+    setVideoSrc(pickHeroVideo(window.innerWidth));
+  }, []);
+
   return (
     <section
       ref={sectionRef}
       className="relative min-h-screen w-full overflow-hidden bg-black"
     >
-      {/* Video background */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 h-full w-full object-cover opacity-50"
-        aria-hidden
-      >
-        <source src="/main-vid.mp4" type="video/mp4" />
-      </video>
+      {/* Video background — responsive whiskey video, chosen by viewport */}
+      {videoSrc && (
+        <video
+          key={videoSrc}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="absolute inset-0 h-full w-full object-cover opacity-50"
+          aria-hidden
+        >
+          <source src={videoSrc} type="video/mp4" />
+        </video>
+      )}
 
       {/* Dark overlay — flat */}
       <div className="absolute inset-0 bg-black/40" aria-hidden />

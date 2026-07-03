@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Large master video — exceeds GitHub 100MB limit, host externally
+public/new-media/Whiskey 1080.mp4
