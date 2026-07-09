@@ -356,6 +356,7 @@ export const PRODUCTS: Product[] = [
     secondaryCta: { label: "See Tasting Notes", href: CONTACT_HREF },
     image: "/whiskey.png",
     sourceImage: "/cornone.jpg",
+    videoUrl: "/new-media/Whiskey%20720.mp4",
     eyebrow: "🥃  Single Farm Rye  ·  Canada",
     subtitle: "Rye Whiskey · Single Farm Rye Expression",
     stats: [
