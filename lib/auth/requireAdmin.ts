@@ -3,36 +3,51 @@ import 'server-only';
 import { redirect } from 'next/navigation';
 import { createServerSupabase } from '@/lib/supabase/server';
 import { createAdminSupabase } from '@/lib/supabase/admin';
+import { type Role, roleCan, normalizeRole } from '@/lib/auth/roles';
+
+export type { Role };
 
 export interface AdminUser {
     id: string;
     email: string;
+    role: Role;
 }
 
-/** True if the email is present in the cms_admins allowlist. */
-export async function isAdminEmail(email: string | null | undefined): Promise<boolean> {
-    if (!email) return false;
+/** Return the CMS role for an email, or null if it isn't an allowlisted user. */
+export async function getAdminRole(email: string | null | undefined): Promise<Role | null> {
+    if (!email) return null;
     try {
         const admin = createAdminSupabase();
         const { data, error } = await admin
             .from('cms_admins')
-            .select('email')
+            .select('role')
             .eq('email', email.toLowerCase())
             .maybeSingle();
 
         if (error) {
-            console.error('[auth] cms_admins lookup error:', error.message);
-            return false;
+            // The `role` column may not exist yet (roles migration not run).
+            // Fall back to plain allowlist membership → treat as admin.
+            const { data: fallback } = await admin
+                .from('cms_admins')
+                .select('email')
+                .eq('email', email.toLowerCase())
+                .maybeSingle();
+            return fallback ? 'admin' : null;
         }
-        return !!data;
+        if (!data) return null;
+        return normalizeRole(data.role);
     } catch (err) {
-        // Missing service-role key or unreachable DB — deny rather than crash.
         console.error('[auth] admin check failed:', (err as Error).message);
-        return false;
+        return null;
     }
 }
 
-/** Returns the logged-in admin user, or null if not authenticated / not an admin. */
+/** True if the email is an allowlisted CMS user. */
+export async function isAdminEmail(email: string | null | undefined): Promise<boolean> {
+    return (await getAdminRole(email)) !== null;
+}
+
+/** The logged-in CMS user (with role), or null if not authenticated / not allowlisted. */
 export async function getAdminUser(): Promise<AdminUser | null> {
     const supabase = await createServerSupabase();
     const {
@@ -40,14 +55,22 @@ export async function getAdminUser(): Promise<AdminUser | null> {
     } = await supabase.auth.getUser();
 
     if (!user?.email) return null;
-    if (!(await isAdminEmail(user.email))) return null;
+    const role = await getAdminRole(user.email);
+    if (!role) return null;
 
-    return { id: user.id, email: user.email };
+    return { id: user.id, email: user.email, role };
 }
 
-/** Guard for admin pages/actions. Redirects to /admin/login if not an admin. */
+/** Guard for any admin page/action. Redirects to /admin/login if not allowlisted. */
 export async function requireAdmin(): Promise<AdminUser> {
     const user = await getAdminUser();
     if (!user) redirect('/admin/login');
+    return user;
+}
+
+/** Guard a specific CMS section. Redirects allowlisted users without access to the dashboard. */
+export async function requireSection(section: string): Promise<AdminUser> {
+    const user = await requireAdmin();
+    if (!roleCan(user.role, section)) redirect('/admin');
     return user;
 }

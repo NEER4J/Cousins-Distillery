@@ -1,10 +1,10 @@
-import { requireAdmin } from '@/lib/auth/requireAdmin';
+import { requireSection } from '@/lib/auth/requireAdmin';
 import { createAdminSupabase } from '@/lib/supabase/admin';
 import { ScriptsForm } from './ScriptsForm';
 import { ErrorNote } from '../../_components/ErrorNote';
 
 export default async function ScriptsPage() {
-    await requireAdmin();
+    await requireSection('scripts');
 
     let initial = { header_scripts: '', body_start_scripts: '', footer_scripts: '' };
     let loadError = false;

@@ -1,7 +1,7 @@
 'use server';
 
 import { revalidatePath } from 'next/cache';
-import { requireAdmin } from '@/lib/auth/requireAdmin';
+import { requireSection } from '@/lib/auth/requireAdmin';
 import { createAdminSupabase } from '@/lib/supabase/admin';
 
 export interface ScriptsFormState {
@@ -13,7 +13,7 @@ export async function saveScripts(
     _prev: ScriptsFormState | null,
     formData: FormData
 ): Promise<ScriptsFormState> {
-    await requireAdmin();
+    await requireSection('scripts');
 
     const payload = {
         header_scripts: String(formData.get('header_scripts') ?? ''),

@@ -20,20 +20,27 @@ Restart `npm run dev` after adding it.
 
 ### 2. Run the database migrations
 
-In the Supabase Dashboard → **SQL Editor**, run these four files (in order):
+In the Supabase Dashboard → **SQL Editor**, run these files (in order):
 
 1. `supabase/migrations/20260724000001_create_cms_admins.sql`  — admin allowlist (seeds `neeraj.kumar@virtualxcellence.com`)
 2. `supabase/migrations/20260724000002_create_site_settings.sql` — header/body/footer scripts
 3. `supabase/migrations/20260724000003_create_seo_settings.sql`  — per-page SEO overrides
 4. `supabase/migrations/20260724000004_alter_submissions_add_status.sql` — read/status tracking on submissions
+5. `supabase/migrations/20260724000005_add_cms_roles.sql` — roles (admin/manager/editor) for CMS users
 
 ### 3. Create your admin password
 
 Go to **`/admin/login`** → click **"Set your password"** → enter the allowlisted email and a password (8+ chars) → it creates your account and signs you in. From then on, use **Sign in**.
 
-## Managing admins
+## Users & roles
 
-Add or remove admins by editing the `cms_admins` table (Supabase → Table Editor). Only emails in that table can access `/admin`.
+Open **Users** in the CMS (Admins only) to add people with an email + password (no verification) and a role:
+
+- **Admin** — full access, including user management
+- **Manager** — everything except user management
+- **Editor** — submissions & SEO only (no scripts, no users)
+
+From there you can change roles, reset passwords, and remove users. You can also still add/remove entries directly in the `cms_admins` table (Supabase → Table Editor) — only emails in that table can access `/admin`. Roles are enforced both in the sidebar and on each page/server action.
 
 ## How the pieces work
 
