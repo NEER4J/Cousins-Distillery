@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/cms/seo";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { OriginSection } from "./components/OriginSection";
@@ -9,13 +10,15 @@ import { PhilosophySection } from "./components/PhilosophySection";
 import { ExperienceSection } from "./components/ExperienceSection";
 import { Footer } from "./components/Footer";
 
-export const metadata: Metadata = {
-  title: "Cousins Distillery | Premium Craft Spirits & Small-Batch Vodka",
-  description: "Cousins Distillery: Experience the art of craft spirits. From our 13-stage distillation process to our heritage-inspired blends, discover vodka, tequila, blue agave spirit, and rye whiskey.",
-  alternates: {
-    canonical: "/",
-  }
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return buildMetadata("/", {
+    title: "Cousins Distillery | Premium Craft Spirits & Small-Batch Vodka",
+    description: "Cousins Distillery: Experience the art of craft spirits. From our 13-stage distillation process to our heritage-inspired blends, discover vodka, tequila, blue agave spirit, and rye whiskey.",
+    alternates: {
+      canonical: "/",
+    },
+  });
+}
 
 export default function Home() {
   return (

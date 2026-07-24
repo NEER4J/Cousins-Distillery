@@ -1,13 +1,16 @@
 import type { Metadata } from 'next';
+import { buildMetadata } from '@/lib/cms/seo';
 
-export const metadata: Metadata = {
-  title: 'Cousins Distillery | Coming Soon',
-  description: 'Cousins Distillery is cultivating something special. Our premium craft spirits—Vodka, Blue Agave, and Tequila—will be available soon.',
-  robots: {
-    index: false,
-    follow: false,
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return buildMetadata('/coming-soon', {
+    title: 'Cousins Distillery | Coming Soon',
+    description: 'Cousins Distillery is cultivating something special. Our premium craft spirits—Vodka, Blue Agave, and Tequila—will be available soon.',
+    robots: {
+      index: false,
+      follow: false,
+    },
+  });
+}
 
 export default function ComingSoonLayout({
   children,

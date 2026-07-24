@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Poppins, Noto_Serif } from "next/font/google";
+import { headers } from "next/headers";
 import "./globals.css";
 import { AgeGate } from "./components/AgeGate";
+import { CmsScripts } from "./components/CmsScripts";
+import { getSiteSettings } from "@/lib/cms/settings";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -110,22 +113,33 @@ const organizationJsonLd = {
   "servesCuisine": "Distillery",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // The admin CMS lives under /admin — it must NOT show the age gate or fire
+  // the site's custom tracking scripts. Middleware forwards the path via header.
+  const pathname = (await headers()).get("x-pathname") ?? "";
+  const isAdmin = pathname.startsWith("/admin");
+  const settings = isAdmin ? null : await getSiteSettings();
+
   return (
     <html lang="en">
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-        />
+        {!isAdmin && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+          />
+        )}
+        {settings && <CmsScripts html={settings.header_scripts} position="head" />}
       </head>
       <body className={`${poppins.variable} ${notoSerif.variable} antialiased`}>
-        <AgeGate />
+        {settings && <CmsScripts html={settings.body_start_scripts} position="body-start" />}
+        {!isAdmin && <AgeGate />}
         {children}
+        {settings && <CmsScripts html={settings.footer_scripts} position="footer" />}
       </body>
     </html>
   );
